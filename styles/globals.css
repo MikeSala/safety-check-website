@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+  @apply h-full w-full overflow-hidden bg-neutral-50;
+}
+
+* {
+  @apply font-montserrat;
+}
+
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary-600;
+}
+
+a,
+button {
+  @apply rounded;
+}
+
+hr {
+  @apply border-neutral-300;
+}
+
+/* modal global styles */
+.MuiDialog-paper {
+  margin: 8px;
+}
+
+.MuiStepContent-root {
+  padding-left: 8px;
+  padding-right: 4px;
+}
+
+/* quote page */
+.react-pdf__Document canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+.react-pdf__Document .annotationLayer {
+  display: none;
+}

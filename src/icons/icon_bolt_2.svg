@@ -1,0 +1,11 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+ <title>Icon</title>
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <line stroke="#000" id="svg_4" y2="26.53648" x2="21.33531" y1="9.42191" x1="31.79697" fill="none"/>
+  <line id="svg_7" y2="26.43198" x2="28.81862" y1="26.43198" x1="20.94272" stroke="#000" fill="none"/>
+  <line stroke="#000" id="svg_10" y2="71.06205" x2="57.21957" y1="70.82339" x1="57.21957" fill="none"/>
+  <line stroke="#000" id="svg_11" y2="26.53648" x2="21.33531" y1="9.42191" x1="31.79697" fill="none"/>
+  <path id="svg_12" d="m28.933,26.36702l-10.46165,17.11457" opacity="undefined" stroke="#000" fill="none"/>
+ </g>
+</svg>

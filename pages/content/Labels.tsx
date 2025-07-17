@@ -1,0 +1,22 @@
+export const NAV_LABELS = {
+  SERVICES: "Usługi",
+  COMPLIANCE_SUBSCRIPTION: "Subskrypcja Zgodności",
+  SMOKE_ALARM_CHECK: "Przegląd Czujników Dymu",
+  ELECTRICAL_CHECK: "Przegląd Instalacji Elektrycznej",
+  GAS_CHECK: "Przegląd Instalacji Gazowej",
+  CARAVAN_GAS_CHECK: "Przegląd Instalacji w Przyczepach Kempingowych",
+  SWITCHBOARD_UPGRADE: "Modernizacja Rozdzielnicy Elektrycznej",
+  PLUMBING_SERVICES: "Usługi Hydrauliczne",
+  INCLUSIONS_EXCLUSIONS: "Zakres Usługi i Wyłączenia",
+
+  SOLUTIONS: "Rozwiązania",
+  FOR_PROPERTY_MANAGERS: "Dla Zarządców Nieruchomości",
+  FOR_LANDLORDS: "Dla właścicieli mieszkań na wynajem",
+  FOR_BUILDING_MANAGERS: "Dla administratorów budynków",
+  FOR_HOMEOWNERS: "Dla właścicieli domów",
+  FOR_REAL_ESTATE: "Dla Biur Nieruchomości",
+
+  FAQ: "FAQ",
+  ABOUT_US: "O nas",
+  WORK_WITH_US: "Praca z nami",
+};
