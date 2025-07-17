@@ -1,12 +1,11 @@
 export const solutionsContent = {
   bannerTitle: "Rozwiązania",
   section1: {
-    title:
-      "Przeglądy bezpieczeństwa instalacji elektrycznej, gazowej i przegląd czujników dymu",
+    title: "Przeglądy instalacji elektrycznych, gazowych i systemów alarmowych",
     paragraphs: [
-      `Nasi wysoko wykwalifikowani technicy mają doświadczenie w wykrywaniu potencjalnych zagrożeń i dostarczą szczegółowych informacji o tym, jak można usunąć zidentyfikowane problemy. Dopilnujemy, aby Twoje instalacje elektryczne, gazowe i systemy czujników dymu były bezpieczne i zgodne ze wszystkimi przepisami.`,
-      `Rozumiemy, jak kosztowne mogą być przestoje dla firmy, dlatego pracujemy szybko i sprawnie, aby zminimalizować zakłócenia w Twojej działalności.`,
-      `Z nami możesz mieć pewność, że Twoje nieruchomości będą bezpieczne i zgodne z wymogami. Skontaktuj się z nami – chętnie porozmawiamy o tym, jak możemy Ci pomóc.`,
+      `Nasze przeglądy pomagają wcześnie wykryć potencjalne zagrożenia i wskazują konkretne działania naprawcze. Sprawdzamy stan instalacji zgodnie z obowiązującymi przepisami oraz dobrymi praktykami branżowymi.`,
+      `Działamy sprawnie, aby ograniczyć wpływ przeglądów na codzienne funkcjonowanie budynku. Pracujemy na terenie całej Polski – zarówno w lokalach mieszkalnych, jak i obiektach komercyjnych.`,
+      `Zadbaj o bezpieczeństwo użytkowników i uniknij problemów prawnych wynikających z zaniedbań. Chętnie odpowiemy na pytania i przedstawimy, jak możemy pomóc.`,
     ],
   },
 };
@@ -14,17 +13,17 @@ export const solutionsContent = {
 export const solutionsForBuildingManagersContent = {
   bannerTitle: "Rozwiązania dla Zarządców Budynków",
   section1: {
-    title: `Przeglądy Bezpieczeństwa dla Zarządców Budynków`,
+    title: "Obowiązkowe przeglądy techniczne budynków",
     paragraphs: [
-      `Zarządzanie zgodnością i bezpieczeństwem w dużym portfelu nieruchomości bywa wymagające. Dlatego nasze usługi, obsługa klienta i technologie są dostosowane tak, aby pomóc Ci zaoszczędzić czas, ograniczyć niedogodności oraz zapewnić bezpieczeństwo Tobie, mieszkańcom i użytkownikom budynków.`,
-      `Zgodnie z polskim Prawem budowlanym i przepisami przeciwpożarowymi właściciele i zarządcy budynków mają obowiązek wykonywania okresowych kontroli instalacji elektrycznej i gazowej, a także zapewnienia sprawności systemów sygnalizacji pożaru i czujników dymu. Nasze doświadczenie pozwala skutecznie wypełnić te obowiązki – kontrolujemy m.in. rozdzielnice, instalacje gazowe, przewody, urządzenia oraz systemy alarmowe.`,
+      `Zarządzając budynkami, odpowiadasz za ich stan techniczny i bezpieczeństwo użytkowników. Nasze usługi wspierają Cię w spełnianiu wymagań Prawa budowlanego oraz przepisów przeciwpożarowych.`,
+      `Wykonujemy kontrole instalacji elektrycznych, gazowych oraz systemów sygnalizacji pożaru – w tym rozdzielnic, przewodów, rurociągów i urządzeń. Dokumentujemy stan techniczny i wskazujemy nieprawidłowości.`,
     ],
   },
   section2: {
-    title: `Inspekcje Bezpieczeństwa Nieruchomości`,
+    title: "Zakres usług i elastyczność współpracy",
     paragraphs: [
-      `Dla zarządców nieruchomości wynajmowanych regularne przeglądy bezpieczeństwa to nie tylko obowiązek prawny, ale i podstawa ochrony najemców i budynku. Nasze wieloletnie doświadczenie pozwala zadbać o zgodność z przepisami i standardami bezpieczeństwa. Oferujemy kontrole instalacji gazowych i elektrycznych, w tym rozdzielnic, rurociągów i urządzeń, a także sprawdzenie czujników dymu i systemów sygnalizacji pożaru.`,
-      `Możemy przeprowadzić pojedyncze kontrole lub zaoferować kompleksowy pakiet przeglądów elektrycznych, gazowych i pożarowych w korzystnej cenie. Jeśli podczas inspekcji wykryte zostaną usterki wymagające naprawy, możesz nam je powierzyć do realizacji – ale decyzja zawsze należy do Ciebie.`,
+      `Przeprowadzamy zarówno pojedyncze przeglądy, jak i oferujemy pakiety obejmujące wszystkie wymagane kontrole. Na życzenie możemy również zrealizować drobne naprawy wykrytych usterek – decyzja zawsze należy do Ciebie.`,
+      `Nasze doświadczenie pozwala usprawnić procesy w dużych portfelach nieruchomości i zredukować ryzyko odpowiedzialności prawnej.`,
     ],
   },
 };
@@ -32,35 +31,35 @@ export const solutionsForBuildingManagersContent = {
 export const solutionsForHomeownersContent = {
   bannerTitle: "Rozwiązania dla Właścicieli Domów",
   section1: {
-    title: `Przeglądy Bezpieczeństwa dla Właścicieli Domów`,
+    title: "Przeglądy bezpieczeństwa dla domów jednorodzinnych",
     paragraphs: [
-      `RCSC provides comprehensive checks that offer peace of mind by ensuring your property is safe and meets all legal requirements. You can rest easy knowing that your installations are in the hands of the experts with all the experience and knowledge needed to guarantee your safety.`,
-      `Zgodnie z polskim Prawem budowlanym i przepisami przeciwpożarowymi właściciele mają obowiązek wykonywania okresowych kontroli instalacji elektrycznej i gazowej, a także zapewnienia sprawności systemów sygnalizacji pożaru i czujników dymu. Nasze doświadczenie pozwala skutecznie wypełnić te obowiązki – kontrolujemy m.in. rozdzielnice, instalacje gazowe, przewody, urządzenia oraz systemy alarmowe.`,
+      `Jako właściciel domu odpowiadasz za stan techniczny instalacji i urządzeń. Regularne kontrole pomagają uniknąć awarii, pożarów oraz zatruć czadem.`,
+      `Przeglądy wykonujemy zgodnie z Prawem budowlanym oraz zaleceniami producentów urządzeń. Sprawdzamy rozdzielnice, przewody, instalacje gazowe, czujniki dymu i systemy alarmowe.`,
     ],
   },
   section2: {
-    title: `Inspekcje Bezpieczeństwa Nieruchomości`,
+    title: "Bezpieczny dom – spokojna głowa",
     paragraphs: [
-      `Dla właścicieli domów, regularne przeglądy bezpieczeństwa to nie tylko obowiązek prawny, ale i podstawa bezpiecznego mieszkania. Nasze wieloletnie doświadczenie pozwala zadbać o zgodność z przepisami i standardami bezpieczeństwa. Oferujemy kontrole instalacji gazowych i elektrycznych, w tym rozdzielnic, rurociągów i urządzeń, a także sprawdzenie czujników dymu i systemów sygnalizacji pożaru.`,
-      `Możemy przeprowadzić pojedyncze kontrole lub zaoferować kompleksowy pakiet przeglądów elektrycznych, gazowych i pożarowych w korzystnej cenie. Jeśli podczas inspekcji wykryte zostaną usterki wymagające naprawy, możesz nam je powierzyć do realizacji – ale decyzja zawsze należy do Ciebie.`,
+      `Przeglądy wykonujemy terminowo, bez zbędnych formalności. Możesz zamówić pojedynczą usługę lub kompleksowy pakiet obejmujący wszystkie instalacje.`,
+      `W przypadku wykrycia nieprawidłowości, zaproponujemy możliwe rozwiązania. To Ty decydujesz, czy i kiedy zrealizować naprawy.`,
     ],
   },
 };
+
 export const solutionsForLandlordsContent = {
   bannerTitle: "Rozwiązania dla Właścicieli Mieszkań na Wynajem",
   section1: {
-    title: `Przeglądy Bezpieczeństwa dla Właścicieli Mieszkań na Wynajem`,
+    title: "Bezpieczne mieszkanie to podstawa odpowiedzialnego wynajmu",
     paragraphs: [
-      `wspiera właścicieli nieruchomości w zapewnianiu bezpieczeństwa najemcom, oferując wysokiej jakości usługi przeglądowe. Niezależnie od tego, czy posiadasz lokale mieszkalne czy komercyjne, nasz doświadczony zespół zadba o to, aby Twoja nieruchomość spełniała wszystkie wymagane przepisami normy prawne.`,
-      `W Polsce właściciel lokalu ma obowiązek utrzymywania instalacji elektrycznych i gazowych w stanie bezpiecznym dla użytkowników (zgodnie z ustawą Prawo budowlane oraz przepisami BHP). Regularne przeglądy okresowe tych instalacji (minimum co 5 lat dla elektryki, coroczne kontrole gazowe zalecane przez producentów urządzeń i przepisy lokalne) są kluczowe dla bezpieczeństwa mieszkańców i zgodności z prawem. Zaniedbanie tych obowiązków może prowadzić do poważnych konsekwencji prawnych, w tym odpowiedzialności cywilnej lub karnej w razie wypadku.`,
-      `Jako właściciel nieruchomości musisz zadbać o ochronę swoich najemców przed zagrożeniami związanymi z instalacją elektryczną, gazową oraz systemami alarmowymi przeciwpożarowymi. Nasz zespół ekspertów ds. bezpieczeństwa instalacji elektrycznych i gazowych pomoże Ci doprowadzić Twój budynek do pełnej zgodności z wymaganiami prawa.`,
+      `Jako właściciel lokalu masz obowiązek utrzymywać instalacje w stanie bezpiecznym – dotyczy to zarówno elektryki, jak i gazu. Niedopełnienie tego obowiązku może skutkować odpowiedzialnością cywilną lub karną.`,
+      `Wykonujemy przeglądy zgodnie z Prawem budowlanym i przepisami BHP – minimum co 5 lat dla instalacji elektrycznych oraz corocznie dla gazowych. Sprawdzamy również czujniki dymu i systemy alarmowe.`,
     ],
   },
   section2: {
-    title: `Inspekcje Bezpieczeństwa Nieruchomości`,
+    title: "Profesjonalna obsługa techniczna Twoich lokali",
     paragraphs: [
-      `Dla właścicieli mieszkań pod wynajem regularne przeglądy bezpieczeństwa to nie tylko obowiązek prawny, ale i podstawa ochrony najemców i budynku. Nasze wieloletnie doświadczenie pozwala zadbać o zgodność z przepisami i standardami bezpieczeństwa. Oferujemy kontrole instalacji gazowych i elektrycznych, w tym rozdzielnic, rurociągów i urządzeń, a także sprawdzenie czujników dymu i systemów sygnalizacji pożaru.`,
-      `Możemy zrealizować pojedyncze kontrole lub przeprowadzić kompleksowy pakiet przeglądów elektrycznych, gazowych i pożarowych. Jeśli podczas przeglądu wykryte zostaną usterki wymagające naprawy, możesz nam je powierzyć do realizacji - jest to opcjonalne.`,
+      `Współpracujemy z właścicielami prywatnymi oraz zarządcami mieszkań inwestycyjnych. Oferujemy kompleksowe kontrole instalacji oraz dokumentację do okazania najemcom lub ubezpieczycielowi.`,
+      `Na życzenie możemy usunąć wykryte nieprawidłowości – zawsze po Twojej akceptacji.`,
     ],
   },
 };
@@ -77,8 +76,8 @@ export const solutionsForPropertyManagersContent = {
   section2: {
     title: `Inspekcje Bezpieczeństwa Nieruchomości`,
     paragraphs: [
-      `Dla zarządców nieruchomości pod wynajem regularne przeglądy bezpieczeństwa to nie tylko obowiązek prawny, ale i podstawa ochrony najemców i budynku. Nasze wieloletnie doświadczenie pozwala zadbać o zgodność z przepisami i standardami bezpieczeństwa. Oferujemy kontrole instalacji gazowych i elektrycznych, w tym rozdzielnic, rurociągów i urządzeń, a także sprawdzenie czujników dymu i systemów sygnalizacji pożaru.`,
-      `Możemy przeprowadzić pojedyncze kontrole lub zaoferować kompleksowy pakiet przeglądów elektrycznych, gazowych i pożarowych w korzystnej cenie. Jeśli podczas inspekcji wykryte zostaną usterki wymagające naprawy, możesz nam je powierzyć do realizacji – ale decyzja zawsze należy do Ciebie.`,
+      `Dla zarządców nieruchomości pod wynajem, regularne przeglądy bezpieczeństwa to nie tylko obowiązek prawny, ale i podstawa ochrony najemców i budynku. Nasze wieloletnie doświadczenie, pozwala zadbać o zgodność z przepisami i standardami bezpieczeństwa. Oferujemy kontrole instalacji gazowych i elektrycznych, w tym rozdzielnic, rurociągów, a także sprawdzenie czujników dymu i systemów sygnalizacji pożaru.`,
+      `Możemy przeprowadzić pojedyncze kontrole lub zaoferować kompleksowy pakiet przeglądów elektrycznych, gazowych i pożarowych. Jeżeli podczas inspekcji wykryte zostaną usterki wymagające naprawy, możesz nam je powierzyć do realizacji – decyzja zawsze należy do Ciebie.`,
     ],
   },
 };
@@ -86,17 +85,17 @@ export const solutionsForPropertyManagersContent = {
 export const solutionsForRealEstateContent = {
   bannerTitle: "Rozwiązania dla Biur Nieruchomości",
   section1: {
-    title: `Przeglądy Bezpieczeństwa dla Biur Nieruchomości`,
+    title: "Wsparcie techniczne dla agencji nieruchomości",
     paragraphs: [
-      `Zarządzanie zgodnością i bezpieczeństwem w dużym portfelu nieruchomości bywa wymagające. Dlatego nasze usługi, obsługa klienta i technologie są dostosowane tak, aby pomóc Ci zaoszczędzić czas, ograniczyć niedogodności oraz zapewnić bezpieczeństwo Tobie i użytkownikom budynków.`,
-      `Zgodnie z polskim Prawem budowlanym i przepisami przeciwpożarowymi właściciele i zarządcy budynków mają obowiązek wykonywania okresowych kontroli instalacji elektrycznej i gazowej, a także zapewnienia sprawności systemów sygnalizacji pożaru i czujników dymu. Nasze doświadczenie pozwala skutecznie wypełnić te obowiązki – kontrolujemy m.in. rozdzielnice, instalacje gazowe, przewody, urządzenia oraz systemy alarmowe.`,
+      `Zajmujemy się kompleksową obsługą przeglądów w lokalach, którymi opiekują się biura nieruchomości. Oferujemy elastyczne terminy, czytelne raporty i szybką realizację.`,
+      `Nasi technicy posiadają uprawnienia SEP oraz OC zawodowe. Przeglądy wykonujemy zgodnie z obowiązującymi przepisami oraz potrzebami najemców i właścicieli.`,
     ],
   },
   section2: {
-    title: `Inspekcje Bezpieczeństwa Nieruchomości`,
+    title: "Bezpieczne lokale – zadowoleni klienci",
     paragraphs: [
-      `Posiadamy doświadczenie we współpracy z biurami nieruchomości, zarządcami budynków i właścicielami, zapewniając im usługi najwyższej jakości. Skutecznie realizujemy instalacje i konserwacje w szerokim zakresie projektów, obejmujących centra handlowe, fabryki i magazyny, obiekty eventowe, budynki mieszkalne, biura, bary czy restauracje.`,
-      `Wszyscy specjaliści posiadają wymagane w Polsce uprawnienia SEP do pracy przy instalacjach elektrycznych i gazowych oraz ubezpieczenia OC na prowadzone prace. Dbamy o bezpieczeństwo Twojej nieruchomości, oferując kompleksowe przeglądy bezpieczeństwa instalacji elektrycznych, gazowych i systemów alarmowych przeciwpożarowych, zgodnie z polskimi przepisami i normami technicznymi.`,
+      `Obsługujemy zarówno budynki mieszkalne, jak i komercyjne – od mieszkań i biur po bary i magazyny. Dzięki nam klienci Twojej agencji zyskują pewność, że oferowane nieruchomości są bezpieczne i zgodne z prawem.`,
+      `Jeśli w trakcie przeglądu wykryjemy usterki, przekażemy wszystkie rekomendacje i – jeśli zechcesz – wykonamy naprawy.`,
     ],
   },
 };
