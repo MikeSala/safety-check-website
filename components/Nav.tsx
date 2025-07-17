@@ -16,6 +16,7 @@ import {
 } from "src/components/icons";
 import { NavItem, NavItemProps } from "~/components/NavItem";
 import { NAV_LABELS } from "~/pages/content/Labels";
+import { ROUTES } from "~/pages/content/Routes";
 
 const navItems: NavItemProps[] = [
   {
@@ -23,91 +24,91 @@ const navItems: NavItemProps[] = [
     subItems: [
       {
         name: NAV_LABELS.COMPLIANCE_SUBSCRIPTION,
-        href: "/property-compliance-subscription",
+        href: ROUTES.COMPLIANCE_SUBSCRIPTION,
         icon: (
           <Icons8Property className="mr-2 h-8 w-8 flex-shrink-0 group-hover:text-red-500" />
         ),
       },
       {
-        name: "Przegląd Czujników Dymu",
-        href: "/smoke-alarm-safety-check",
+        name: NAV_LABELS.SMOKE_ALARM_CHECK,
+        href: ROUTES.SMOKE_ALARM_CHECK,
         icon: <Icons8SmokeDetectorB className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Przegląd Instalacji Elektrycznej",
-        href: "/electrical-safety-check",
+        name: NAV_LABELS.ELECTRICAL_CHECK,
+        href: ROUTES.ELECTRICAL_CHECK,
         icon: (
           <IconElectrical className="mr-2 h-8 w-8 flex-shrink-0 group-hover:text-red-500" />
         ),
       },
       {
-        name: "Przegląd Instalacji Gazowej",
-        href: "/gas-safety-check",
+        name: NAV_LABELS.GAS_CHECK,
+        href: ROUTES.GAS_CHECK,
         icon: <Icons8Fire className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Przegląd Instalacji w Przyczepach Kempingowych",
-        href: "/caravan-gas-compliance-check",
+        name: NAV_LABELS.CARAVAN_GAS_CHECK,
+        href: ROUTES.CARAVAN_GAS_CHECK,
         icon: <Icons8Trailer className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Modernizacja Rozdzielnicy Elektrycznej",
-        href: "/electrical-switchboard-upgrade",
+        name: NAV_LABELS.SWITCHBOARD_UPGRADE,
+        href: ROUTES.SWITCHBOARD_UPGRADE,
         icon: <Icons8Switchboard className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Usługi Hydrauliczne",
-        href: "/general-plumbing",
+        name: NAV_LABELS.PLUMBING_SERVICES,
+        href: ROUTES.GENERAL_PLUMBING,
         icon: <Icons8Plumbing className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Zakres Usługi i Wyłączenia",
-        href: "/inclusions-exclusions",
+        name: NAV_LABELS.INCLUSIONS_EXCLUSIONS,
+        href: ROUTES.INCLUSIONS_EXCLUSIONS,
         icon: <Icons8Maybe className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
     ],
   },
   {
-    name: "Rozwiązania",
+    name: NAV_LABELS.SOLUTIONS,
     subItems: [
       {
-        name: "Dla Zarządców Zieruchomości",
-        href: "/solutions-for-property-managers",
+        name: NAV_LABELS.FOR_PROPERTY_MANAGERS,
+        href: ROUTES.PROPERTY_MANAGERS,
         icon: <Icons8Apartment className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Dla właścicieli mieszkań na wynajem",
-        href: "/solutions-for-landlords",
+        name: NAV_LABELS.FOR_LANDLORDS,
+        href: ROUTES.LANDLORDS,
         icon: <Icons8Residence className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Dla administratorów budynków",
-        href: "/solutions-for-building-managers",
+        name: NAV_LABELS.FOR_BUILDING_MANAGERS,
+        href: ROUTES.BUILDING_MANAGERS,
         icon: <Icons8Building className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Dla właścicieli domów",
-        href: "/solutions-for-homeowners",
+        name: NAV_LABELS.FOR_HOMEOWNERS,
+        href: ROUTES.HOMEOWNERS,
         icon: <Icons8CountryHouse className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
       {
-        name: "Dla Biur Nieruchomości",
-        href: "/solutions-for-real-estate",
+        name: NAV_LABELS.FOR_REAL_ESTATE,
+        href: ROUTES.REAL_ESTATE,
         icon: <Icons8CityBlock className="mr-2 h-8 w-8 flex-shrink-0" />,
       },
     ],
   },
   {
-    name: "FAQ",
-    href: "/faq",
+    name: NAV_LABELS.FAQ,
+    href: ROUTES.FAQ,
   },
   {
-    name: "O nas",
-    href: "/about-us",
+    name: NAV_LABELS.ABOUT_US,
+    href: ROUTES.ABOUT_US,
   },
   {
-    name: "Praca z nami",
-    href: "/work-with-us",
+    name: NAV_LABELS.WORK_WITH_US,
+    href: ROUTES.WORK_WITH_US,
   },
 ];
 

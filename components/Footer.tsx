@@ -4,6 +4,8 @@ import React, { ReactNode, useContext } from "react";
 import ContactButtons from "~/components/ContactButtons";
 import DistrictBar from "~/components/DisctrictBar";
 import { LogoButton } from "~/components/LogoButton";
+import { NAV_LABELS } from "~/pages/content/Labels";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 export const Footer: React.FC = () => {
@@ -64,69 +66,73 @@ export const Footer: React.FC = () => {
             <Link href="/services">Nasze usługi</Link>
           </li>
           <li>
-            <Link href="/property-compliance-subscription">Subskrypcja</Link>
-          </li>
-          <li>
-            <Link href="/smoke-alarm-safety-check">
-              Przegląd Systemów Sygnalizacji Pożarowej
+            <Link href={ROUTES.COMPLIANCE_SUBSCRIPTION}>
+              {NAV_LABELS.COMPLIANCE_SUBSCRIPTION}
             </Link>
           </li>
           <li>
-            <Link href="/electrical-safety-check">
-              Przegląd Instalacji Elektrycznej
+            <Link href={ROUTES.SMOKE_ALARM_CHECK}>
+              {NAV_LABELS.SMOKE_ALARM_CHECK}
             </Link>
           </li>
           <li>
-            <Link href="/gas-safety-check">Przegląd Instalacji Gazowej</Link>
-          </li>
-          <li>
-            <Link href="/caravan-gas-compliance-check">
-              Przegląd Instalacji w Przyczepach Kempingowych
+            <Link href={ROUTES.ELECTRICAL_CHECK}>
+              {NAV_LABELS.ELECTRICAL_CHECK}
             </Link>
           </li>
           <li>
-            <Link href="/electrical-switchboard-upgrade">
-              Modernizacja Rozdzielnicy Elektrycznej
+            <Link href={ROUTES.GAS_CHECK}>{NAV_LABELS.GAS_CHECK}</Link>
+          </li>
+          <li>
+            <Link href={ROUTES.CARAVAN_GAS_CHECK}>
+              {NAV_LABELS.CARAVAN_GAS_CHECK}
             </Link>
           </li>
           <li>
-            <Link href="/general-plumbing">Usługi hydrauliczne</Link>
+            <Link href={ROUTES.SWITCHBOARD_UPGRADE}>
+              {NAV_LABELS.SWITCHBOARD_UPGRADE}
+            </Link>
           </li>
           <li>
-            <Link href="/inclusions-exclusions">Zakres i wyłączenia</Link>
+            <Link href={ROUTES.GENERAL_PLUMBING}>
+              {" "}
+              {NAV_LABELS.PLUMBING_SERVICES}
+            </Link>
+          </li>
+          <li>
+            <Link href={ROUTES.INCLUSIONS_EXCLUSIONS}>
+              {" "}
+              {NAV_LABELS.INCLUSIONS_EXCLUSIONS}
+            </Link>
           </li>
         </ul>
       ),
     },
     {
-      heading: "Rozwiązania",
+      heading: NAV_LABELS.SOLUTIONS,
       content: (
         <ul>
           <li>
-            <Link href="/solutions">Nasze rozwiązania</Link>
+            <Link href={ROUTES.SOLUTIONS}> {NAV_LABELS.SOLUTIONS}</Link>
           </li>
           <li>
-            <Link href="/solutions-for-property-managers">
-              Dla Zarządców Nieruchomości
+            <Link href={ROUTES.PROPERTY_MANAGERS}>
+              {NAV_LABELS.FOR_PROPERTY_MANAGERS}
             </Link>
           </li>
           <li>
-            <Link href="/solutions-for-landlords">
-              Dla Właścicieli pod Wynajem
+            <Link href={ROUTES.LANDLORDS}> {NAV_LABELS.FOR_LANDLORDS}</Link>
+          </li>
+          <li>
+            <Link href={ROUTES.BUILDING_MANAGERS}>
+              {NAV_LABELS.FOR_BUILDING_MANAGERS}
             </Link>
           </li>
           <li>
-            <Link href="/solutions-for-building-managers">
-              Dla Administratorów Budynków
-            </Link>
+            <Link href={ROUTES.HOMEOWNERS}> {NAV_LABELS.FOR_HOMEOWNERS}</Link>
           </li>
           <li>
-            <Link href="/solutions-for-homeowners">Dla Właścicieli Domów</Link>
-          </li>
-          <li>
-            <Link href="/solutions-for-real-estate">
-              Dla Biur Nieruchomości
-            </Link>
+            <Link href={ROUTES.REAL_ESTATE}> {NAV_LABELS.FOR_REAL_ESTATE}</Link>
           </li>
         </ul>
       ),
@@ -136,25 +142,27 @@ export const Footer: React.FC = () => {
       content: (
         <ul>
           <li>
-            <Link href="/book-now">Zarezerwuj</Link>
+            <Link href={ROUTES.BOOK_NOW}> {NAV_LABELS.BOOK_NOW}</Link>
           </li>
           <li>
-            <Link href="/contact-us">Kontakt</Link>
+            <Link href={ROUTES.CONTACT_US}>{NAV_LABELS.CONTACT_US}</Link>
           </li>
           <li>
-            <Link href="/about-us">O nas</Link>
+            <Link href={ROUTES.ABOUT_US}>{NAV_LABELS.ABOUT_US}</Link>
           </li>
           <li>
-            <Link href="/legislation">Przepisy prawne</Link>
+            <Link href={ROUTES.LEGISLATION}>{NAV_LABELS.LEGISLATION}</Link>
           </li>
           <li>
-            <Link href="/faq">FAQ</Link>
+            <Link href={ROUTES.FAQ}>{NAV_LABELS.FAQ}</Link>
           </li>
           <li>
-            <Link href="/work-with-us">Praca z nami</Link>
+            <Link href={ROUTES.WORK_WITH_US}>{NAV_LABELS.WORK_WITH_US}</Link>
           </li>
           <li>
-            <Link href="/privacy-policy">Polityka prywatności</Link>
+            <Link href={ROUTES.PRIVACY_POLICY}>
+              {NAV_LABELS.PRIVACY_POLICY}
+            </Link>
           </li>
         </ul>
       ),

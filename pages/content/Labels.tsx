@@ -19,4 +19,8 @@ export const NAV_LABELS = {
   FAQ: "FAQ",
   ABOUT_US: "O nas",
   WORK_WITH_US: "Praca z nami",
+  BOOK_NOW: "Zarezerwuj przegląd",
+  CONTACT_US: "Kontakt",
+  LEGISLATION: "Legislacja",
+  PRIVACY_POLICY: "Polityka Prywatności",
 };

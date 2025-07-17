@@ -1,0 +1,25 @@
+export const ROUTES = {
+  COMPLIANCE_SUBSCRIPTION: "/przeglad-subskrypcyjny",
+  SMOKE_ALARM_CHECK: "/przeglad-czujnikow-dymu",
+  ELECTRICAL_CHECK: "/przeglad-instalacji-elektrycznej",
+  GAS_CHECK: "/przeglad-instalacji-gazowej",
+  CARAVAN_GAS_CHECK: "/przeglad-instalacji-gazowej-przyczepy",
+  SWITCHBOARD_UPGRADE: "/modernizacja-rozdzielnicy",
+  GENERAL_PLUMBING: "/przeglad-hydrauliczny",
+  INCLUSIONS_EXCLUSIONS: "/zasieg-i-wylaczenia",
+
+  PROPERTY_MANAGERS: "/dla-zarzadcow-nieruchomosci",
+  LANDLORDS: "/dla-wlascicieli-mieszkan",
+  BUILDING_MANAGERS: "/dla-administratorow-budynkow",
+  HOMEOWNERS: "/dla-wlascicieli-domow",
+  REAL_ESTATE: "/dla-biur-nieruchomosci",
+
+  FAQ: "/faq",
+  ABOUT_US: "/o-nas",
+  WORK_WITH_US: "/praca-z-nami",
+  PRIVACY_POLICY: "/polityka-prywatnosci",
+  LEGISLATION: "/legislacja",
+  CONTACT_US: "/kontakt",
+  BOOK_NOW: "/zarezerwuj-przeglad",
+  SOLUTIONS: "/rozwiazania",
+};
