@@ -11,7 +11,7 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { solutionsForRealEstate } from "~/pages/content/Solutions";
+import { SolutionsForRealEstateContent as content } from "~/pages/solutions-for-real-estate/content.pl";
 import InfoLinks from "~/pages/InfoLinks";
 import { InspectionAreas } from "~/pages/InspectionAreas";
 import { ViewportContext } from "~/providers/ViewportProvider";
@@ -22,7 +22,7 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title={solutionsForRealEstate.bannerTitle} />
+      <Banner title={content.bannerTitle} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -39,10 +39,10 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {solutionsForRealEstate.section1.title}
+              {content.section1.title}
             </h3>
             <p className="mb-4">
-              {solutionsForRealEstate.section1.paragraphs.map((p, i) => (
+              {content.section1.paragraphs.map((p, i) => (
                 <p key={i} className="mb-2">
                   {p}
                 </p>
@@ -65,11 +65,11 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
         >
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {solutionsForRealEstate.section2.title}
+              {content.section2.title}
             </h3>
             <p className="mb-4">
               {" "}
-              {solutionsForRealEstate.section2.paragraphs.map((p, i) => (
+              {content.section2.paragraphs.map((p, i) => (
                 <p key={i} className="mb-2">
                   {p}
                 </p>

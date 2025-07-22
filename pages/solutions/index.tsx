@@ -11,7 +11,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { solutionsContent } from "~/pages/content/Solutions";
+import { SolutionsContent as content } from "~/pages/solutions/content.pl";
 
 const selectedId = [
   1, 2, 3, 4, 11, 12, 15, 21, 22, 23, 41, 42, 43, 44, 71, 72, 81, 83, 91, 93,
@@ -21,16 +21,16 @@ const selectedId = [
 const SolutionsPage: NextPageWithLayout = () => {
   return (
     <>
-      <Banner title={solutionsContent.bannerTitle} />
+      <Banner title={content.bannerTitle} />
       <MarginLayout className="flex w-full justify-center">
         <SolutionSelector />
       </MarginLayout>
       <MarginLayout className="flex">
         <div className="mx-auto -mt-20 rounded bg-white p-8 shadow-sm">
           <h3 className="mb-4 text-xl font-bold text-gray-800 h3">
-            {solutionsContent.section1.title}
+            {content.section1.title}
           </h3>
-          {solutionsContent.section1.paragraphs.map((p, i) => (
+          {content.section1.paragraphs.map((p, i) => (
             <p key={i} className="mb-2">
               {p}
             </p>

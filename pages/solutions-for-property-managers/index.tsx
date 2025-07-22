@@ -11,9 +11,9 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { solutionsForPropertyManagersContent } from "~/pages/content/Solutions";
 import InfoLinks from "~/pages/InfoLinks";
 import { InspectionAreas } from "~/pages/InspectionAreas";
+import { SolutionsForPropertyManagersContent as content } from "~/pages/solutions-for-property-managers/content.pl";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const selectedId = [111, 112, 113, 114, 115];
@@ -22,7 +22,7 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title={solutionsForPropertyManagersContent.bannerTitle} />
+      <Banner title={content.bannerTitle} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -39,15 +39,13 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {solutionsForPropertyManagersContent.section1.title}
+              {content.section1.title}
             </h3>
-            {solutionsForPropertyManagersContent.section1.paragraphs.map(
-              (p, i) => (
-                <p key={i} className="mb-2">
-                  {p}
-                </p>
-              )
-            )}
+            {content.section1.paragraphs.map((p, i) => (
+              <p key={i} className="mb-2">
+                {p}
+              </p>
+            ))}
             <InspectionAreas
               ctaHref="book-now"
               ctaLabel="Skontaktuj się z nami"
@@ -67,15 +65,13 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
         >
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {solutionsForPropertyManagersContent.section2.title}
+              {content.section2.title}
             </h3>
-            {solutionsForPropertyManagersContent.section2.paragraphs.map(
-              (p, i) => (
-                <p key={i} className="mb-2">
-                  {p}
-                </p>
-              )
-            )}
+            {content.section2.paragraphs.map((p, i) => (
+              <p key={i} className="mb-2">
+                {p}
+              </p>
+            ))}
             <InfoLinks />
           </div>
 
