@@ -10,12 +10,128 @@ const nextConfig = {
     domains: ["lirp.cdn-website.com"],
   },
   i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+    locales: ["pl"],
+    defaultLocale: "pl",
   },
   productionBrowserSourceMaps: true,
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/przeglad-instalacji-elektrycznej",
+        destination: "/electrical-safety-check",
+      },
+      {
+        source: "/przeglad-instalacji-gazowej",
+        destination: "/gas-safety-check",
+      },
+      {
+        source: "/przeglad-czujnikow-dymu",
+        destination: "/smoke-alarm-safety-check",
+      },
+      {
+        source: "/przeglad-instalacji-gazowej-przyczepy",
+        destination: "/caravan-gas-compliance-check",
+      },
+      {
+        source: "/modernizacja-rozdzielnicy",
+        destination: "/electrical-switchboard-upgrade",
+      },
+      { source: "/przeglad-hydrauliczny", destination: "/general-plumbing" },
+      { source: "/zasieg-i-wylaczenia", destination: "/inclusions-exclusions" },
+      {
+        source: "/abonament-na-zgodnosc",
+        destination: "/property-compliance-subscription",
+      },
+      {
+        source: "/dla-zarzadcow-nieruchomosci",
+        destination: "/solutions-for-property-managers",
+      },
+      {
+        source: "/dla-wlascicieli-mieszkan",
+        destination: "/solutions-for-landlords",
+      },
+      {
+        source: "/dla-administratorow-budynkow",
+        destination: "/solutions-for-building-managers",
+      },
+      {
+        source: "/dla-wlascicieli-domow",
+        destination: "/solutions-for-homeowners",
+      },
+      {
+        source: "/dla-biur-nieruchomosci",
+        destination: "/solutions-for-real-estate",
+      },
+      { source: "/faq", destination: "/faq" },
+      { source: "/o-nas", destination: "/about-us" },
+      { source: "/praca-z-nami", destination: "/work-with-us" },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: "/electrical-safety-check",
+        destination: "/404",
+        permanent: false,
+      },
+      { source: "/gas-safety-check", destination: "/404", permanent: false },
+      {
+        source: "/smoke-alarm-safety-check",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/caravan-gas-compliance-check",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/electrical-switchboard-upgrade",
+        destination: "/404",
+        permanent: false,
+      },
+      { source: "/general-plumbing", destination: "/404", permanent: false },
+      {
+        source: "/inclusions-exclusions",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/property-compliance-subscription",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/solutions-for-property-managers",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/solutions-for-landlords",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/solutions-for-building-managers",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/solutions-for-homeowners",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/solutions-for-real-estate",
+        destination: "/404",
+        permanent: false,
+      },
+      { source: "/about-us", destination: "/404", permanent: false },
+      { source: "/work-with-us", destination: "/404", permanent: false },
+    ];
   },
 };
 
