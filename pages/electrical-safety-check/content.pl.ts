@@ -1,4 +1,5 @@
-export const electricalSafetyCheckContent = {
+export const ElectricalSafetyCheckContent = {
+  bannerTitle: "Electrical Safety Check",
   section1: {
     title: "Przeglądy bezpieczeństwa instalacji elektrycznej",
     paragraphs: [

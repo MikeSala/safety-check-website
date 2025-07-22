@@ -1,4 +1,5 @@
 export const SmokeSafetyCheckContent = {
+  bannerTitle: "Przegląd bezpieczeństwa czujników dymu",
   section1: {
     title: "Przegląd bezpieczeństwa czujników dymu",
     paragraphs: [

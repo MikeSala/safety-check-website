@@ -1,4 +1,4 @@
-export const gasSafetyCheckContent = {
+export const GasSafetyCheckContent = {
   section1: {
     title: "Przegląd bezpieczeństwa instalacji gazowej",
     paragraphs: [
