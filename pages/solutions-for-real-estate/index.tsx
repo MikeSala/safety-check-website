@@ -2,8 +2,9 @@ import clsx from "clsx";
 import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
+import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
@@ -11,9 +12,8 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { SolutionsForRealEstateContent as content } from "~/pages/solutions-for-real-estate/content.pl";
 import InfoLinks from "~/pages/InfoLinks";
-import { InspectionAreas } from "~/pages/InspectionAreas";
+import { SolutionsForRealEstateContent as content } from "~/pages/solutions-for-real-estate/content.pl";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const selectedId = [141, 142, 143, 144, 145];
@@ -22,7 +22,7 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title={content.bannerTitle} />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -99,8 +99,8 @@ SolutionsForRealEstatePage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Solutions for Real Estate"
-        description="Comprehensive safety checks for Real Estate. Get a safety inspection to keep your property safe. "
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>

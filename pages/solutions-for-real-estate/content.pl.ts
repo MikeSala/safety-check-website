@@ -1,5 +1,4 @@
 export const SolutionsForRealEstateContent = {
-  bannerTitle: "Rozwiązania dla Biur Nieruchomości",
   section1: {
     title: "Wsparcie techniczne dla agencji nieruchomości",
     paragraphs: [
@@ -13,5 +12,10 @@ export const SolutionsForRealEstateContent = {
       `Obsługujemy zarówno budynki mieszkalne, jak i komercyjne – od mieszkań i biur po bary i magazyny. Dzięki nam klienci Twojej agencji zyskują pewność, że oferowane nieruchomości są bezpieczne i zgodne z prawem.`,
       `Jeśli w trakcie przeglądu wykryjemy usterki, przekażemy wszystkie rekomendacje i – jeśli zechcesz – wykonamy naprawy.`,
     ],
+  },
+  seo: {
+    title: "Rozwiązania dla Biur Nieruchomości",
+    description:
+      "Kompleksowe kontrole bezpieczeństwa dla nieruchomości. Zleć inspekcję bezpieczeństwa, aby zapewnić bezpieczeństwo swojej nieruchomości.",
   },
 };

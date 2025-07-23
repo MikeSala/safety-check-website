@@ -1,8 +1,8 @@
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
 import FormComponent from "~/components/FormComponent";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import { ServiceProjects } from "~/components/ServiceProjects";

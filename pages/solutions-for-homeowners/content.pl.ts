@@ -1,5 +1,4 @@
 export const SolutionsForHomeownersContent = {
-  bannerTitle: "Rozwiązania dla Właścicieli Domów",
   section1: {
     title: "Przeglądy bezpieczeństwa dla domów jednorodzinnych",
     paragraphs: [
@@ -13,5 +12,10 @@ export const SolutionsForHomeownersContent = {
       `Przeglądy wykonujemy terminowo, bez zbędnych formalności. Możesz zamówić pojedynczą usługę lub kompleksowy pakiet obejmujący wszystkie instalacje.`,
       `W przypadku wykrycia nieprawidłowości, zaproponujemy możliwe rozwiązania. To Ty decydujesz, czy i kiedy zrealizować naprawy.`,
     ],
+  },
+  seo: {
+    title: "Rozwiązania dla Właścicieli Domów",
+    description:
+      "Kompleksowe kontrole bezpieczeństwa dla właścicieli domów. Zleć inspekcję bezpieczeństwa, aby zapewnić bezpieczeństwo sobie i swojej rodzinie.",
   },
 };

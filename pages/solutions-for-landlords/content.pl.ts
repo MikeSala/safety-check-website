@@ -14,4 +14,9 @@ export const SolutionsForLandlordsContent = {
       `Na życzenie możemy usunąć wykryte nieprawidłowości – zawsze po Twojej akceptacji.`,
     ],
   },
+  seo: {
+    title: "Rozwiązania dla Właścicieli Mieszkań na Wynajem",
+    description:
+      "Kompleksowe kontrole bezpieczeństwa dla właścicieli nieruchomości. Zleć inspekcję bezpieczeństwa, aby zapewnić bezpieczeństwo swojej nieruchomości.",
+  },
 };

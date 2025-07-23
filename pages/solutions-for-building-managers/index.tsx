@@ -3,8 +3,9 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
+import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
@@ -13,7 +14,6 @@ import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { InspectionAreas } from "~/pages/InspectionAreas";
 import { SolutionsForBuildingManagersContent as content } from "~/pages/solutions-for-building-managers/content.pl";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
@@ -42,7 +42,7 @@ const SolutionsForBuildingManagersPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title={content.bannerTitle} />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -117,8 +117,8 @@ SolutionsForBuildingManagersPage.getLayout = function GetLayout(
   return (
     <MainLayout>
       <NextSeo
-        title="Solutions for Building Managers"
-        description="Comprehensive safety checks for Building Managers. Get a safety inspection to keep your property safe. "
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
