@@ -1,5 +1,5 @@
 import { ApolloProvider } from "@apollo/client/react";
-import { Comfortaa, Montserrat } from "@next/font/google";
+import { Comfortaa, Inter } from "@next/font/google";
 import clsx from "clsx";
 import { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
@@ -32,9 +32,9 @@ const comfortaa = Comfortaa({
 });
 
 // body text
-const montserrat = Montserrat({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-montserrat",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
@@ -68,8 +68,8 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
           id="app"
           className={clsx(
             "flex h-full flex-col overflow-auto",
-            comfortaa.variable,
-            montserrat.variable
+            inter.variable,
+            inter.variable
           )}
           ref={ref}
         >
