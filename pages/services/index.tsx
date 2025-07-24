@@ -1,8 +1,8 @@
 import { NextSeo } from "next-seo";
 import { ReactElement } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
 import FormComponent from "~/components/FormComponent";
 import { ServiceBanner, ServiceBannerProps } from "~/components/ServiceBanner";
 import { ServiceProjects } from "~/components/ServiceProjects";
@@ -11,6 +11,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
+import { servicesPageContent as content } from "./content.pl";
 
 const selectedId = [
   1, 2, 3, 4, 11, 12, 15, 21, 22, 23, 41, 42, 43, 44, 71, 72, 81, 83, 91, 93,
@@ -19,53 +20,31 @@ const selectedId = [
 
 const serviceBanners: ServiceBannerProps[] = [
   {
-    serviceOfferings: [
-      "Pressure retention test of the main gas line to the property.",
-      "Gas safety checks of all owner-supplied gas appliances at the property, such as gas stoves, heaters and hot water units.",
-      "Service of gas heaters, including a carbon monoxide safety test.",
-    ],
+    serviceOfferings: content.serviceBanners.gas.offerings,
     imageUrl: "/services-details-gas.webp",
-    title: "Gas Safety Checks",
+    title: content.serviceBanners.gas.title,
     priority: true,
   },
   {
-    serviceOfferings: [
-      "Testing of all electrical points in accordance with Section 4 of AS/NZS 3019.",
-      "Periodic checks of electrical installations.",
-    ],
+    serviceOfferings: content.serviceBanners.electric.offerings,
     imageUrl: "/services-details-electric.webp",
-    title: "Electrical Safety Checks",
+    title: content.serviceBanners.electric.title,
     priority: true,
   },
   {
-    serviceOfferings: [
-      "Testing of smoke alarms.",
-      "Battery replacement in all smoke alarms.",
-      "Verification that smoke alarms are correctly located.",
-    ],
+    serviceOfferings: content.serviceBanners.smoke.offerings,
     imageUrl: "/services-details-smoke.webp",
-    title: "Smoke Alarm Service",
+    title: content.serviceBanners.smoke.title,
   },
 ];
 
 const ServicesPage: NextPageWithLayout = () => {
   return (
     <>
-      <Banner title="Our Services" />
+      <Banner title={content.bannerTitle} />
       <MarginLayout className="flex-col gap-4">
-        <h2 className="h2">
-          Our safety check and compliance services are only available in
-          Melbourne.
-        </h2>
-        <p>
-          We operate from the City to the Mornington Peninsula, South East,
-          Bayside, and Westernport areas of Melbourne. For your peace of mind,
-          we offer extensive comprehensive safety and compliance checks to keep
-          properties in line with current and future legislation. Our reliable,
-          fully-qualified electricians and plumbers have the knowledge and
-          experience to tackle emergency jobs and regular maintenance,fixing
-          problems quickly and keeping occupants safe.
-        </p>
+        <h2 className="h2">{content.introHeading}</h2>
+        <p>{content.introParagraph}</p>
       </MarginLayout>
 
       <MarginLayout className="-mt-20">
@@ -92,8 +71,8 @@ ServicesPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Safety Checks, Plumbing Services & Switchboard Upgrades"
-        description="Protect your property with our professional safety checks. Book now to ensure your property meets safety standards and runs no risks."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
