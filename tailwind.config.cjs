@@ -27,6 +27,7 @@ module.exports = {
       fontFamily: {
         comfortaa: ["var(--font-comfortaa)", ...fontFamily.sans],
         montserrat: ["var(--font-montserrat)", ...fontFamily.sans],
+        inter: ["var(--font-inter)", ...fontFamily.sans],
       },
       spacing: {
         "half-vertical": "50vh",

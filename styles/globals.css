@@ -9,7 +9,7 @@ body,
 }
 
 * {
-  @apply font-montserrat;
+  @apply font-inter;
 }
 
 *:focus-visible {
