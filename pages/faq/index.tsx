@@ -4,8 +4,9 @@ import { Banner } from "~/components/Banner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import FaqComponent from "../../components/FAQ/FaqComponent";
-import faqSectionsData from "../../components/FAQ/FaqData";
+import FaqComponent from "../../components/FAQ/Faq";
+import faqSectionsData from "../../components/FAQ/faqContent";
+import { faqPageContent as content } from "./content.pl";
 
 const selectedId = [
   1, 2, 3, 4, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29,
@@ -16,16 +17,10 @@ const selectedId = [
 const FaqPage: NextPageWithLayout = () => {
   return (
     <>
-      <Banner title="Frequently Asked Questions" />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto flex-col sm:-mb-20">
-        <h3 className="mb-4 text-center font-bold h2">Witamy w sekcji FAQ</h3>
-        Przygotowaliśmy odpowiedzi na najczęściej zadawane pytania dotyczące
-        umawiania wizyt, przeglądów bezpieczeństwa instalacji elektrycznych,
-        gazowych i alarmów przeciwpożarowych, a także modernizacji tablic
-        rozdzielczych. Naszym celem jest przekazanie jasnych i konkretnych
-        informacji, aby ułatwić Ci zrozumienie tych usług i podjęcie świadomych
-        decyzji zgodnie z obowiązującymi w Polsce przepisami prawa budowlanego i
-        bezpieczeństwa.
+        <h3 className="mb-4 text-center font-bold h2">{content.title}</h3>
+        {content.description}
       </MarginLayout>
 
       <MarginLayout className="flex-col gap-2 py-1">
@@ -33,12 +28,7 @@ const FaqPage: NextPageWithLayout = () => {
       </MarginLayout>
 
       <MarginLayout className="-mb-15 mx-auto -mt-20 flex-col">
-        <i>
-          Powyższe odpowiedzi mają charakter ogólny i dotyczą kluczowych zasad
-          bezpieczeństwa wynikających z polskiego prawa budowlanego, przepisów
-          przeciwpożarowych oraz norm dotyczących instalacji elektrycznych i
-          gazowych w budynkach mieszkalnych.
-        </i>
+        <i>{content.note}</i>
       </MarginLayout>
     </>
   );
@@ -48,8 +38,8 @@ FaqPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Frequently Asked Questions"
-        description="Answers to the most common questions regarding our services: safety checks, plumbing and switchboard upgrades."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
