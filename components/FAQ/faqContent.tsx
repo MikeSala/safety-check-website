@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Icons8ArrowRight, Icons8checkmark } from "~/src/components/icons";
+import { Icons8checkmark } from "~/src/components/icons";
 import Icon8Checkmark from "~/src/components/icons/Icon8checkmark";
 
 export interface FaqItem {
@@ -8,7 +8,7 @@ export interface FaqItem {
   answer: string | JSX.Element;
 }
 
-export interface FaqSectionData {
+export interface FaqSectionConent {
   title: string;
   items: FaqItem[];
 }
@@ -30,7 +30,7 @@ Solutions for Building Managers, 131-140
 Solutions for Real Estate, 141-150
 Legislation Page Elements, 151-160*/
 
-const FaqSectionsData: FaqSectionData[] = [
+const FaqSectionsConent: FaqSectionConent[] = [
   {
     title: "Najczęstsze pytania ogólne",
     items: [
@@ -727,8 +727,13 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 65,
         question: "Jak przygotować przyczepę kempingową do przeglądu gazowego?",
-        answer:
-          "Upewnij się, że: - Przyczepa stoi na równym podłożu. - Jest zainstalowany punkt testowy gazu. - Butla gazowa jest napełniona. - Wszystkie urządzenia działają prawidłowo. - Masz reduktor dwustopniowy z zabezpieczeniem nadciśnieniowym. - Używasz wyłącznie urządzeń z polską lub europejską certyfikacją.",
+        answer: `Upewnij się, że:
+  - Przyczepa stoi na równym podłożu.
+  - Jest zainstalowany punkt testowy gazu.
+  - Butla gazowa jest napełniona.
+  - Wszystkie urządzenia działają prawidłowo.
+  - Masz reduktor dwustopniowy z zabezpieczeniem nadciśnieniowym.
+  - Używasz wyłącznie urządzeń z polską lub europejską certyfikacją.`,
       },
       {
         id: 66,
@@ -804,326 +809,262 @@ const FaqSectionsData: FaqSectionData[] = [
     ],
   },
   {
-    title: "Interconnected Smoke Alarms FAQ",
+    title: "Czujniki Dymu Połączone w Sieć – FAQ",
     items: [
       {
         id: 81,
-        question: "What's an interconnected smoke alarm?",
+        question: "Czym jest czujnik dymu połączony w sieć?",
         answer: (
-          <>
-            {" "}
-            <p>
-              An interconnected smoke alarm is a system where multiple smoke
-              alarms are linked so that, if one detects smoke, all the alarms
-              sound simultaneously. This interconnectedness ensures that people
-              in all areas of a property are alerted prompty.
-            </p>
-          </>
+          <p>
+            To system czujników, które są ze sobą połączone – jeśli jeden
+            wykryje dym, uruchamiają się wszystkie jednocześnie. Zapewnia to
+            szybsze ostrzeżenie dla osób znajdujących się w różnych częściach
+            budynku.
+          </p>
         ),
       },
       {
         id: 82,
-        question:
-          "How do interconnected smoke alarms differ from traditional smoke alarms?",
+        question: "Czym różni się czujnik połączony od tradycyjnego?",
         answer: (
-          <>
-            <p>
-              Traditional smoke alarms operate independently. In contrast,
-              interconnected alarms communicate with each other, ensuring that
-              if one alarm is triggered, every alarm in the system sounds. This
-              increases the chances of early detection and evacuation.
-            </p>
-          </>
+          <p>
+            Tradycyjne czujniki działają niezależnie. Połączone w sieć
+            komunikują się ze sobą, co zwiększa szanse na szybką ewakuację –
+            szczególnie w dużych domach.
+          </p>
         ),
       },
       {
         id: 83,
-        question:
-          "Why should I consider installing interconnected smoke alarms in my property?",
+        question: "Dlaczego warto zainstalować czujniki połączone w sieć?",
         answer: (
-          <>
-            {" "}
-            <p>
-              Interconnected alarms provide enhanced safety. If a fire starts in
-              a remote part of a property, residents in other areas are alerted
-              immediately, increasing evacuation time. This can be especially
-              important in larger homes or properties.
-            </p>
-          </>
+          <p>
+            Dają lepszą ochronę – ogień w piwnicy czy garażu może być wykryty
+            wcześniej, a sygnał dotrze do całego domu. To ważne dla rodzin i
+            większych budynków.
+          </p>
         ),
       },
       {
         id: 84,
-        question:
-          "How do interconnected smoke alarms communicate with each other?",
+        question: "Jak komunikują się czujniki połączone w sieć?",
         answer: (
-          <>
-            {" "}
-            <p>
-              Most modern interconnected alarms communicate wirelessly, while
-              some older systems may use hard-wired connections. This
-              communication ensures synchronous alerts across alarms, creating a
-              networked safety system.
-            </p>
-          </>
+          <p>
+            Najczęściej przez połączenie radiowe (bezprzewodowe), choć niektóre
+            starsze modele mogą być połączone przewodowo.
+          </p>
         ),
       },
       {
         id: 85,
-        question:
-          "What power sources can interconnected smoke alarms operate on: batteries, mains power, or both?",
+        question: "Na jakim zasilaniu działają takie czujniki?",
         answer: (
-          <>
-            {" "}
-            <p>
-              They can operate on both. Many interconnected alarms are
-              hard-wired to the mains power with a battery backup, ensuring they
-              work even during power outages. This dual-power approach maximises
-              reliability.
-            </p>
-          </>
+          <p>
+            Mogą być zasilane z sieci 230V z baterią awaryjną lub wyłącznie
+            bateryjnie. Najlepiej wybrać wersje łączące oba źródła zasilania dla
+            bezpieczeństwa w razie awarii prądu.
+          </p>
         ),
       },
       {
         id: 86,
-        question:
-          "How many interconnected smoke alarms can be linked together in a single system?",
+        question: "Ile czujników można połączyć w jednej instalacji?",
         answer: (
-          <>
-            {" "}
-            <p>
-              It varies by brand and model, but commonly, up to 12-24 alarms can
-              be interconnected in one system. This range allows them to cater
-              to properties of different sizes.
-            </p>
-          </>
+          <p>
+            Zazwyczaj od 12 do 24, zależnie od producenta. Wystarczy to do
+            zabezpieczenia całego domu lub mieszkania.
+          </p>
         ),
       },
       {
         id: 87,
         question:
-          "Are interconnected smoke alarms compatible with smart home systems or apps?",
+          "Czy czujniki połączone w sieć można połączyć z systemem smart home?",
         answer: (
-          <>
-            {" "}
-            <p>
-              Yes, many modern interconnected alarms can integrate with smart
-              home systems, allowing remote monitoring and notifications via
-              smartphone apps. This feature adds an additional layer of
-              convenience and security.
-            </p>
-          </>
+          <p>
+            Tak, nowoczesne modele obsługują integrację z aplikacjami i
+            systemami inteligentnego domu. Pozwalają one otrzymywać
+            powiadomienia na telefon i monitorować czujniki zdalnie.
+          </p>
         ),
       },
       {
         id: 88,
-        question:
-          "What considerations should be made when positioning interconnected smoke alarms throughout a property?",
+        question: "Gdzie najlepiej zamontować czujniki w domu?",
         answer: (
-          <>
-            {" "}
-            <p>
-              Alarms should be placed in every bedroom, outside sleeping areas,
-              and on every level of the home. Avoid placing them near kitchens
-              or bathrooms to reduce false alarms from steam or cooking smoke.
-              Proper placement ensures effective coverage and reduces nuisances.
-            </p>
-          </>
+          <p>
+            W każdej sypialni, na korytarzach i na każdej kondygnacji. Unikaj
+            kuchni i łazienek – para i dym z gotowania mogą wywoływać fałszywe
+            alarmy.
+          </p>
         ),
       },
       {
         id: 89,
-        question:
-          "How frequently do interconnected smoke alarms need maintenance or testing?",
+        question: "Jak często należy testować i konserwować czujniki?",
         answer: (
-          <>
-            {" "}
-            <p>
-              Test interconnected alarms monthly using the test button. Replace
-              batteries annually (unless they&apos;re long-life batteries) and
-              replace the entire unit every 10 years or as recommended by the
-              manufacturer. Regular testing and maintenance keep the system
-              optimal.
-            </p>
-          </>
+          <p>
+            Testuj co miesiąc przyciskiem testowym. Wymieniaj baterie co roku
+            (chyba że są to baterie długowieczne). Cały czujnik należy wymienić
+            co 10 lat lub zgodnie z zaleceniami producenta.
+          </p>
         ),
       },
       {
         id: 90,
-        question:
-          "Are there specific brands or types of interconnected smoke alarms recommended for certain types of buildings or conditions?",
+        question: "Czy są rekomendowane modele do określonych budynków?",
         answer: (
-          <>
-            {" "}
-            <p>
-              Recommendations can vary based on regional regulations and
-              building types. Always check local guidelines and consult with
-              fire safety professionals when choosing a system. Different
-              structures might have unique requirements.
-            </p>
-          </>
+          <p>
+            Tak – różne budynki (np. bloki, domy wolnostojące) mogą mieć inne
+            wymagania. Skonsultuj wybór z ekspertem lub zapoznaj się z lokalnymi
+            przepisami ppoż.
+          </p>
         ),
       },
     ],
   },
   {
-    title: "Property Compliance Subscription FAQ",
+    title: "FAQ – Abonament na zgodność instalacji",
     items: [
       {
         id: 91,
-        question: "What is the Property Compliance Subscription?",
+        question: "Czym jest Abonament na Zgodność Instalacji?",
         answer: (
           <>
-            {" "}
             <p>
-              The Property Compliance Subscription offers regular electrical,
-              gas and smoke alarm safety checks as a package for a discounted
-              annual fee. It&apos;s a simple and effective solution.
-            </p>{" "}
+              Abonament na zgodność to usługa w formie rocznego pakietu z
+              przeglądami instalacji elektrycznej, gazowej i czujników dymu
+              realizowanymi cyklicznie, w preferencyjnej cenie. To wygodne i
+              bezpieczne rozwiązanie dla właścicieli nieruchomości.
+            </p>
             <p>
-              The Property Compliance Subscription is available only for rental
-              properties.
+              Abonament przeznaczony jest wyłącznie dla mieszkań i domów
+              wynajmowanych.
             </p>
           </>
         ),
       },
       {
         id: 92,
-        question: "How often are the safety checks conducted on my property?",
+        question: "Jak często wykonywane są przeglądy?",
         answer: (
-          <>
-            <p>
-              This service includes:
-              <ul className="list-disc space-y-2 pl-5">
-                <li>An electrical safety check every two years.</li>
-                <li>A gas safety check every two years.</li>
-                <li>A smoke alarm safety check every year.</li>
-              </ul>
-            </p>
-          </>
+          <p>
+            Usługa obejmuje:
+            <ul className="list-disc space-y-2 pl-5">
+              <li>Przegląd instalacji elektrycznej co 2 lata</li>
+              <li>Przegląd instalacji gazowej co 2 lata</li>
+              <li>Przegląd czujników dymu raz w roku</li>
+            </ul>
+          </p>
         ),
       },
       {
         id: 93,
-        question:
-          "What kind of service calls are covered under the Property Compliance Subscription?",
+        question: "Jakie wezwania serwisowe są objęte abonamentem?",
         answer: (
           <>
-            Service calls for verified safety issues related to gas and
-            electrical installations, appliances and fittings are covered under
-            the subscription. This includes problems with gas appliances, pilot
-            light reignition, switchboards and power points.
+            W ramach abonamentu realizujemy zgłoszenia dotyczące bezpieczeństwa
+            instalacji gazowej i elektrycznej, w tym problemy z urządzeniami
+            gazowymi, iskrownikami, rozdzielnicą czy gniazdkami.
           </>
         ),
       },
       {
         id: 94,
-        question:
-          "What happens if there's a recurring issue with my gas or electrical appliance?",
+        question: "Co jeśli problem z urządzeniem powraca?",
         answer: (
           <>
-            We will provide solutions for any reported appliance issues.
-            However, we reserve the right to exclude recurring appliance issues
-            from the service if RCSC&apos;s repair recommendations are declined.
+            Wykonujemy naprawy i zalecamy rozwiązania. Jeśli jednak klient nie
+            zastosuje się do rekomendacji, zastrzegamy sobie prawo do wyłączenia
+            danego urządzenia z dalszych usług.
           </>
         ),
       },
       {
         id: 95,
-        question:
-          "Are there any complimentary parts included in the subscription?",
+        question: "Czy w abonamencie są darmowe części zamienne?",
         answer: (
           <>
-            Yes, certain complementary parts are included, such as thermocouple
-            replacements for gas services, standard safety switches, light
-            switches, power points, fuses, and circuit breakers for electrical
-            services.
+            Tak, w cenie abonamentu zawarte są m.in.: wymiana termopar (gaz),
+            standardowe wyłączniki różnicowoprądowe, gniazdka, bezpieczniki i
+            wyłączniki nadprądowe (elektryka).
           </>
         ),
       },
       {
         id: 96,
-        question:
-          "What's not covered in the subscription regarding electrical installations and appliances?",
+        question: "Czego nie obejmuje abonament?",
         answer: (
           <>
-            The subscription doesn&apos;t cover general faults in electrical
-            installations, appliances and fittings, as well as issues with
-            lighting or the replacement of light bulbs.
+            Abonament nie obejmuje ogólnych usterek instalacji, wymiany żarówek,
+            opraw oświetleniowych oraz napraw niezwiązanych z bezpieczeństwem.
           </>
         ),
       },
       {
         id: 97,
-        question:
-          "What kind of materials are provided for free under the subscription?",
+        question: "Jakie materiały są bezpłatnie dostarczane w ramach usługi?",
         answer: (
           <>
             <p className="mb-2">
-              For gas safety, examples include control valve replacements,
-              temporary heaters and lagging of exposed PEX pipework.
+              Dla instalacji gazowej: zawory kontrolne, nagrzewnice tymczasowe,
+              izolacja rur PEX.
             </p>
             <p className="mb-2">
-              For electrical safety, the materials include standard switch and
-              socket outlet.
+              Dla elektryki: standardowe gniazdka i włączniki.
             </p>
           </>
         ),
       },
       {
         id: 98,
-        question: "When does the subscription start?",
-        answer: <>It begins on the invoice issuance date.</>,
+        question: "Kiedy zaczyna się abonament?",
+        answer: <>Abonament aktywowany jest w dniu wystawienia faktury.</>,
       },
       {
         id: 99,
-        question: "When are the services executed?",
+        question: "Kiedy wykonywane są usługi?",
         answer: (
           <>
-            Services start as soon as the subscription becomes active. However,
-            they&apos;re not normally executed on the subscription start date
-            itself in order to avoid operational difficulties.
+            Prace serwisowe rozpoczynają się po aktywacji abonamentu, ale nie
+            zawsze dokładnie w dniu jego startu – ze względów logistycznych.
           </>
         ),
       },
       {
         id: 100,
-        question: "How is payment for services processed?",
+        question: "Jak przebiega płatność?",
         answer: (
           <>
-            For those affiliated with our partner agencies, we coordinate
-            payments through them. Other clients receive invoices directly from
-            us.
+            Dla klientów współpracujących z agencjami nieruchomości – płatności
+            koordynowane są przez agencje. Pozostali otrzymują faktury
+            bezpośrednio od nas.
           </>
         ),
       },
     ],
   },
   {
-    title: "Solutions for Landlords FAQ",
+    title: "FAQ – Rozwiązania dla Właścicieli Nieruchomości na Wynajem",
     items: [
       {
         id: 101,
         question:
-          "What safety standards should I be aware of for electrical systems, gas appliances, and smoke alarms in my rental properties?",
+          "Jakie przepisy muszę spełniać jako właściciel mieszkania lub domu na wynajem?",
         answer: (
           <>
             <p>
-              As a Landlord, you must uphold the Residential Tenancies
-              Regulations 2021 by observing the following:
+              Jako właściciel masz obowiązek zapewnić zgodność z polskim prawem
+              budowlanym i przepisami PPOŻ. Obejmuje to m.in.:
               <ul className="mb-1 list-disc space-y-2 pl-5">
                 <li>
-                  Safety Checks for Electrical and Gas Installations: Both
-                  electrical and gas systems should undergo safety checks by
-                  qualified professionals every two years. Tenants are entitled
-                  to know the dates of the latest checks upon request.
+                  Regularne przeglądy instalacji elektrycznej i gazowej przez
+                  uprawnionego specjalistę co najmniej co 2 lata.
                 </li>
                 <li>
-                  Smoke Alarms: They must be correctly installed, maintained,
-                  and tested according to the manufacturer&apos;s instructions
-                  at least once a year. Batteries should be replaced when
-                  required. If a smoke alarm is found to be defective, it&apos;s
-                  the tenant&apos;s responsibility to report it in writing.
+                  Czujniki dymu muszą być zamontowane, sprawne, testowane co
+                  najmniej raz w roku i mieć wymieniane baterie. Najemca
+                  powinien zgłaszać niesprawność.
                 </li>
               </ul>
             </p>
@@ -1132,31 +1073,29 @@ const FaqSectionsData: FaqSectionData[] = [
       },
       {
         id: 102,
-        question: "When can I schedule an appointment?",
+        question: "Kiedy mogę umówić wizytę technika?",
         answer: (
           <>
             <p>
-              You can schedule an appointment Monday to Friday, between 08:00
-              and 16:00.
+              Przeglądy i serwis wykonujemy od poniedziałku do piątku w
+              godzinach 8:00–16:00. Sobota – wyłącznie po wcześniejszym
+              ustaleniu.
             </p>
-            <p>Saturdays are available by prior arrangement only.</p>
           </>
         ),
       },
       {
         id: 103,
-        question: "How long does each appointment take?",
+        question: "Ile trwa wizyta technika?",
         answer: (
           <>
             <p>
-              The duration of the appointment depends on the service:
+              Czas trwania zależy od usługi:
               <ul className="mb-1 list-disc space-y-2 pl-5">
-                <li>Electrical checks: 1-2 hours</li>
-                <li>Gas safety checks: 1-3 hours</li>
-                <li>Smoke alarm checks: ~15 minutes</li>
+                <li>Elektryka: ok. 1–2 godziny</li>
+                <li>Gaz: ok. 1–3 godziny</li>
+                <li>Czujniki dymu: ok. 15 minut</li>
               </ul>
-              However, these times can vary for several reasons, such as the
-              number of appliances or the need for urgent repairs.
             </p>
           </>
         ),
@@ -1164,35 +1103,31 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 104,
         question:
-          "What service do you suggest for busy landlords who want to ensure their compliance with current regulations?",
+          "Co polecacie właścicielom, którzy chcą mieć wszystko pod kontrolą?",
         answer: (
           <>
-            {" "}
             <p>
-              We recommend our{" "}
+              Polecamy{" "}
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc"
               >
-                Property Compliance Subscription
-              </Link>{" "}
-              . This service is designed to maintain compliance with the latest
-              regulations, particularly around safety checks. It removes the
-              hassle of remembering deadlines and ensures everything is always
-              up-to-date.
+                Abonament na Zgodność
+              </Link>
+              . To kompleksowa usługa, która zapewnia pełną zgodność z
+              przepisami i spokój na co dzień.
             </p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
               <li>
-                All-In-One Service: Fewer repeat visits, guaranteed lowest
-                prices, and swift problem resolution.
+                Usługa „wszystko w jednym”: mniej wizyt, niskie ceny, szybka
+                reakcja.
               </li>
               <li>
-                Hands-Free Management: Set and forget. We handle urgent repairs
-                and regular checks, providing a clear audit trail.
+                Obsługa bez zaangażowania: my pamiętamy o terminach i zapewniamy
+                dokumentację.
               </li>
               <li>
-                Transparent Pricing: A consistent annual fee after the first
-                year for hassle-free compliance management.
+                Stała cena roczna – brak ukrytych kosztów i pewność działania.
               </li>
             </ul>
           </>
@@ -1201,136 +1136,123 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 105,
         question:
-          "As a landlord, what are the consequences of neglecting to conduct consistent electrical, gas and smoke alarm safety inspections at rental properties?",
+          "Jakie są konsekwencje prawne i praktyczne braku regularnych przeglądów instalacji elektrycznej, gazowej i czujników dymu w nieruchomościach na wynajem?",
         answer: (
           <>
             <p>
-              In Victoria, Landlords are legally required to ensure licensed
-              professionals perform electrical and gas safety checks on all
-              their properties every two years. Failure to do so will result in
-              serious legal consequences and may endanger the tenants&apos;
-              lives.
+              W Polsce właściciel nieruchomości ma obowiązek zapewnienia
+              bezpieczeństwa lokalu zgodnie z Prawem budowlanym, ustawą o
+              ochronie przeciwpożarowej oraz Kodeksem cywilnym. Brak cyklicznych
+              przeglądów instalacji elektrycznej, gazowej i niesprawne czujniki
+              dymu może skutkować:
             </p>
+            <ul className="mt-2 list-disc space-y-2 pl-5">
+              <li>odpowiedzialnością cywilną i karną w razie wypadku,</li>
+              <li>
+                karami administracyjnymi lub sankcjami z nadzoru budowlanego,
+              </li>
+              <li>nieważnością polisy ubezpieczeniowej,</li>
+              <li>zagrożeniem życia i zdrowia najemców.</li>
+            </ul>
           </>
         ),
       },
     ],
   },
   {
-    title: "Solutions for Property Managers FAQ",
+    title: "FAQ – Rozwiązania dla Zarządców Nieruchomości",
     items: [
       {
         id: 111,
         question:
-          "What safety standards should I be aware of for electrical systems, gas appliances and smoke alarms in my rental units?",
+          "Jakie normy bezpieczeństwa powinienem uwzględniać przy instalacjach elektrycznych, gazowych i czujnikach dymu w wynajmowanych lokalach?",
         answer: (
           <>
             <p>
-              As a Property Manager, it&apos;s essential to uphold the
-              Residential Tenancies Regulations 2021 for the Landlords you
-              represent:
+              Jako zarządca nieruchomości masz obowiązek zapewnić zgodność
+              lokali z obowiązującymi przepisami budowlanymi oraz PPOŻ w imieniu
+              właścicieli. Wymagane są:
             </p>
-
             <ul className="mb-1 list-disc space-y-2 pl-5">
               <li>
-                Safety Checks for Electrical and Gas Installations: Both
-                electrical and gas systems should undergo safety checks by
-                qualified professionals every two years. Tenants are entitled to
-                know the dates of the latest checks upon request.
+                Przeglądy instalacji elektrycznej i gazowej – co najmniej raz na
+                2 lata, wykonywane przez uprawnionych specjalistów.
               </li>
               <li>
-                Smoke Alarms: They must be correctly installed, maintained, and
-                tested according to the manufacturer&apos;s instructions at
-                least once a year. Batteries should be replaced when required.
-                If a smoke alarm is found to be defective, it&apos;s the
-                tenant&apos;s responsibility to report it in writing.
+                Sprawne i przetestowane czujniki dymu – minimum raz w roku.
+                Wymiana baterii oraz naprawa po zgłoszeniu usterki przez
+                najemcę.
               </li>
             </ul>
-
             <p>
-              We provide both individual safety checks and an annual
-              subscription-based service. This service covers all three safety
-              checks and is bundled with other benefits to make managing your
-              properties more convenient.{" "}
+              Oferujemy zarówno pojedyncze przeglądy, jak i usługę abonamentową
+              obejmującą wszystkie elementy bezpieczeństwa w jednym pakiecie.
             </p>
             <p>
-              Learn more about the{" "}
+              Dowiedz się więcej o{" "}
               <Link
-                className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc"
+                className="text-blue-500 hover:underline"
               >
-                Property Compliance Subscription
-              </Link>
-              , remove the hassle of remembering deadlines, and ensure
-              everything is always up-to-date.
+                Abonamencie na Zgodność
+              </Link>{" "}
+              i zadbaj o terminową zgodność z przepisami bez zbędnego stresu.
             </p>
           </>
         ),
       },
       {
         id: 112,
-        question: "How long do the different safety checks take?",
+        question: "Ile czasu trwają poszczególne przeglądy?",
         answer: (
           <>
-            <p>The duration of the safety check depends on the service:</p>
+            <p>Szacowany czas wykonania usługi:</p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
-              <li>Electrical checks: 1-2 hours</li>
-              <li>Gas safety checks: 1-3 hours</li>
-              <li>Smoke alarm checks: ~15 minutes</li>
+              <li>Przegląd elektryczny: 1–2 godziny</li>
+              <li>Przegląd gazowy: 1–3 godziny</li>
+              <li>Kontrola czujników dymu: ok. 15 minut</li>
             </ul>
             <p>
-              However, these can vary for several reasons, such as the number of
-              appliances or the need for urgent repairs.
+              Czas może się wydłużyć w zależności od liczby urządzeń lub
+              potrzeby wykonania naprawy.
             </p>
           </>
         ),
       },
       {
         id: 113,
-        question: "How should I prepare my property for the safety checks?",
+        question: "Jak przygotować lokal do przeglądów?",
         answer: (
-          <>
-            <p>
-              Our team will provide detailed instructions on how to prepare,
-              tailored to your property type and the specific checks to be
-              conducted.
-            </p>
-          </>
+          <p>
+            Nasz zespół przed każdą wizytą przekazuje szczegółowe informacje
+            dopasowane do rodzaju nieruchomości i zakresu kontroli.
+          </p>
         ),
       },
       {
         id: 114,
-        question:
-          "What service do you suggest for busy property managers who want to ensure their compliance with current regulations?",
+        question: "Jaką usługę polecacie zapracowanym zarządcom nieruchomości?",
         answer: (
           <>
-            {" "}
             <p>
-              We recommend our{" "}
+              Najlepszym rozwiązaniem jest{" "}
               <Link
-                className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc"
+                className="text-blue-500 hover:underline"
               >
-                Property Compliance Subscription
+                Abonament na Zgodność
               </Link>
-              . This service is designed to maintain compliance with the latest
-              regulations, particularly around safety checks. It removes the
-              hassle of remembering deadlines and ensures everything is always
-              up-to-date.
+              , który kompleksowo obsługuje wszystkie wymagane przeglądy,
+              pozwalając Ci zająć się innymi obowiązkami.
             </p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
               <li>
-                All-In-One Service: Fewer repeat visits, guaranteed lowest
-                prices, and swift problem resolution.
+                Kompletna usługa – jeden pakiet, minimum wizyt i niskie koszty
               </li>
               <li>
-                Hands-Free Management: Set and forget. We handle urgent repairs
-                and regular checks, providing a clear audit trail.
+                Zarządzanie bezobsługowe – my pamiętamy o terminach i naprawach
               </li>
-              <li>
-                Transparent Pricing: A consistent annual fee after the first
-                year for hassle-free compliance management.
-              </li>
+              <li>Stała cena roczna – pełna przewidywalność i dokumentacja</li>
             </ul>
           </>
         ),
@@ -1338,28 +1260,24 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 115,
         question:
-          "What are the potential consequences of not conducting routine electrical, gas, and smoke alarm safety checks?",
+          "Jakie są konsekwencje braku cyklicznych przeglądów instalacji i czujników?",
         answer: (
           <>
             <p>
-              As a Property Manager, it&apos;s essential to uphold the
-              Residential Tenancies Regulations 2021 for the Landlords you
-              represent. This involves ensuring licensed professionals perform
-              electrical and gas safety checks on all their properties every two
-              years. Failure to do so will result in serious legal consequences
-              and may endanger tenants&apos; lives.
+              Obowiązkiem zarządcy jest nadzorowanie zgodności z przepisami dla
+              wszystkich zarządzanych lokali. Zaniedbanie przeglądów może
+              skutkować odpowiedzialnością prawną, brakiem ważności
+              ubezpieczenia oraz zagrożeniem życia lokatorów.
             </p>
             <p>
-              {" "}
-              To help you stay on top of this, RCSC offers the{" "}
+              Skorzystaj z{" "}
               <Link
-                className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc"
+                className="text-blue-500 hover:underline"
               >
-                Property Compliance Subscription
+                Abonamentu na Zgodność
               </Link>
-              , a subscription-based service that handles all the safety checks
-              on your behalf.
+              , który realizuje wszystkie kontrole w Twoim imieniu.
             </p>
           </>
         ),
@@ -1367,30 +1285,30 @@ const FaqSectionsData: FaqSectionData[] = [
     ],
   },
   {
-    title: "Solutions for Homeowners FAQ",
+    title: "Rozwiązania dla Właścicieli Domów – FAQ",
     items: [
       {
         id: 121,
         question:
-          "What safety standards should I be aware of for electrical systems, gas appliances and smoke alarms in my rental units?",
+          "Jakie standardy bezpieczeństwa powinienem znać w zakresie instalacji elektrycznych, urządzeń gazowych i czujników dymu w moim domu?",
         answer: (
           <>
             <p>
-              According to the Residential Tenancies Regulations 2021, your
-              obligations include:
+              Zgodnie z przepisami *Residential Tenancies Regulations 2021*
+              Twoje obowiązki obejmują:
               <ul className="mt-1 list-disc space-y-2 pl-5">
                 <li>
-                  Safety Checks for Electrical and Gas Installations: Both
-                  electrical and gas systems should undergo safety checks by
-                  qualified professionals every two years. Tenants are entitled
-                  to know the dates of the latest checks upon request.
+                  Przeglądy instalacji elektrycznej i gazowej: Obie instalacje
+                  powinny być sprawdzane przez wykwalifikowanych specjalistów co
+                  dwa lata. Najemcy mają prawo znać daty ostatnich kontroli na
+                  żądanie.
                 </li>
                 <li className="mb-1">
-                  Smoke Alarms: They must be correctly installed, maintained,
-                  and tested according to the manufacturer&apos;s instructions
-                  at least once a year. Batteries should be replaced when
-                  required. If a smoke alarm is found to be defective, it&apos;s
-                  the tenant&apos;s responsibility to report it in writing.
+                  Czujniki dymu: Muszą być poprawnie zainstalowane, konserwowane
+                  i testowane zgodnie z instrukcją producenta co najmniej raz w
+                  roku. Baterie należy wymieniać w razie potrzeby. Jeśli czujnik
+                  dymu jest niesprawny, obowiązkiem najemcy jest zgłoszenie tego
+                  pisemnie.
                 </li>
               </ul>
             </p>
@@ -1399,32 +1317,32 @@ const FaqSectionsData: FaqSectionData[] = [
       },
       {
         id: 122,
-        question: "How long does each appointment take?",
+        question: "Ile trwa każda wizyta serwisowa?",
         answer: (
           <>
             <p>
-              The duration of the appointment depends on the service:
+              Czas trwania wizyty zależy od rodzaju usługi:
               <ul className="mb-1 mt-1 list-disc space-y-2 pl-5">
-                <li>Electrical checks: 1-2 hours.</li>
-                <li>Gas safety checks: 1-3 hours</li>
-                <li>Smoke alarm checks: ~15 minutes</li>
+                <li>Przegląd elektryczny: 1–2 godziny</li>
+                <li>Przegląd gazowy: 1–3 godziny</li>
+                <li>Kontrola czujników dymu: około 15 minut</li>
               </ul>
             </p>
             <p>
-              However, these times can vary for several reasons, such as the
-              number of appliances or the need for urgent repairs.
+              Czas może się różnić w zależności od liczby urządzeń lub
+              konieczności pilnych napraw.
             </p>
           </>
         ),
       },
       {
         id: 123,
-        question: "How should I prepare my property for the safety checks?",
+        question: "Jak przygotować nieruchomość do przeglądów?",
         answer: (
           <>
             <p>
-              Our staff will guide you through any necessary preparations based
-              on the services chosen for your specific property.
+              Nasz zespół poinformuje Cię o wszelkich wymaganych
+              przygotowaniach, zależnie od rodzaju usług i typu nieruchomości.
             </p>
           </>
         ),
@@ -1432,22 +1350,20 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 124,
         question:
-          "What service do you suggest for busy people who are concerned about compliance?",
+          "Jaką usługę polecacie osobom zapracowanym, które chcą zadbać o zgodność z przepisami?",
         answer: (
           <>
-            {" "}
             <p>
-              The{" "}
+              Rekomendujemy naszą usługę{" "}
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
                 href="/property-compliance-subscription/"
               >
                 Property Compliance Subscription
-              </Link>{" "}
-              is recommended. This service manages compliance with safety checks
-              and eliminates the hassle of remembering deadlines. It&apos;s an
-              all-in-one service that includes immediate coverage, hands-free
-              management, emergency readiness, and transparent pricing.
+              </Link>
+              . Usługa ta zapewnia zgodność z aktualnymi przepisami, w
+              szczególności dotyczącymi kontroli bezpieczeństwa. Eliminuje
+              konieczność pamiętania o terminach i zapewnia kompleksową obsługę.
             </p>
           </>
         ),
@@ -1455,25 +1371,26 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 125,
         question:
-          "What are the potential consequences of not conducting routine smoke alarm, electrical, and gas safety checks?",
+          "Jakie są potencjalne konsekwencje braku regularnych przeglądów instalacji elektrycznej, gazowej i czujników dymu?",
         answer: (
           <>
             <p>
-              For property owners in Victoria, it&apos;s essential that licensed
-              professionals perform electrical and gas safety checks on all
-              properties every two years. Failure to do so will result in
-              serious legal consequences and may endanger lives.
+              Dla właścicieli nieruchomości w stanie Wiktoria kluczowe jest, aby
+              licencjonowani specjaliści przeprowadzali przeglądy instalacji
+              elektrycznych i gazowych co dwa lata. Zaniechanie tych obowiązków
+              grozi poważnymi konsekwencjami prawnymi oraz zagrożeniem życia.
             </p>
             <p>
-              If staying on top of this feels daunting, RCSC offers the{" "}
+              Jeśli dbanie o zgodność z przepisami wydaje się zbyt
+              skomplikowane, skorzystaj z{" "}
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
                 href="/property-compliance-subscription/"
               >
                 Property Compliance Subscription
               </Link>
-              , a subscription-based service that takes care of all the safety
-              checks on your behalf.
+              – subskrypcyjnej usługi, która przejmuje odpowiedzialność za
+              przeprowadzanie wszystkich wymaganych przeglądów.
             </p>
           </>
         ),
@@ -1481,31 +1398,31 @@ const FaqSectionsData: FaqSectionData[] = [
     ],
   },
   {
-    title: "Solutions for Building Managers FAQ",
+    title: "Rozwiązania dla Zarządców Budynków – FAQ",
     items: [
       {
         id: 131,
         question:
-          "What safety standards should I be aware of for electrical systems, gas appliances and smoke alarms in my rental units?",
+          "Jakie standardy bezpieczeństwa powinienem znać w zakresie instalacji elektrycznych, urządzeń gazowych i czujników dymu w lokalach, którymi zarządzam?",
         answer: (
           <>
             <p>
-              According to the Residential Tenancies Regulations 2021, your
-              obligations involve:
+              Zgodnie z przepisami *Residential Tenancies Regulations 2021*,
+              Twoje obowiązki obejmują:
             </p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
               <li>
-                Safety Checks for Electrical and Gas Installations: Both
-                electrical and gas systems should undergo safety checks by
-                qualified professionals every two years. Tenants are entitled to
-                know the dates of the latest checks upon request.
+                Przeglądy instalacji elektrycznej i gazowej: Obie instalacje
+                powinny być sprawdzane przez wykwalifikowanych specjalistów co
+                dwa lata. Najemcy mają prawo znać daty ostatnich kontroli na
+                żądanie.
               </li>
               <li>
-                Smoke Alarms: They must be correctly installed, maintained, and
-                tested according to the manufacturer&apos;s instructions at
-                least once a year. Batteries should be replaced when required.
-                If a smoke alarm is found to be defective, it&apos;s the
-                tenant&apos;s responsibility to report it in writing.
+                Czujniki dymu: Muszą być poprawnie zainstalowane, konserwowane i
+                testowane zgodnie z instrukcją producenta co najmniej raz w
+                roku. Baterie należy wymieniać w razie potrzeby. Jeśli czujnik
+                dymu jest niesprawny, obowiązkiem najemcy jest zgłoszenie tego
+                pisemnie.
               </li>
             </ul>
           </>
@@ -1513,30 +1430,30 @@ const FaqSectionsData: FaqSectionData[] = [
       },
       {
         id: 132,
-        question: "How long do the different safety checks take?",
+        question: "Ile trwają poszczególne przeglądy bezpieczeństwa?",
         answer: (
           <>
-            <p>The duration of the safety check varies based on the service:</p>
+            <p>Czas trwania przeglądu zależy od rodzaju usługi:</p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
-              <li>Electrical checks: 1-2 hours.</li>
-              <li>Gas safety checks: 1-3 hours</li>
-              <li>Smoke alarm checks: ~15 minutes</li>
+              <li>Przegląd elektryczny: 1–2 godziny</li>
+              <li>Przegląd gazowy: 1–3 godziny</li>
+              <li>Kontrola czujników dymu: około 15 minut</li>
             </ul>
             <p>
-              However, these times can vary for several reasons, such as the
-              number of appliances or the need for urgent repairs.
+              Czas może się różnić w zależności od liczby urządzeń lub
+              konieczności pilnych napraw.
             </p>
           </>
         ),
       },
       {
         id: 133,
-        question: "How should I prepare my property for the safety checks?",
+        question: "Jak przygotować nieruchomość do przeglądów?",
         answer: (
           <>
             <p>
-              Our staff will guide you through any necessary preparations based
-              on the services chosen for your specific property.
+              Nasz zespół udzieli szczegółowych instrukcji dostosowanych do
+              rodzaju nieruchomości i planowanych przeglądów.
             </p>
           </>
         ),
@@ -1544,36 +1461,26 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 134,
         question:
-          "What service do you suggest to busy building managers to ensure their compliance with current regulations?",
+          "Jaką usługę polecacie zapracowanym zarządcom budynków, aby zadbali o zgodność z przepisami?",
         answer: (
           <>
-            {" "}
             <p>
-              We recommend our{" "}
+              Rekomendujemy naszą usługę
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
                 href="/property-compliance-subscription/"
               >
                 Property Compliance Subscription
-              </Link>{" "}
-              . This service is designed to maintain compliance with the latest
-              regulations, particularly around safety checks. It removes the
-              hassle of remembering deadlines and ensures everything is always
-              up-to-date.
+              </Link>
+              . Usługa ta zapewnia zgodność z aktualnymi przepisami i eliminuje
+              konieczność pamiętania o terminach.
             </p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
               <li>
-                All-In-One Service: Fewer repeat visits, guaranteed lowest
-                prices, and swift problem resolution.
+                Wszystko w jednym: mniej wizyt, niższe koszty, szybkie naprawy.
               </li>
-              <li>
-                Hands-Free Management: Set and forget. We handle urgent repairs
-                and regular checks, providing a clear audit trail.
-              </li>
-              <li>
-                Transparent Pricing: A consistent annual fee after the first
-                year for hassle-free compliance management.
-              </li>
+              <li>Zarządzanie bez wysiłku: my zajmujemy się wszystkim.</li>
+              <li>Jasne ceny: stała opłata roczna po pierwszym roku.</li>
             </ul>
           </>
         ),
@@ -1581,27 +1488,26 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 135,
         question:
-          "What are the potential consequences of not conducting routine electrical, gas and smoke alarm safety checks?",
+          "Jakie są potencjalne konsekwencje braku regularnych przeglądów instalacji elektrycznej, gazowej i czujników dymu?",
         answer: (
           <>
             <p className="mb-4">
-              Building managers must uphold the Residential Tenancies
-              Regulations 2021. This involves ensuring licensed professionals
-              perform electrical and gas safety checks on all their properties
-              every two years. Failure to do so will result in serious legal
-              consequences and may endanger the lives of tenants.
+              Zarządcy budynków muszą przestrzegać przepisów *Residential
+              Tenancies Regulations 2021*, zapewniając regularne przeglądy przez
+              licencjonowanych specjalistów co dwa lata. Brak działań może
+              prowadzić do poważnych konsekwencji prawnych i zagrożenia życia
+              mieszkańców.
             </p>
-
             <p>
-              To help you stay on top of this, RCSC offers the{" "}
+              Aby temu zapobiec, skorzystaj z
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
                 href="/property-compliance-subscription/"
               >
                 Property Compliance Subscription
               </Link>
-              , a subscription-based service that handles all the safety checks
-              on your behalf.
+              – subskrypcyjnej usługi realizującej wszystkie obowiązkowe
+              przeglądy.
             </p>
           </>
         ),
@@ -1609,30 +1515,21 @@ const FaqSectionsData: FaqSectionData[] = [
     ],
   },
   {
-    title: "Solutions for Real Estate FAQ",
+    title: "Rozwiązania dla Agencji Nieruchomości – FAQ",
     items: [
       {
         id: 141,
         question:
-          "What safety standards should I be aware of for electrical systems, gas appliances and smoke alarms in my rental units?",
+          "Jakie standardy bezpieczeństwa powinienem znać w zakresie instalacji elektrycznych, gazowych i czujników dymu w nieruchomościach, którymi zarządzamy?",
         answer: (
           <>
             <p>
-              According to the Residential Tenancies Regulations 2021, your
-              obligations include:
+              Zgodnie z *Residential Tenancies Regulations 2021* Twoje obowiązki
+              obejmują:
               <ul className="mb-1 mt-1 list-disc space-y-2 pl-5">
+                <li>Regularne kontrole elektryczne i gazowe co 2 lata</li>
                 <li>
-                  Safety Checks for Electrical and Gas Installations: Both
-                  electrical and gas systems should undergo safety checks by
-                  qualified professionals every two years. Tenants are entitled
-                  to know the dates of the latest checks upon request.
-                </li>
-                <li>
-                  Smoke Alarms: They must be correctly installed, maintained,
-                  and tested according to the manufacturer&apos;s instructions
-                  at least once a year. Batteries should be replaced when
-                  required. If a smoke alarm is found to be defective, it&apos;s
-                  the tenant&apos;s responsibility to report it in writing.
+                  Testy i konserwacja czujników dymu przynajmniej raz w roku
                 </li>
               </ul>
             </p>
@@ -1641,30 +1538,28 @@ const FaqSectionsData: FaqSectionData[] = [
       },
       {
         id: 142,
-        question: "How long do each of the checks typically take?",
+        question: "Ile zazwyczaj trwają poszczególne przeglądy?",
         answer: (
           <>
             <p>
-              The duration of the safety check depends on the service:
+              To zależy od usługi:
               <ul className="mb-1 mt-1 list-disc space-y-2 pl-5">
-                <li>Electrical checks: 1-2 hours</li>
-                <li>Gas safety checks: 1-3 hours</li>
-                <li>Smoke alarm checks: ~15 minutes</li>
+                <li>Instalacje elektryczne: 1–2 godziny</li>
+                <li>Instalacje gazowe: 1–3 godziny</li>
+                <li>Czujniki dymu: ok. 15 minut</li>
               </ul>
-              However, these times can vary for several reasons, such as the
-              number of appliances or the need for urgent repairs.
             </p>
           </>
         ),
       },
       {
         id: 143,
-        question: "How should I prepare my property for the safety checks?",
+        question: "Jak przygotować nieruchomość do przeglądów?",
         answer: (
           <>
             <p>
-              Our staff will guide you through any necessary preparations based
-              on the services chosen for your specific property.
+              Nasz zespół przeprowadzi Cię przez proces przygotowania na
+              podstawie rodzaju Twojej nieruchomości i wybranych usług.
             </p>
           </>
         ),
@@ -1672,36 +1567,23 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 144,
         question:
-          "What service do you suggest for busy real estate companies who want to ensure their compliance with current regulations?",
+          "Jaką usługę polecacie zapracowanym agencjom nieruchomości, które chcą dbać o zgodność z przepisami?",
         answer: (
           <>
-            {" "}
             <p>
-              We recommend our{" "}
+              Polecamy naszą
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
                 href="/property-compliance-subscription/"
               >
                 Property Compliance Subscription
-              </Link>{" "}
-              . This service is designed to maintain compliance with the latest
-              regulations, particularly around safety checks. It removes the
-              hassle of remembering deadlines and ensures everything is always
-              up-to-date.
+              </Link>
+              . Gwarantuje zgodność z przepisami i wygodę zarządzania.
             </p>
             <ul className="mb-1 list-disc space-y-2 pl-5">
-              <li>
-                All-In-One Service: Fewer repeat visits, guaranteed lowest
-                prices, and swift problem resolution.
-              </li>
-              <li>
-                Hands-Free Management: Set and forget. We handle urgent repairs
-                and regular checks, providing a clear audit trail.
-              </li>
-              <li>
-                Transparent Pricing: A consistent annual fee after the first
-                year for hassle-free compliance management.
-              </li>
+              <li>Wszystko w jednym: mniej wizyt, szybsze naprawy</li>
+              <li>Brak stresu: pełne zarządzanie przez nasz zespół</li>
+              <li>Przejrzyste ceny: stała opłata po pierwszym roku</li>
             </ul>
           </>
         ),
@@ -1709,124 +1591,97 @@ const FaqSectionsData: FaqSectionData[] = [
       {
         id: 145,
         question:
-          "What are the potential consequences of not conducting routine electrical, gas and smoke alarm safety checks?",
+          "Jakie są konsekwencje zaniechania regularnych przeglądów elektrycznych, gazowych i przeciwpożarowych?",
         answer: (
           <>
             <p className="mb-4">
-              The Residential Tenancies Regulations 2021 must be upheld. This
-              involves ensuring licensed professionals perform electrical and
-              gas safety checks on all their properties every two years. Failure
-              to do so will result in serious legal consequences and may
-              endanger tenants&apos; lives.
+              Obowiązkiem agencji nieruchomości jest zapewnienie, że wszystkie
+              nieruchomości są objęte kontrolami co 2 lata przez uprawnionych
+              fachowców. Brak działań może prowadzić do sankcji prawnych i
+              zagrożeń dla najemców.
             </p>
             <p>
-              To help you stay on top of this, RCSC offers the{" "}
+              Aby ułatwić przestrzeganie przepisów, oferujemy
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
                 href="/property-compliance-subscription/"
               >
                 Property Compliance Subscription
               </Link>
-              , a subscription-based service that handles all the safety checks
-              on your behalf.
+              – kompleksową usługę przeglądów w ramach jednej subskrypcji.
             </p>
           </>
         ),
       },
     ],
   },
-
   {
-    title: "Legislation",
+    title: "Wymagania Prawne",
     items: [
       {
         id: 151,
-        question: "Electrical Safety Activities",
+        question: "Bezpieczeństwo Instalacji Elektrycznych",
         answer: (
           <>
             <p className="mb-2 text-center text-xl font-bold">
-              Residential Tenancies Regulations 2021 - Schedule 3 -
-              Safety-related activities
+              Obowiązkowe kontrole instalacji elektrycznej – zgodnie z polskim
+              prawem
             </p>
             <p className="mb-4">
-              The residential rental provider must ensure that an electrical
-              safety check of all electrical installations, appliances, and
-              fittings provided by a residential rental provider in the rented
-              premises is conducted every 2 years by a licensed or registered
-              electrician and must provide the renter with the date of the most
-              recent safety check, in writing, on request by the renter.
+              Zgodnie z ustawą Prawo budowlane oraz Rozporządzeniem Ministra
+              Infrastruktury, właściciel lub zarządca budynku ma obowiązek
+              wykonywania okresowej kontroli instalacji elektrycznej co najmniej
+              raz na 5 lat. Kontrola obejmuje stan techniczny, sprawność
+              połączeń, zabezpieczeń i środków ochrony przeciwporażeniowej.
             </p>
             <p className="mb-4">
-              If an electrical safety check of the rented premises has not been
-              conducted within the last 2 years at the time the renter occupies
-              the premises, the residential rental provider must arrange an
-              electrical safety check as soon as practicable.
+              Kontrola powinna być przeprowadzana przez osobę z odpowiednimi
+              uprawnieniami SEP (Stowarzyszenie Elektryków Polskich).
             </p>
             <p className="mb-4">
-              On and from 29 March 2023, in relation to electrical safety, all
-              power outlets and lighting circuits in the rented premises are to
-              be connected to:
+              W nowoczesnych instalacjach wymagane jest również stosowanie
+              wyłączników różnicowoprądowych (RCD) oraz zabezpieczeń
+              nadprądowych zgodnych z obowiązującymi normami technicznymi.
             </p>
             <ul className="mb-4 list-disc">
               <li className="mb-2 mr-2 flex h-10 items-center">
-                <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />a
-                switchboard-type circuit breaker that complies with AS/NZS 3000,
-                “Electrical Installations”,
-              </li>
-              <li className="mb-2 mr-2 flex h-10 items-center font-bold">
                 <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                and a switchboard-type Residual Current Device:
+                Regularna kontrola rozdzielnic, przewodów i gniazd
+                elektrycznych.
               </li>
-              <li className="h-18 ml-8 mb-2 mr-2 flex items-center">
-                <Icons8ArrowRight className="mr-4 h-7 w-7 flex-shrink-0" />
-                AS/NZS 3190, “Approval and test specification—Residual current
-                devices (current operated earth-leakage devices)”,
+              <li className="mb-2 mr-2 flex h-10 items-center">
+                <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
+                Weryfikacja obecności i sprawności wyłączników
+                różnicowoprądowych.
               </li>
-              <li className="h-18 ml-8 mb-2 mr-2 flex items-center">
-                <Icons8ArrowRight className="mr-4 h-7 w-7 flex-shrink-0" />
-                or AS/NZS 61008.1, “Residual current operated circuit-breakers
-                without integral overcurrent protection for household and
-                similar uses (RCBOs): Part 1: General rules”,
-              </li>
-              <li className="h-18 ml-8 mb-2 mr-2 flex items-center">
-                <Icons8ArrowRight className="mr-4 h-7 w-7 flex-shrink-0" />
-                or AS/NZS 61009.1, “Residual current operated circuit-breakers
-                with integral overcurrent protection for household and similar
-                uses (RCCBs) Part 1: General rules”,
-              </li>
-            </ul>
+            </ul>{" "}
           </>
         ),
       },
       {
         id: 152,
-        question: "Gas Safety Activities",
+        question: "Bezpieczeństwo Instalacji Gazowych",
         answer: (
           <>
             <p className="mb-2 text-center text-xl font-bold">
-              Residential Tenancies Regulations 2021 - Schedule 3 -
-              Safety-related activities
+              Przeglądy instalacji gazowej – obowiązki właściciela lub zarządcy
             </p>
             <p>
-              The safety-related activities in the below subclauses only apply
-              if the rented premises contain any appliances, fixtures or
-              fittings which use or supply gas:
+              Właściciel lub zarządca budynku ma obowiązek zapewnienia
+              regularnych kontroli instalacji gazowych zgodnie z przepisami
+              Prawa budowlanego. Przegląd powinien być wykonywany co najmniej
+              raz w roku przez osobę posiadającą odpowiednie uprawnienia gazowe.
             </p>
             <ul className="mb-1 list-disc">
               <li className="mb-2 flex h-20 items-center">
                 <Icons8checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                The residential rental provider must ensure that a gas safety
-                check of all gas installations and fittings in the rented
-                premises is conducted every 2 years by a licensed or registered
-                gasfitter and must provide the renter with the date of the most
-                recent safety check, in writing, on request by the renter.
+                Kontrola obejmuje szczelność instalacji, stan przewodów i
+                urządzeń gazowych.
               </li>
               <li className="mb-2 flex h-20 items-center">
                 <Icons8checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                If a gas safety check has not been conducted within the last 2
-                years at the time the renter occupies the premises, the
-                residential rental provider must arrange a gas safety check as
-                soon as practicable.
+                Brak wykonania przeglądu może skutkować sankcjami
+                administracyjnymi i zwiększa ryzyko awarii.
               </li>
             </ul>
           </>
@@ -1834,75 +1689,59 @@ const FaqSectionsData: FaqSectionData[] = [
       },
       {
         id: 153,
-        question: "Smoke Alarm Safety Activities",
+        question: "Bezpieczeństwo Instalacji Przeciwpożarowych",
         answer: (
           <>
             <p className="mb-2 text-center text-xl font-bold">
-              Residential Tenancies Regulations 2021 - Schedule 3 -
-              Safety-related activities
+              Czujniki dymu – obowiązki wynikające z przepisów przeciwpożarowych
             </p>
-
             <ol>
               <li>
-                The residential rental provider must ensure that:
+                Właściciel lub zarządca nieruchomości ma obowiązek:
                 <ul className="mb-1 mt-1 list-disc space-y-2">
                   <li className="mb-2 mr-2 flex h-10 items-center">
                     <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                    each smoke alarm is correctly installed and in working
-                    condition;
+                    zapewnić sprawność działania czujników dymu we wszystkich
+                    lokalach,
                   </li>
                   <li className="mb-2 mr-2 flex h-10 items-center">
                     <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                    each smoke alarm is tested according to the
-                    manufacturer&apos;s instructions at least once every 12
-                    months;
+                    dokonywać testów zgodnie z zaleceniami producenta co
+                    najmniej raz w roku,
                   </li>
                   <li className="mb-2 mr-2 flex h-10 items-center">
                     <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                    the batteries in each smoke alarm are replaced as required.
+                    wymieniać baterie w czujnikach, jeśli są wymagane.
                   </li>
                 </ul>
               </li>
-
               <li>
-                The residential rental provider must immediately arrange for a
-                smoke alarm to be repaired or replaced as an urgent repair if
-                they are notified by the renter that it is not in working order.
-                <p className="mb-4 mt-4 text-center italic">
-                  Note – A suitably qualified person must repair or replace a
-                  hard-wired smoke alarm.
-                </p>
+                W razie zgłoszenia niesprawności czujnika, należy bezzwłocznie
+                zlecić jego naprawę lub wymianę. W przypadku czujników
+                zasilanych sieciowo, wymiana powinna być przeprowadzona przez
+                osobę uprawnioną.
               </li>
-
               <li>
-                The residential rental provider, on or before the commencement
-                of the residential rental agreement, must provide the renter
-                with the following information in writing:
+                Przed wynajmem lokalu najemcy należy przekazać instrukcję
+                obsługi czujników, w tym:
                 <ul className="mb-1 mt-1 list-disc space-y-2">
                   <li className="mb-2 mr-2 flex h-10 items-center">
                     <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                    how each smoke alarm in the rented premises operates;
+                    sposób działania i testowania urządzeń,
                   </li>
                   <li className="mb-2 mr-2 flex h-10 items-center">
                     <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                    how to test each smoke alarm in the rented premises;
-                  </li>
-                  <li className="mb-2 mr-2 flex h-10 items-center">
-                    <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
-                    the renter&apos;s obligations to not tamper with any smoke
-                    alarms and to report if a smoke alarm in the rented premises
-                    is not in working order.
+                    obowiązek nieingerowania w czujniki oraz zgłaszania usterek.
                   </li>
                 </ul>
               </li>
-
               <li>
-                The renter must give written notice to the residential rental
-                provider as soon as practicable after becoming aware that a
-                smoke alarm in the rented premises is not in working order.
+                Najemca ma obowiązek zgłosić niesprawność czujnika zaraz po jej
+                wykryciu.
                 <p className="mb-4 mt-4 text-center italic">
-                  Note – Regulations under the Building Act 1993 require
-                  installing smoke alarms in all residential buildings.
+                  Uwaga – Zgodnie z Rozporządzeniem Ministra Infrastruktury, w
+                  każdym budynku mieszkalnym wymagane jest stosowanie czujników
+                  dymu lub systemów sygnalizacji pożaru.
                 </p>
               </li>
             </ol>
@@ -1913,4 +1752,4 @@ const FaqSectionsData: FaqSectionData[] = [
   },
 ];
 
-export default FaqSectionsData;
+export default FaqSectionsConent;
