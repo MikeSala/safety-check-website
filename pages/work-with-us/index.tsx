@@ -13,6 +13,21 @@ import { NextPageWithLayout } from "~/pages/_app";
 import { preventEnterSubmit } from "~/utils/form";
 import { errorToast, successToast } from "~/utils/toast";
 
+const content = {
+  bannerTitle: "Pracuj z Nami",
+  step1Title: "Proszę podaj swoje dane i załącz CV",
+  step2Title: "Sprawdź, czy dane są poprawne",
+  step1Label: "Twoje dane",
+  step2Label: "Podsumowanie",
+  stepperSubmitButton: "Wyślij",
+  errorMessage: "Wypełnij proszę wskazane pola",
+  seo: {
+    title: "Dołącz do nas",
+    description:
+      "Inwestujemy w ludzi. Dołącz do nas i odkryj nowe możliwości rozwoju i pracy.",
+  },
+};
+
 const SEND_FORM_SERVICE = gql`
   mutation submitWorkApplication($input: SubmitWorkApplicationInput!) {
     submitWorkApplication(input: $input) {
@@ -61,7 +76,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
 
   const steps = [
     {
-      label: "Your details",
+      label: content.step1Label,
       fields: [
         "firstName",
         "lastName",
@@ -72,7 +87,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
       ],
       component: () => (
         <WorkApplicationSectionOne
-          title="Please provide your details and attach your resume"
+          title={content.step1Title}
           stepId="1"
           control={control}
           errors={errors}
@@ -83,11 +98,11 @@ const WorkWithUsPage: NextPageWithLayout = () => {
       ),
     },
     {
-      label: "Review",
+      label: content.step2Label,
       fields: [],
       component: () => (
         <WorkApplicationSectionTwo
-          title="Check if your details are correct"
+          title={content.step2Title}
           stepId="2"
           getValues={getValues}
         />
@@ -98,7 +113,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
   return (
     <>
       <>
-        <Banner title="Work With Us" />
+        <Banner title={content.bannerTitle} />
         <div className="flex flex-wrap lg:flex-nowrap">
           <ResponsiveImage
             className="order-1 lg:order-1 lg:h-auto lg:w-1/2"
@@ -118,7 +133,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
                 activeStep={activeStep}
                 setActiveStep={setActiveStep}
                 triggerForm={trigger}
-                preFinalStepLabel="Submit"
+                preFinalStepLabel={content.stepperSubmitButton}
                 stepperUsedFor="workApplication"
                 loading={loading}
                 error={error}
@@ -126,7 +141,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
             </form>
             {errors.confirm?.message && (
               <p className="mt-2 text-sm text-red-500">
-                Please fill in the highlighted fields
+                {content.errorMessage}
               </p>
             )}
           </div>
@@ -140,8 +155,8 @@ WorkWithUsPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Work With Us"
-        description="At RCSC, we're committed to investing in our people. Work with us and discover new opportunities for growth and development."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
