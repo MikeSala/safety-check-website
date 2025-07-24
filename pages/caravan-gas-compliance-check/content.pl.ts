@@ -1,5 +1,4 @@
 export const caravanGasContent = {
-  bannerTitle: "Przegląd Przyczepy Kempingowej",
   intro: {
     title: "Kontrola zgodności gazu w przyczepie kempingowej",
     paragraphs: [
@@ -47,7 +46,7 @@ export const caravanGasContent = {
       "Przygotowanie przyczepy do kontroli bezpieczeństwa gazu nie tylko ułatwia przebieg inspekcji, ale także pomaga w utrzymaniu długoterminowej niezawodności i bezpieczeństwa systemu gazowego. Dobrze przygotowana przyczepa pozwoli Ci szybciej wrócić na drogę!",
   },
   seo: {
-    title: "Kontrola zgodności gazu w przyczepie kempingowej",
+    title: "Przegląd Przyczepy Kempingowej",
     description:
       "Zapewnij bezpieczeństwo swojej przyczepy dzięki profesjonalnej usłudze Kontroli Zgodności Gazowej. Zarezerwuj teraz, aby mieć spokój podczas podróży.",
   },
