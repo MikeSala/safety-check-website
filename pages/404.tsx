@@ -9,17 +9,17 @@ const NotFoundPage: NextPageWithLayout = () => {
   return (
     <MarginLayout className="flex-col justify-center" verticalPadding="lg">
       <p className="text-sm font-semibold uppercase tracking-wide text-primary-600">
-        404 error
+        Błąd 404
       </p>
       <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
-        Page not found
+        Nie znaleziono strony
       </h1>
       <p className="mt-2 text-base text-gray-500">
-        Sorry, we couldn&apos;t find the page you&apos;re looking for.
+        Przepraszamy, nie mogliśmy znaleźć strony, której szukasz.
       </p>
       <div className="mt-6">
         <Link className="link" href="/">
-          Go back home<span aria-hidden="true"> &rarr;</span>
+          Powrót na stronę główną<span aria-hidden="true"> &rarr;</span>
         </Link>
       </div>
     </MarginLayout>
@@ -30,8 +30,8 @@ NotFoundPage.getLayout = (page: ReactElement) => {
   return (
     <MainLayout className="flex">
       <NextSeo
-        title="Page not found"
-        description="Page not found - sometimes it may happen, so return to homepage."
+        title="Nie znaleziono strony"
+        description="Nie znaleziono strony – czasem tak się zdarza. Wróć na stronę główną."
         noindex
       />
       {page}
