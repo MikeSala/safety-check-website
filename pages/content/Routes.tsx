@@ -1,12 +1,12 @@
 export const ROUTES = {
-  COMPLIANCE_SUBSCRIPTION: "/przeglad-subskrypcyjny",
+  COMPLIANCE_SUBSCRIPTION: "/abonament-na-zgodnosc",
   SMOKE_ALARM_CHECK: "/przeglad-czujnikow-dymu",
   ELECTRICAL_CHECK: "/przeglad-instalacji-elektrycznej",
   GAS_CHECK: "/przeglad-instalacji-gazowej",
   CARAVAN_GAS_CHECK: "/przeglad-instalacji-gazowej-przyczepy",
   SWITCHBOARD_UPGRADE: "/modernizacja-rozdzielnicy",
   GENERAL_PLUMBING: "/przeglad-hydrauliczny",
-  INCLUSIONS_EXCLUSIONS: "/zasieg-i-wylaczenia",
+  INCLUSIONS_EXCLUSIONS: "/wlaczenia-wylaczenia",
 
   PROPERTY_MANAGERS: "/dla-zarzadcow-nieruchomosci",
   LANDLORDS: "/dla-wlascicieli-mieszkan",
@@ -22,4 +22,5 @@ export const ROUTES = {
   CONTACT_US: "/kontakt",
   BOOK_NOW: "/zarezerwuj-przeglad",
   SOLUTIONS: "/rozwiazania",
+  SERVICES: "/uslugi",
 };
