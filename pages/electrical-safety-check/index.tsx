@@ -2,9 +2,10 @@ import clsx from "clsx";
 import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
 import InclusionsExclusions from "~/components/InclusionsExclusions";
+import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
@@ -12,10 +13,9 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { electricalSafetyCheckContent } from "~/pages/content/ElectricalSafetyCheck";
-import { InspectionAreas } from "~/pages/InspectionAreas";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8checkmark } from "~/src/components/icons";
+import { ElectricalSafetyCheckContent as content } from "./content.pl";
 
 const selectedId = [21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33];
 
@@ -23,7 +23,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title="Electrical Safety Check" />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -41,16 +41,16 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
           <div className=" text-gray-700 ">
             <div>
               <h3 className="mb-4 text-xl font-bold h3">
-                {electricalSafetyCheckContent.section1.title}
+                {content.section1.title}
               </h3>
-              {electricalSafetyCheckContent.section1.paragraphs.map((p, i) => (
+              {content.section1.paragraphs.map((p, i) => (
                 <p key={i} className="mb-2">
                   {p}
                 </p>
               ))}
               <InspectionAreas
                 ctaLabel="Skontaktuj się z nami"
-                ctaHref="/book-now"
+                ctaHref="/zarezerwuj-przeglad"
               />
             </div>
           </div>
@@ -65,9 +65,9 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="flex flex-col  text-gray-700">
             <h3 className="mb-4 text-xl font-bold text-gray-800 h3">
-              {electricalSafetyCheckContent.section2.title}
+              {content.section2.title}
             </h3>
-            {electricalSafetyCheckContent.section2.paragraphs.map((p, i) => (
+            {content.section2.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
@@ -97,31 +97,29 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {electricalSafetyCheckContent.section3.title}
+              {content.section3.title}
             </h3>
             <div>
-              <p className="">{electricalSafetyCheckContent.section3.intro}</p>
+              <p className="">{content.section3.intro}</p>
 
               <ul className="mb-4 list-disc">
-                {electricalSafetyCheckContent.section3.paragraphs.map(
-                  (p, i) => (
-                    <li
-                      key={i}
-                      className={`mb-2 flex items-center ${
-                        isMobile ? "h-16 text-sm" : "h-20 text-base"
+                {content.section3.paragraphs.map((p, i) => (
+                  <li
+                    key={i}
+                    className={`mb-2 flex items-center ${
+                      isMobile ? "h-16 text-sm" : "h-20 text-base"
+                    }`}
+                  >
+                    <Icons8checkmark
+                      className={`-ml-1 flex-shrink-0 ${
+                        isMobile ? "mr-2 h-6 w-6" : "mr-2 h-7 w-7"
                       }`}
-                    >
-                      <Icons8checkmark
-                        className={`-ml-1 flex-shrink-0 ${
-                          isMobile ? "mr-2 h-6 w-6" : "mr-2 h-7 w-7"
-                        }`}
-                      />
-                      {p}
-                    </li>
-                  )
-                )}
+                    />
+                    {p}
+                  </li>
+                ))}
               </ul>
-              <p>{electricalSafetyCheckContent.section3.note}</p>
+              <p>{content.section3.note}</p>
             </div>
           </div>
         </div>
@@ -142,8 +140,8 @@ ElectricalSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Electrical Safety Check for Rental Property"
-        description="Electrical safety checks in rented or commercial properties in Melbourne. Book a safety check now and keep your property safe with RCSC."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>

@@ -32,4 +32,9 @@ export const GasSafetyCheckContent = {
       `Wszelkie prace serwisowe przy urządzeniach gazowych muszą być wykonywane zgodnie z instrukcją producenta lub innymi odpowiednimi wytycznymi, a stosowane części zamienne muszą być odpowiedniej jakości i kompatybilne z danym urządzeniem.`,
     ],
   },
+  seo: {
+    title: "Przegląd Instalacji Gazowej",
+    description:
+      "Przeglady instalacji elektrycznej w prywatnych i komercyjnych nieruchomościach. Zarezerwuj przegląd już dzisiaj.",
+  },
 };

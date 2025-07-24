@@ -2,9 +2,10 @@ import clsx from "clsx";
 import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
 import InclusionsExclusions from "~/components/InclusionsExclusions";
+import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
@@ -12,10 +13,9 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { gasSafetyCheckContent } from "~/pages/content/GasSafetyCheck";
-import { InspectionAreas } from "~/pages/InspectionAreas";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
+import { GasSafetyCheckContent as content } from "./content.pl";
 
 const selectedId = [
   41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
@@ -25,7 +25,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title="Gas Safety Check" />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -43,16 +43,16 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
               {" "}
-              {gasSafetyCheckContent.section1.title}
+              {content.section1.title}
             </h3>
-            {gasSafetyCheckContent.section1.paragraphs.map((p, i) => (
+            {content.section1.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
             ))}
             <InspectionAreas
               ctaLabel="Book Now and get your Gas Safety Check"
-              ctaHref="/book-now"
+              ctaHref="/zarezerwuj-przeglad"
             />
           </div>
         </div>
@@ -66,10 +66,10 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="flex flex-col  text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {gasSafetyCheckContent.section2.title}
+              {content.section2.title}
             </h3>
 
-            {gasSafetyCheckContent.section2.paragraphs.map((p, i) => (
+            {content.section2.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
@@ -100,11 +100,11 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold  h3">
-              {gasSafetyCheckContent.section3.title}
+              {content.section3.title}
             </h3>
-            <p className="">{gasSafetyCheckContent.section3.intro}</p>
+            <p className="">{content.section3.intro}</p>
             <ul className="mb-4 list-disc">
-              {gasSafetyCheckContent.section3.paragraphs.map((p, i) => (
+              {content.section3.paragraphs.map((p, i) => (
                 <li
                   key={i}
                   className={`mb-2 flex items-center ${
@@ -120,7 +120,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
                 </li>
               ))}
             </ul>
-            <p className="mb-4">{gasSafetyCheckContent.section3.note}</p>
+            <p className="mb-4">{content.section3.note}</p>
           </div>
         </div>
       </MarginLayout>
@@ -138,8 +138,8 @@ GasSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Gas Safety Check for Rental Property"
-        description="Gas safety checks in rented or commercial properties in Melbourne. Book a safety check now and keep your property safe with RCSC."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>

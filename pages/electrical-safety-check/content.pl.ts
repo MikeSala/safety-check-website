@@ -1,5 +1,4 @@
 export const ElectricalSafetyCheckContent = {
-  bannerTitle: "Electrical Safety Check",
   section1: {
     title: "Przeglądy bezpieczeństwa instalacji elektrycznej",
     paragraphs: [
@@ -31,5 +30,10 @@ export const ElectricalSafetyCheckContent = {
     note: [
       `Dokument ten stanowi dowód przeprowadzenia przeglądu i potwierdza, że podjęto niezbędne środki w celu zapewnienia bezpiecznego użytkowania instalacji elektrycznej.`,
     ],
+  },
+  seo: {
+    title: "Przegląd Instalacji Elektrycznej",
+    description:
+      "Przeglady instalacji elektrycznej w prywatnych i komercyjnych nieruchomościach. Zarezerwuj przegląd już dzisiaj.",
   },
 };

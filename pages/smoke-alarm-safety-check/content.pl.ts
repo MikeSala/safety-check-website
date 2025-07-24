@@ -1,5 +1,4 @@
 export const SmokeSafetyCheckContent = {
-  bannerTitle: "Przegląd bezpieczeństwa czujników dymu",
   section1: {
     title: "Przegląd bezpieczeństwa czujników dymu",
     paragraphs: [
@@ -14,5 +13,10 @@ export const SmokeSafetyCheckContent = {
       `Dokładne kontrole obejmują ocenę bezpieczeństwa, konserwację, naprawę oraz – w razie potrzeby – wymianę czujników dymu.`,
       `Aby mieć pewność, że Twoje czujniki dymu spełniają wszystkie wymagane normy bezpieczeństwa, skontaktuj się z naszym zespołem z Krakowa i zamów kompleksowy przegląd detektorów dymu w swoim obiekcie.`,
     ],
+  },
+  seo: {
+    title: "Przegląd Bezpieczeństwa Czujników Dymu",
+    description:
+      "Przeglądy bezpieczeństwa czujników dymu w prywatnych, jak i komercyjnych nieruchomościach.",
   },
 };

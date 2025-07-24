@@ -2,9 +2,10 @@ import clsx from "clsx";
 import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
 import InclusionsExclusions from "~/components/InclusionsExclusions";
+import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
@@ -12,9 +13,8 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { SmokeSafetyCheckContent } from "~/pages/content/SmokeSafetyCheck";
-import { InspectionAreas } from "~/pages/InspectionAreas";
 import { ViewportContext } from "~/providers/ViewportProvider";
+import { SmokeSafetyCheckContent as content } from "./content.pl";
 
 const selectedId = [11, 12, 13, 14, 15, 16, 17];
 
@@ -23,7 +23,7 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
 
   return (
     <>
-      <Banner title="Smoke Alarm Safety Check" />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
@@ -40,17 +40,17 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {SmokeSafetyCheckContent.section1.title}
+              {content.section1.title}
             </h3>
-            {SmokeSafetyCheckContent.section1.paragraphs.map((p, i) => (
+            {content.section1.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
             ))}
 
             <InspectionAreas
-              ctaLabel="Book Now and get your Smoke Safety Check"
-              ctaHref="/book-now"
+              ctaLabel="Zarezerwuj przegląd instalacji przeciwpożarowej"
+              ctaHref="/zarezerwuj-przeglad"
             />
           </div>
         </div>
@@ -64,9 +64,9 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="flex flex-col text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {SmokeSafetyCheckContent.section2.title}
+              {content.section2.title}
             </h3>
-            {SmokeSafetyCheckContent.section2.paragraphs.map((p, i) => (
+            {content.section2.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
@@ -95,8 +95,8 @@ SmokeSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Smoke Alarm Safety Check for Rental Property"
-        description="Smoke alarm detector checks in rented or commercial properties in Melbourne. Book an inspection and keep your property safe with RCSC."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
