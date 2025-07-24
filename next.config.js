@@ -66,8 +66,18 @@ const nextConfig = {
         destination: "/solutions-for-real-estate",
       },
       { source: "/faq", destination: "/faq" },
+      {
+        source: "/wlaczenia-wylaczenia",
+        destination: "/inclusions-exclusions",
+      },
       { source: "/o-nas", destination: "/about-us" },
+      { source: "/kontakt", destination: "/contact-us" },
       { source: "/praca-z-nami", destination: "/work-with-us" },
+      { source: "/uslugi", destination: "/services" },
+      { source: "/legislacja", destination: "/legislation" },
+      { source: "/rozwiazania", destination: "/solutions" },
+      { source: "/zarezerwuj-przeglad", destination: "/book-now" },
+      { source: "/polityka-prywatnosci", destination: "/privacy-policy" },
     ];
   },
   async redirects() {
@@ -130,7 +140,13 @@ const nextConfig = {
         permanent: false,
       },
       { source: "/about-us", destination: "/404", permanent: false },
+      { source: "/contact-us", destination: "/404", permanent: false },
       { source: "/work-with-us", destination: "/404", permanent: false },
+      { source: "/services", destination: "/404", permanent: false },
+      { source: "/solutions", destination: "/404", permanent: false },
+      { source: "/legislation", destination: "/404", permanent: false },
+      { source: "/book-now", destination: "/404", permanent: false },
+      { source: "/privacy-policy", destination: "/404", permanent: false },
     ];
   },
 };
