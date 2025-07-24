@@ -21,7 +21,7 @@ const selectedId = [
 const SolutionsPage: NextPageWithLayout = () => {
   return (
     <>
-      <Banner title={content.bannerTitle} />
+      <Banner title={content.seo.title} />
       <MarginLayout className="flex w-full justify-center">
         <SolutionSelector />
       </MarginLayout>
@@ -55,8 +55,8 @@ SolutionsPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Solutions for Landlords, Property Managers, Building Managers, Real Estate and Homeowners"
-        description="RCSC's solutions are designed for Landlords, Property Managers, Building Managers, Real Estate and Homeowners. Book now for fast, reliable service."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
