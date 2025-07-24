@@ -7,15 +7,15 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { GeneralPlumbingContent } from "~/pages/content/GeneralPluming";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight, Icons8checkmark } from "~/src/components/icons";
+import { GeneralPlumbingContent as content } from "./content.pl";
 
 const GeneralPlumbing: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title="General Plumbing Services" />
+      <Banner title={content.seo.title} />
       <MarginLayout className="mx-auto -mb-20 max-w-7xl">
         <div
           className={clsx(
@@ -32,12 +32,12 @@ const GeneralPlumbing: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {GeneralPlumbingContent.section1.title}
+              {content.section1.title}
             </h3>
-            <p className="mb-4">{GeneralPlumbingContent.section1.paragraphs}</p>
-            <h5 className="mb-4 ">{GeneralPlumbingContent.section1.bullet}</h5>
+            <p className="mb-4">{content.section1.paragraphs}</p>
+            <h5 className="mb-4 ">{content.section1.bullet}</h5>
             <ul className="mb-4 list-disc">
-              {GeneralPlumbingContent.section1.list.map((p, i) => (
+              {content.section1.list.map((p, i) => (
                 <li
                   key={i}
                   className={`mb-2 flex items-center ${
@@ -66,11 +66,11 @@ const GeneralPlumbing: NextPageWithLayout = () => {
         >
           <div className="flex flex-col text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {GeneralPlumbingContent.section2.title}
+              {content.section2.title}
             </h3>
-            <p className="mb-4">{GeneralPlumbingContent.section2.paragraph}</p>
+            <p className="mb-4">{content.section2.paragraph}</p>
             <ul className="mb-2 list-disc">
-              {GeneralPlumbingContent.section2.list.map((p, i) => (
+              {content.section2.list.map((p, i) => (
                 <li
                   key={i}
                   className={`mb-2 flex items-center ${
@@ -82,7 +82,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
                 </li>
               ))}
             </ul>
-            {GeneralPlumbingContent.section2.note}
+            {content.section2.note}
           </div>
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
@@ -108,12 +108,12 @@ const GeneralPlumbing: NextPageWithLayout = () => {
           </div>
 
           <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {GeneralPlumbingContent.section3.title}
+            <h3 className="mb-4 mt-2 text-xl font-bold h3">
+              {content.section3.title}
             </h3>
-            <p className="mb-4">{GeneralPlumbingContent.section3.paragraph}</p>
+            <p className="mb-4">{content.section3.paragraph}</p>
 
-            {GeneralPlumbingContent.section3.list.map((p, i) => (
+            {content.section3.list.map((p, i) => (
               <li
                 key={i}
                 className={`mb-2 flex items-center ${
@@ -129,7 +129,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
               </li>
             ))}
 
-            <p>{GeneralPlumbingContent.section3.note}</p>
+            <p>{content.section3.note}</p>
           </div>
         </div>
       </MarginLayout>
@@ -141,8 +141,8 @@ GeneralPlumbing.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="General Plumbing Services"
-        description="Our professional plumbers are here, offering expert hot water and leak repair, gas heater service, and comprehensive plumbing solutions."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>

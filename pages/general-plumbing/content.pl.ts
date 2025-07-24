@@ -53,4 +53,9 @@ export const GeneralPlumbingContent = {
     ],
     note: `Szybka interwencja hydraulika pozwala uniknąć kosztownych napraw i poprawia bezpieczeństwo nieruchomości.`,
   },
+  seo: {
+    title: "Usługi hydrauliczne",
+    description:
+      "Nasi profesjonalni hydraulicy oferują fachowe naprawy instalacji ciepłej wody i przecieków, serwis podgrzewaczy gazowych i kompleksowe rozwiązania hydrauliczne.",
+  },
 };
