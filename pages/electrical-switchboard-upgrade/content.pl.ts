@@ -1,5 +1,4 @@
 export const SwitchboardUpgradeContent = {
-  bannerTitle: "Modernizacja Rozdzielnicy Elektrycznej",
   section1: {
     title: "Usługa Modernizacji Rozdzielnicy Elektrycznej",
     paragraphs: [
@@ -27,5 +26,10 @@ export const SwitchboardUpgradeContent = {
       `Każda wycena modernizacji rozdzielnicy obejmuje niezbędne opłaty za przegląd oraz wydanie protokołu odbioru prac. Zapewniamy pełną przejrzystość kosztów – bez ukrytych opłat czy niespodzianek.`,
       `Rozumiemy, jak ważne jest zminimalizowanie przerw w dostawie prądu podczas modernizacji rozdzielnicy elektrycznej. Dokładamy wszelkich starań, aby prace przebiegały sprawnie, bezpiecznie i zgodnie z obowiązującymi przepisami.`,
     ],
+  },
+  seo: {
+    title: "Modernizacja Rozdzielnicy Elektrycznej",
+    description:
+      "Zmodernizuj swoją rozdzielnicę elektryczną dzięki naszym specjalistycznym usługom. Zadbaj o bezpieczeństwo swojej firmy lub domu i uniknij potencjalnych zagrożeń elektrycznych.",
   },
 };

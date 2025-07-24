@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import FaqSectionsData from "~/components/FAQ/FaqData";
+import FaqComponent from "~/components/FAQ/Faq";
+import FaqSectionsData from "~/components/FAQ/faqContent";
 import FormComponent from "~/components/FormComponent";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
@@ -12,9 +12,9 @@ import SwitchboardInclusionsExclusions from "~/components/SwitchboardInclusionsE
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { switchboardUpgradeContent } from "~/pages/content/SwitchboardUpgrade";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
+import { SwitchboardUpgradeContent as content } from "./content.pl";
 
 const selectedId = [71, 72, 73, 74, 75, 76];
 
@@ -22,7 +22,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
-      <Banner title="Modernizacja rozdzielnicy elektrycznej" />
+      <Banner title={content.seo.title} />
 
       <MarginLayout className="mx-auto max-w-7xl">
         <div
@@ -40,17 +40,17 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
 
           <div className="text-gray-700">
             <h3 className="mb-2 text-xl font-bold h3">
-              {switchboardUpgradeContent.section1.title}
+              {content.section1.title}
             </h3>
 
-            {switchboardUpgradeContent.section1.paragraphs.map((p, i) => (
+            {content.section1.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
             ))}
 
             <ul className="mb-2 mt-2 list-disc">
-              {switchboardUpgradeContent.section1.bullets.map((p, i) => (
+              {content.section1.bullets.map((p, i) => (
                 <li key={i} className="mb-2 flex h-16 items-center">
                   <Icons8ArrowRight
                     className={`-ml-1 flex-shrink-0 ${
@@ -73,9 +73,9 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
         >
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
-              {switchboardUpgradeContent.section2.title}
+              {content.section2.title}
             </h3>
-            {switchboardUpgradeContent.section2.paragraphs.map((p, i) => (
+            {content.section2.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
@@ -107,9 +107,9 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
           </div>
           <div>
             <h3 className="mb-4 text-xl font-bold text-gray-800 h3">
-              {switchboardUpgradeContent.section3.title}
+              {content.section3.title}
             </h3>
-            {switchboardUpgradeContent.section3.paragraphs.map((p, i) => (
+            {content.section3.paragraphs.map((p, i) => (
               <p key={i} className="mb-2">
                 {p}
               </p>
@@ -132,8 +132,8 @@ SwitchboardUpgradePage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
-        title="Modernizacja rozdzielnicy elektrycznej"
-        description="Upgrade your electrical switchboard with our expert services. Ensure the safety of your business or home and avoid potential electrical hazards."
+        title={content.seo.title}
+        description={content.seo.description}
       />
       {page}
     </MainLayout>
