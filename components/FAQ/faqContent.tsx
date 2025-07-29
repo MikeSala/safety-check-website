@@ -924,7 +924,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "FAQ – Abonament na zgodność instalacji",
+    title: "Abonament na zgodność instalacji",
     items: [
       {
         id: 91,
@@ -1045,7 +1045,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "FAQ – Rozwiązania dla Właścicieli Nieruchomości na Wynajem",
+    title: "FAQ - Rozwiązania dla Właścicieli Nieruchomości na Wynajem",
     items: [
       {
         id: 101,
@@ -1160,7 +1160,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "FAQ – Rozwiązania dla Zarządców Nieruchomości",
+    title: "FAQ - Rozwiązania dla Zarządców Nieruchomości",
     items: [
       {
         id: 111,
@@ -1285,7 +1285,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Rozwiązania dla Właścicieli Domów – FAQ",
+    title: "FAQ - Rozwiązania dla Właścicieli Domów",
     items: [
       {
         id: 121,
@@ -1398,7 +1398,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Rozwiązania dla Zarządców Budynków – FAQ",
+    title: "FAQ - Rozwiązania dla Zarządców Budynków",
     items: [
       {
         id: 131,
@@ -1515,7 +1515,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Rozwiązania dla Agencji Nieruchomości – FAQ",
+    title: "FAQ - Rozwiązania dla Agencji Nieruchomości",
     items: [
       {
         id: 141,
