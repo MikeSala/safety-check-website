@@ -99,7 +99,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Najczęstsze pytania – czujniki dymu",
+    title: "FAQ - czujniki dymu",
     items: [
       {
         id: 11,
@@ -212,7 +212,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Najczęstsze pytania – bezpieczeństwo elektryczne",
+    title: "FAQ - bezpieczeństwo elektryczne",
     items: [
       {
         id: 21,
@@ -409,7 +409,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Bezpieczeństwo Gazowe",
+    title: "FAQ - Bezpieczeństwo Gazowe",
     items: [
       {
         id: 41,
@@ -694,7 +694,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "FAQ dotyczące przeglądów gazowych w przyczepach kempingowych",
+    title: "FAQ - przeglądy gazowe w przyczepach kempingowych",
     items: [
       {
         id: 61,
@@ -772,7 +772,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "FAQ dotyczące modernizacji tablic rozdzielczych",
+    title: "FAQ - modernizacja tablic rozdzielczych",
     items: [
       {
         id: 71,
@@ -809,7 +809,7 @@ const FaqSectionsConent: FaqSectionConent[] = [
     ],
   },
   {
-    title: "Czujniki Dymu Połączone w Sieć – FAQ",
+    title: "FAQ - Czujniki Dymu Połączone w Sieć",
     items: [
       {
         id: 81,

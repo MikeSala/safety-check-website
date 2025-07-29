@@ -42,7 +42,7 @@ const FaqComponent: React.FC<FaqComponentProps> = ({
       {filteredSections.map((section, index) => (
         <div
           key={index}
-          className={`faq-section my-4 text-left ${
+          className={`faq-section my-4 mb-10 text-left ${
             isMobile ? "text-md" : "mb-20 text-lg"
           }`}
         >
