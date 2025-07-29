@@ -35,23 +35,23 @@ export const ContactForm: React.FC = () => {
       });
       if (!response) {
         throw new Error(
-          "There was an error submitting your form. Please try again. If the problem persists, please contact us directly at info@przegladinstalacji.pl"
+          "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio pod adresem info@przegladinstalacji.pl"
         );
       }
       reset();
-      successToast("Your form has been submitted successfully");
+      successToast("Formularz został pomyślnie wysłany");
     } catch (error) {
       errorToast(
-        "There was an error submitting your form. Please try again. If the problem persists, please contact us directly at info@przegladinstalacji.pl"
+        "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio pod adresem info@przegladinstalacji.pl"
       );
     }
   };
 
   return (
     <MarginLayout>
-      <div className="md:-mt-20 md:items-center md:justify-center">
+      <div className="md:items-center md:justify-center">
         {" "}
-        <h2 className="h4">Contact Form</h2>
+        <h2 className="h4">Formularz kontaktowy</h2>
         <br></br>
         <form
           className="grid flex-grow grid-cols-2 gap-x-8 gap-y-4 "
@@ -59,27 +59,27 @@ export const ContactForm: React.FC = () => {
         >
           <InputField
             className="col-span-2 sm:col-span-1"
-            label="Name"
+            label="Imię i nazwisko"
             error={errors.name?.message}
-            autoComplete="name"
+            autoComplete="Imię"
             required
             formProps={register("name", {
               validate: {
-                message: (v) => (v ? undefined : "Please enter your name"),
+                message: (v) =>
+                  v ? undefined : "Proszę podać imię i nazwisko",
               },
             })}
           />
           <InputField
             className="col-span-2 sm:col-span-1"
-            label="Phone"
+            label="Telefon"
             error={errors.phone?.message}
             type="tel"
             autoComplete="tel"
             required
             formProps={register("phone", {
               validate: {
-                message: (v) =>
-                  v ? undefined : "Please enter your phone number",
+                message: (v) => (v ? undefined : "Proszę podać numer telefonu"),
               },
             })}
           />
@@ -95,30 +95,30 @@ export const ContactForm: React.FC = () => {
                 message: (v) =>
                   !!v && isEmail(v)
                     ? undefined
-                    : "Please enter a valid email address",
+                    : "Proszę podać poprawny adres email",
               },
             })}
           />
           <InputField
             className="col-span-2 sm:col-span-1"
-            label="Subject"
+            label="Temat"
             error={errors.subject?.message}
             required
             formProps={register("subject", {
               validate: {
                 message: (v) =>
-                  v ? undefined : "Please enter the subject of your inquiry",
+                  v ? undefined : "Proszę podać temat zapytania",
               },
             })}
           />
           <TextareaField
             className="col-span-2"
-            label="Message"
+            label="Wiadomość"
             error={errors.message?.message}
             required
             formProps={register("message", {
               validate: {
-                message: (v) => (v ? undefined : "Please enter your message"),
+                message: (v) => (v ? undefined : "Proszę wpisać wiadomość"),
               },
             })}
           />
@@ -129,7 +129,7 @@ export const ContactForm: React.FC = () => {
             color={ButtonColor.Primary}
             size="lg"
           >
-            Send
+            Wyślij
           </Button>
         </form>
       </div>

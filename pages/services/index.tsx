@@ -42,12 +42,9 @@ const ServicesPage: NextPageWithLayout = () => {
   return (
     <>
       <Banner title={content.bannerTitle} />
-      <MarginLayout className="flex-col gap-4">
+      <MarginLayout className="mt-10 flex-col gap-4">
         <h2 className="h2">{content.introHeading}</h2>
         <p>{content.introParagraph}</p>
-      </MarginLayout>
-
-      <MarginLayout className="-mt-20">
         <ServiceSelector />
       </MarginLayout>
       {serviceBanners.map((service, i) => {
@@ -55,9 +52,10 @@ const ServicesPage: NextPageWithLayout = () => {
           <ServiceBanner key={i} {...service} imageFirst={Boolean(i % 2)} />
         );
       })}
-      <SubscriptionServiceBanner />
+
       <FormComponent titleId="ourServices" />
       <ServiceProjects />
+      <SubscriptionServiceBanner />
       <MarginLayout className="flex-col gap-4 sm:py-1">
         <div className="px-4">
           <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
