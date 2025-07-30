@@ -17,7 +17,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   return (
     <div className={clsx("relative h-[300px] w-full sm:h-[400px]", className)}>
       <Image
-        className="h-full w-full object-cover"
+        className="h-full w-full rounded-sm object-cover"
         src={src}
         sizes={sizes}
         alt=""
