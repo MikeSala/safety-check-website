@@ -24,8 +24,8 @@ export const Footer: React.FC = () => {
       ),
     },
     {
-      heading: "Residential & Commercial Safety Checks",
-      content: <p>Book your safety check. Friendly and fast.</p>,
+      heading: "Przegląd",
+      content: <p>Zarezerwuj przegląd. Profesjonalnie i przyjaźnie</p>,
     },
     {
       heading: "Main Office",
@@ -42,13 +42,13 @@ export const Footer: React.FC = () => {
       content: (
         <>
           <Link
-            className="transition duration-300 hover:text-red-500"
+            className="transition duration-300 hover:text-sky-700"
             href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
           >
             {process.env.NEXT_PUBLIC_TEL_LINK}
           </Link>
           <Link
-            className="transition duration-300 hover:text-red-500"
+            className="transition duration-300 hover:text-sky-700"
             href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}`}
             target="_blank"
             rel="noreferrer"
@@ -59,11 +59,10 @@ export const Footer: React.FC = () => {
       ),
     },
     {
-      heading: "Usługi",
       content: (
         <ul>
           <li>
-            <Link href="/services">Nasze usługi</Link>
+            <Link href={ROUTES.SERVICES}>Nasze usługi</Link>
           </li>
           <li>
             <Link href={ROUTES.COMPLIANCE_SUBSCRIPTION}>
@@ -109,11 +108,10 @@ export const Footer: React.FC = () => {
       ),
     },
     {
-      heading: NAV_LABELS.SOLUTIONS,
       content: (
         <ul>
           <li>
-            <Link href={ROUTES.SOLUTIONS}> {NAV_LABELS.SOLUTIONS}</Link>
+            <Link href={ROUTES.SOLUTIONS}>Nasze Rozwiązania</Link>
           </li>
           <li>
             <Link href={ROUTES.PROPERTY_MANAGERS}>
@@ -174,10 +172,7 @@ export const Footer: React.FC = () => {
       <footer className=" bg-black text-gray-200">
         <DistrictBar />
 
-        <hr
-          className="w-full border-t-2 py-2
-"
-        />
+        <br className="w-full py-4" />
         <div className="mx-auto max-w-7xl px-4 sm:px-0">
           <div className="flex flex-col items-center justify-between md:flex-row">
             <div className="flex gap-4 py-4 pb-2"></div>
@@ -193,31 +188,30 @@ export const Footer: React.FC = () => {
                 width={isMobile ? 179.2 : 204.8}
               />
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
-                Residential & Commercial Safety Checks
+                Przegląd Instalacji
               </h3>
-              <p>Book your safety check. Friendly and fast.</p>
-              <p>REC 32917</p>
+              <p>Zarezerwuj przegląd. Profesjonalnie i przyjaźnie.</p>
             </div>
 
             <div className="flex flex-col gap-2 text-sm">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
-                Main Office
+                Główne biuro
               </h3>
-              <p>82 Bardia Avenue,</p>
-              <p>Seaford Vic Australia 3198</p>
-              <p>Monday - Friday 8am - 4pm</p>
+              <p>Rydla</p>
+              <p>Kraków</p>
+              <p>Pon-Pt, 8-16:00</p>
 
               <h3 className="mt-4 text-sm font-semibold uppercase tracking-wider text-gray-200">
-                Contact
+                Kontakt
               </h3>
               <Link
-                className="transition duration-500 hover:text-red-500"
+                className="transition duration-500 hover:text-sky-800"
                 href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
               >
                 {process.env.NEXT_PUBLIC_TEL_LINK}
               </Link>
               <Link
-                className="mt-1 transition duration-500 hover:text-red-500"
+                className="mt-1 transition duration-500 hover:text-sky-800"
                 href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}`}
                 target="_blank"
                 rel="noreferrer"
@@ -257,12 +251,12 @@ export const Footer: React.FC = () => {
                                   return (
                                     <li
                                       className={
-                                        isActive ? "mb-1 text-red-500" : "mb-1"
+                                        isActive ? "mb-1 text-sky-700" : "mb-1"
                                       }
                                     >
                                       <Link
                                         href={link.props.href}
-                                        className="transition duration-500 hover:text-red-500"
+                                        className="transition duration-500 hover:text-sky-700"
                                       >
                                         {link.props.children}
                                       </Link>
@@ -285,16 +279,16 @@ export const Footer: React.FC = () => {
 
           <hr className="my-8" />
           <div className="flex flex-col justify-between gap-2 text-center text-sm sm:flex-row">
-            <p>&copy; {new Date().getFullYear()} RCSC</p>
+            <p>&copy; {new Date().getFullYear()}</p>
             <p>
               Developed by{" "}
               <Link
-                className="text-gray-200 transition duration-500 hover:text-red-500"
+                className="text-gray-200 transition duration-500 hover:text-sky-700"
                 target="_blank"
                 href="https://strive.limited/"
                 rel="noreferrer"
               >
-                Strive
+                Strive & StriveLab
               </Link>
             </p>
           </div>
