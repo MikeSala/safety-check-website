@@ -21,13 +21,7 @@ const FaqPage: NextPageWithLayout = () => {
       <MarginLayout className="mx-auto flex-col sm:-mb-20">
         <h3 className="mb-4 text-center font-bold h2">{content.title}</h3>
         {content.description}
-      </MarginLayout>
-
-      <MarginLayout className="flex-col gap-2 py-1">
         <FaqComponent sections={faqSectionsData} selectedIds={selectedId} />
-      </MarginLayout>
-
-      <MarginLayout className="-mb-15 mx-auto -mt-20 flex-col">
         <i>{content.note}</i>
       </MarginLayout>
     </>

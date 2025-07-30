@@ -12,7 +12,7 @@ interface Props {
 }
 
 const paddingMap: Record<Size, { vertical: string; horizontal: string }> = {
-  sm: { vertical: "py-4", horizontal: "px-1 sm:px-4" },
+  sm: { vertical: "py-4", horizontal: "px-1 sm:px-4 mt-10" },
   md: { vertical: "py-8 sm:py-24", horizontal: "px-4 sm:px-6 lg:px-8" },
   lg: {
     vertical: "py-12 sm:py-32",
@@ -23,12 +23,12 @@ const paddingMap: Record<Size, { vertical: string; horizontal: string }> = {
 export const MarginLayout: React.FC<Props> = ({
   children,
   className,
-  verticalPadding = "md",
-  horizontalPadding = "md",
+  verticalPadding = "sm",
+  horizontalPadding = "sm",
 }) => {
   const { isMobile } = useContext(ViewportContext);
 
-  const effectiveVerticalPadding = isMobile ? "lg" : verticalPadding;
+  const effectiveVerticalPadding = isMobile ? "sm" : verticalPadding;
   const effectiveHorizontalPadding = isMobile ? "sm" : horizontalPadding;
 
   const resolvedVerticalPadding = paddingMap[effectiveVerticalPadding].vertical;
