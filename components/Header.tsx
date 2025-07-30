@@ -30,10 +30,10 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-10 mx-auto flex max-w-7xl items-center justify-between gap-4 bg-neutral-50 px-4 py-3 shadow-lg sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-10 flex w-full items-center justify-between gap-4 bg-neutral-50 px-4 py-3 shadow-lg sm:px-6 lg:px-8">
         {isMobile ? (
           <>
-            <div className="mx-4 flex items-center justify-center gap-2 sm:justify-start">
+            <div className="mx-4 flex w-full items-center justify-between sm:justify-start">
               <button onClick={() => setIsMobileNavOpen(true)}>
                 <span className="sr-only">Open navigation.</span>
                 <Bars3Icon className="h-14 w-14" />
