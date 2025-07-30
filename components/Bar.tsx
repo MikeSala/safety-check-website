@@ -7,11 +7,11 @@ import {
 } from "@heroicons/react/24/outline";
 
 const elements = [
-  { Icon: ClockIcon, text: "Professional Expertise" },
-  { Icon: WrenchScrewdriverIcon, text: "Proven Processes & Systems" },
-  { Icon: ShieldCheckIcon, text: "Medium-sized Business" },
-  { Icon: Cog8ToothIcon, text: "Quick Response" },
-  { Icon: BuildingOffice2Icon, text: "Portal for Real Estate Agencies" },
+  { Icon: ClockIcon, text: "Profesjonalizm" },
+  { Icon: WrenchScrewdriverIcon, text: "Sprawdzone Procedury" },
+  { Icon: ShieldCheckIcon, text: "Firma Średniej Wielkości" },
+  { Icon: Cog8ToothIcon, text: "Szybka Realizacja" },
+  { Icon: BuildingOffice2Icon, text: "Portal dla Agencji Nieruchomości" },
 ];
 
 const Bar = ({
