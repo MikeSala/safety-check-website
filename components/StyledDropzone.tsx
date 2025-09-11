@@ -55,7 +55,7 @@ export const StyledDropzone = React.forwardRef(
 
     const onDropRejected = useCallback((_fileRejections: FileRejection[]) => {
       errorToast(
-        "Upload failed, please upload a .pdf or .docx file smaller than 3MB."
+        "Przesyłanie nie powiodło się, prześlij proszę plik .pdf lub .docx mniejszy niż 3MB."
       );
     }, []);
 
@@ -103,8 +103,8 @@ export const StyledDropzone = React.forwardRef(
               >
                 {
                   <p className="p-4">
-                    <strong>Click to choose a file</strong> or drag your CV here
-                    (PDF, DOCX - 3MB maximum)
+                    <strong>Kliknij by wybrać plik</strong> lub przeciągnij
+                    tutaj CV (PDF, DOCX - 3MB maximum)
                   </p>
                 }
               </div>
