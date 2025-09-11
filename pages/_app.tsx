@@ -58,7 +58,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
     };
   }, [router.events]);
 
-  const siteUrl = "https://www.przegladinstalacji.pl";
+  const siteUrl = "https://www.przegladinstalacji.com";
   const cleanPath = router.asPath.split("#")[0].split("?")[0];
   const canonicalUrl = siteUrl + (router.asPath === "/" ? "" : cleanPath);
 

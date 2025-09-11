@@ -19,7 +19,7 @@ export const DEFAULT_SEO: NextSeoProps = {
   openGraph: {
     type: "website",
     locale: "pl_PL",
-    url: "https://www.przegladinstalacji.pl/",
+    url: "https://www.przegladinstalacji.com/",
     title: defaultTitle,
     description: description,
     siteName: "Inspektor Instalacji",
