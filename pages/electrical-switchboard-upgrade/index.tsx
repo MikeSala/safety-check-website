@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/FAQ/Faq";
-import FaqSectionsData from "~/components/FAQ/faqContent";
+import FaqSectionsData from "~/components/FAQ/FaqContent";
 import FormComponent from "~/components/FormComponent";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
@@ -64,7 +64,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
           </div>
         </div>
       </MarginLayout>
-      <MarginLayout className="mx-auto -mt-20 max-w-7xl">
+      <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
             "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
@@ -92,7 +92,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
         </div>
       </MarginLayout>
 
-      <MarginLayout className="mx-auto -mt-20 max-w-7xl">
+      <MarginLayout className="mx-auto mb-10 max-w-7xl">
         <div
           className={clsx(
             "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
@@ -119,10 +119,8 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
       </MarginLayout>
       <FormComponent titleId="switchboardUpgrade" />
       <SwitchboardInclusionsExclusions />
-
-      <SubscriptionServiceBanner />
       <ServiceBoxes />
-
+      <SubscriptionServiceBanner />
       <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
     </>
   );

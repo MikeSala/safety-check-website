@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/FAQ/Faq";
-import FaqSectionsData from "~/components/FAQ/faqContent";
+import FaqSectionsData from "~/components/FAQ/FaqContent";
 import FormComponent from "~/components/FormComponent";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";

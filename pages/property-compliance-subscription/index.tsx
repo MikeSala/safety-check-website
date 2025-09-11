@@ -5,7 +5,7 @@ import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import ComplianceSubscriptionMaterials from "~/components/ComplianceSubscriptionMaterials";
 import FaqComponent from "~/components/FAQ/Faq";
-import FaqSectionsData from "~/components/FAQ/faqContent";
+import FaqSectionsData from "~/components/FAQ/FaqContent";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
@@ -83,7 +83,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
         </div>
       </MarginLayout>
 
-      <div className="mb-20 mt-20 flex flex-col gap-0 bg-black px-4 py-6 sm:mb-8 sm:mt-8 sm:px-8 md:mb-20 md:mt-20 md:flex-row md:px-24 md:py-12">
+      <div className="mb-20 mt-20 flex flex-col gap-0 bg-sky-700 px-4 py-6 sm:mb-8 sm:mt-8 sm:px-8 md:mb-20 md:mt-20 md:flex-row md:px-24 md:py-12">
         <div className="flex w-full flex-col items-center justify-center border-white bg-black p-4 text-center sm:p-6 md:w-1/2 md:border-r-2 md:p-4">
           <p className="mb-4 text-center font-semibold text-white h5">
             {content.description}
@@ -116,7 +116,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
         </div>
       </div>
       <PropertyComplianceForm />
-      <MarginLayout className="-mt-20 -mb-20 flex w-full flex-col">
+      <MarginLayout className="flex w-full flex-col">
         <ComplianceSubscriptionMaterials />
       </MarginLayout>
 

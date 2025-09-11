@@ -5,7 +5,7 @@ import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import FaqComponent from "../../components/FAQ/Faq";
-import faqSectionsData from "../../components/FAQ/faqContent";
+import faqSectionsData from "../../components/FAQ/FaqContent";
 import { faqPageContent as content } from "./content.pl";
 
 const selectedId = [

@@ -2,14 +2,14 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { ReactElement } from "react";
 import { Banner } from "~/components/Banner";
+import FaqComponent from "~/components/FAQ/Faq";
+import faqSectionsData from "~/components/FAQ/FaqContent";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import FaqComponent from "~/components/FAQ/FaqComponent";
-import faqSectionsData from "~/components/FAQ/FaqData";
 import { PhoneNumberLink } from "~/pages/solutions-for-building-managers";
 
 const selectedId = [81, 82, 83, 84, 85, 86, 87, 88, 89, 90];

@@ -61,7 +61,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
       });
       if (!response) {
         throw new Error(
-          "There was an error submitting your form. Please try again. If the problem persists, please contact us directly at info@przegladinstalacji.pl"
+          "Pojawił się błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio poprzez email info@przegladinstalacji.com"
         );
       }
       reset();
@@ -69,7 +69,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
       successToast("Your application has been submitted successfully");
     } catch (e) {
       errorToast(
-        "There was an error submitting your form. Please try again. If the problem persists, please contact us directly at info@przegladinstalacji.pl"
+        "Pojawił się błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio poprzez email info@przegladinstalacji.com"
       );
     }
   };

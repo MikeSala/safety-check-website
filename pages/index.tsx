@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import Bar from "~/components/Bar";
 import FaqComponent from "~/components/FAQ/Faq";
-import FaqSectionsData from "~/components/FAQ/faqContent";
+import FaqSectionsData from "~/components/FAQ/FaqContent";
 import HeaderComponent from "~/components/HeaderComponent";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
@@ -29,7 +29,7 @@ const HomePage: NextPageWithLayout = () => {
     <>
       <HeaderComponent />
       <Bar
-        backgroundColor="bg-black"
+        backgroundColor="bg-sky-800"
         textColor="text-white"
         iconColor="text-white"
       />
@@ -50,7 +50,7 @@ const HomePage: NextPageWithLayout = () => {
         <SolutionSelector />
       </MarginLayout>
       {/* <ResponsiveImage className="-mt-15" src="/hero-hallway.webp" /> */}
-      <article className="flex h-[100px] flex-col items-center justify-center gap-4 bg-black px-4 py-12 text-center text-2xl text-white h3 sm:py-24 lg:px-8">
+      <article className="flex h-[100px] flex-col items-center justify-center gap-4 bg-sky-800 px-4 py-12 text-center text-2xl text-white h3 sm:py-24 lg:px-8">
         <h2 className="font-semibold h2">{content.titles.subTitle2}</h2>
       </article>
       <MarginLayout className="mx-auto max-w-7xl">

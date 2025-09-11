@@ -13,7 +13,7 @@ export const privacyPolicyContent = {
       title: "Jakie dane osobowe zbieramy i dlaczego?",
       description: [
         "Dane osobowe to wszelkie informacje umożliwiające identyfikację osoby fizycznej. Mogą to być: imię i nazwisko, adres e-mail, numer telefonu, adres zamieszkania itp.",
-        "Dane te pozyskujemy za pośrednictwem formularzy na stronie internetowej www.przegladinstalacji.pl, e-maila, telefonu oraz ciasteczek i innych narzędzi analitycznych. Dane mogą być także przekazane przez strony trzecie (np. zarządców nieruchomości).",
+        "Dane te pozyskujemy za pośrednictwem formularzy na stronie internetowej www.przegladinstalacji.com, e-maila, telefonu oraz ciasteczek i innych narzędzi analitycznych. Dane mogą być także przekazane przez strony trzecie (np. zarządców nieruchomości).",
         "Główne cele przetwarzania danych to: świadczenie usług, kontakt z klientami oraz działania marketingowe. W każdej chwili możesz zrezygnować z otrzymywania informacji marketingowych, kontaktując się z nami.",
         "W miarę możliwości poinformujemy Cię, dlaczego potrzebujemy danych i w jaki sposób będą one wykorzystywane.",
       ],

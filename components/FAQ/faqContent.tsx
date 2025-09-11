@@ -8,7 +8,7 @@ export interface FaqItem {
   answer: string | JSX.Element;
 }
 
-export interface FaqSectionConent {
+export interface FaqContent {
   title: string;
   items: FaqItem[];
 }
@@ -30,7 +30,7 @@ Solutions for Building Managers, 131-140
 Solutions for Real Estate, 141-150
 Legislation Page Elements, 151-160*/
 
-const FaqSectionsConent: FaqSectionConent[] = [
+const FaqSectionsContent: FaqContent[] = [
   {
     title: "Najczęstsze pytania ogólne",
     items: [
@@ -1752,4 +1752,4 @@ const FaqSectionsConent: FaqSectionConent[] = [
   },
 ];
 
-export default FaqSectionsConent;
+export default FaqSectionsContent;

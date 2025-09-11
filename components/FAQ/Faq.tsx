@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React, { useContext, useState } from "react";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { ViewportContext } from "~/providers/ViewportProvider";
-import { FaqSectionConent } from "./faqContent";
+import { FaqSectionConent } from "./FaqContent";
 
 interface FaqComponentProps {
   sections: FaqSectionConent[];
@@ -75,18 +75,18 @@ const FaqComponent: React.FC<FaqComponentProps> = ({
                 }
               >
                 <h3
-                  className={`faq-question duration-400 flex items-center border-t border-gray-200 bg-white p-2 shadow-sm transition hover:text-red-500 ${
+                  className={`faq-question duration-400 flex items-center border-t border-gray-200 bg-white p-2 shadow-sm transition hover:text-sky-600 ${
                     activeSection === index && activeItem === itemIndex
-                      ? "border-t-1 text-blue-500"
+                      ? "border-t-1 text-sky-600"
                       : ""
-                  } duration-400 transition group-hover:text-blue-500`}
+                  } duration-400 transition group-hover:text-sky-600`}
                 >
                   <div className=" flex-grow">{item.question}</div>
                   <ChevronDownIcon
                     className={clsx(
-                      "duration-400 ml-auto h-7 w-7 flex-shrink-0 transform text-neutral-700 transition duration-200 ease-in-out group-hover:text-red-500",
+                      "duration-400 ml-auto h-7 w-7 flex-shrink-0 transform text-neutral-700 transition duration-200 ease-in-out group-hover:text-sky-600",
                       {
-                        "text-blue-500":
+                        "text-sky-600":
                           activeSection === index && activeItem === itemIndex,
                         "rotate-180":
                           activeSection === index && activeItem === itemIndex,

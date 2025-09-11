@@ -45,7 +45,7 @@ export const switchboardText = {
 const SwitchboardInclusionsExclusions = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
-    <div className="xs:px-4 mb-10 mt-10 bg-black py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
+    <div className="xs:px-4 mb-10 mt-10 bg-sky-900 py-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
       <div className="mb-6 flex items-center justify-center">
         <h3 className="text-2xl font-semibold text-white h2">
           {switchboardText.title}
@@ -53,7 +53,7 @@ const SwitchboardInclusionsExclusions = () => {
       </div>
 
       <div className="gap-0 md:grid md:grid-cols-2">
-        <div className="justify-top order-2 flex w-full flex-col items-start border-white bg-black p-4 md:order-1 md:w-auto md:border-r-2">
+        <div className="justify-top order-2 flex w-full flex-col items-start border-white bg-sky-900 p-4 md:order-1 md:w-auto md:border-r-2">
           <h4 className="mb-4 pl-16 text-xl font-semibold text-white h2">
             Włączenie
           </h4>
@@ -72,7 +72,7 @@ const SwitchboardInclusionsExclusions = () => {
           </ul>
         </div>
 
-        <div className="order-1 w-full bg-black p-4 md:order-2 md:w-auto">
+        <div className="order-1 w-full bg-sky-900 p-4 md:order-2 md:w-auto">
           <h4 className="mb-4 pl-16 text-xl font-semibold text-white h2">
             Wyłączenie
           </h4>

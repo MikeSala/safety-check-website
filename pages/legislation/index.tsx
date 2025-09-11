@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ReactElement } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/FAQ/Faq";
-import FaqSectionsData from "~/components/FAQ/faqContent";
+import FaqSectionsData from "~/components/FAQ/FaqContent";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";

@@ -3,7 +3,7 @@ import { NextSeo } from "next-seo";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/FAQ/Faq";
-import FaqSectionsData from "~/components/FAQ/faqContent";
+import FaqSectionsData from "~/components/FAQ/FaqContent";
 import InclusionsExclusions from "~/components/InclusionsExclusions";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
@@ -51,7 +51,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
               </p>
             ))}
             <InspectionAreas
-              ctaLabel="Book Now and get your Gas Safety Check"
+              ctaLabel="Skontaktuj się z nami"
               ctaHref="/zarezerwuj-przeglad"
             />
           </div>
@@ -126,9 +126,8 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
       </MarginLayout>
       <InclusionsExclusions category="Przeglądy Bezpieczeństwa Elektrycznego" />
       <PropertyComplianceForm />
-      <SubscriptionServiceBanner />
       <ServiceBoxes />
-
+      <SubscriptionServiceBanner />
       <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
     </>
   );

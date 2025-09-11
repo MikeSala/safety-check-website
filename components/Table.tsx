@@ -4,7 +4,10 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ServiceItem, serviceItems } from "~/pages/inclusions-exclusions";
+import {
+  ServiceItem,
+  serviceItems,
+} from "~/pages/inclusions-exclusions/content.pl";
 
 const columnHelper = createColumnHelper<ServiceItem>();
 const columns = [
