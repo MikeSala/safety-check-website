@@ -48,7 +48,7 @@ const WorkApplicationLastStepMessage = ({
                   <p className={"text-2xl font-medium"}>Error!</p>
                   <p>
                     Something went wrong. Please try again later or send email
-                    directly to info@przegladinstalacji.pl
+                    directly to info@przegladinstalacji.com
                   </p>
                 </>
               )}

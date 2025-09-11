@@ -46,14 +46,16 @@ export const TenantForm: React.FC = () => {
       });
       if (!res) {
         throw new Error(
-          "There was an error submitting your form. Please try again. If the problem persists, please contact us directly at info@przegladinstalacji.pl"
+          "Pojawił się błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio poprzez email info@przegladinstalacji.com"
         );
       }
       reset();
-      successToast("Tenant information has been submitted successfully");
+      successToast("Informacje o lokatorze zostały wysłane");
     } catch (e) {
       console.log(e);
-      errorToast("There was an error submitting your form. Please try again.");
+      errorToast(
+        "Pojawił się błąd podczas wysyłania formularza. Spróbuj ponownie."
+      );
     }
   });
 
@@ -65,47 +67,45 @@ export const TenantForm: React.FC = () => {
       >
         <InputField
           className="col-span-2 sm:col-span-1"
-          label="Tenant's Full Name"
+          label="Pełne imię lokatora"
           error={errors.tenantFullName?.message}
           autoComplete="name"
           required
           formProps={register("tenantFullName", {
             validate: {
-              message: (v) => (v ? undefined : "Please enter your name"),
+              message: (v) => (v ? undefined : "Podaj swoje imię"),
             },
           })}
         />
         <InputField
           className="col-span-2 sm:col-span-1"
-          label="Tenant's Phone Number"
+          label="Numer telefonu lokatora"
           error={errors.tenantPhone?.message}
           type="tel"
           autoComplete="tel"
           required
           formProps={register("tenantPhone", {
             validate: {
-              message: (v) =>
-                v ? undefined : "Please enter your phone number",
+              message: (v) => (v ? undefined : "Podaj swój numer telefonu"),
             },
           })}
         />
         <InputField
           className="col-span-2 sm:col-span-1"
-          label="Tenant's Email Address"
+          label="Adres email lokatora"
           error={errors.tenantEmail?.message}
           type="email"
           autoComplete="email"
           required
           formProps={register("tenantEmail", {
             validate: {
-              message: (v) =>
-                v ? undefined : "Please enter your email address",
+              message: (v) => (v ? undefined : "Podaj adres email"),
             },
           })}
         />
         <InputField
           className="col-span-2 sm:col-span-1"
-          label="Tenant's Secondary Phone Number"
+          label="Dodatkowy numer telefonu lokatora"
           error={errors.tenantSecondaryPhone?.message}
           formProps={register("tenantSecondaryPhone")}
         />
@@ -116,7 +116,7 @@ export const TenantForm: React.FC = () => {
           size="lg"
           loading={loading}
         >
-          Submit
+          Wyślij
         </Button>
       </form>
     </MarginLayout>

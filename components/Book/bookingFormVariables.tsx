@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { RadioOption } from "~/components/Fields/RadioField";
+import { NAV_LABELS } from "~/pages/content/Labels";
+import { ROUTES } from "~/pages/content/Routes";
 
 export enum SERVICE_KEYS {
   FullServicePackage = "full-service-package",
@@ -29,91 +31,92 @@ export type AdditionalServicesOption = RadioOption & { oneTimeFee?: number };
 
 export const SERVICES: Service[] = [
   {
-    label: "Electrical Safety Check",
+    label: NAV_LABELS.ELECTRICAL_CHECK,
     value: SERVICE_KEYS.ElectricalSafetyCheck,
     price: 30000,
-    address: "/electrical-safety-check/",
+    address: ROUTES.ELECTRICAL_CHECK,
     description: (
       <>
         <p>
-          Electrical safety check of all electrical points in accordance with
-          section 4 of AS/NZS 3019 &quot;Electrical installations—Periodic
-          verification&quot; as required by the Residential Tenancies Act 2021,
-          Consumer Affairs and Energy Safe Victoria
+          Przegląd wszystkich punktów elektrycznych zgodnie z sekcją 4 normy
+          AS/NZS 3019 „Instalacje elektryczne — okresowa weryfikacja” wymaganej
+          przez Residential Tenancies Act 2021, Consumer Affairs i Energy Safe
+          Victoria.
         </p>
         <p>
-          Supply of a detailed electrical report as a valid legal record for
-          proof of servicing will be provided on completion
+          Po zakończeniu zostanie dostarczony szczegółowy raport elektryczny
+          jako ważny dokument prawny potwierdzający wykonanie usługi.
         </p>
       </>
     ),
   },
   {
-    label: "Gas Safety Check",
+    label: NAV_LABELS.GAS_CHECK,
     value: SERVICE_KEYS.GasSafetyCheck,
     price: 35000,
-    address: "/gas-safety-check/",
+    address: ROUTES.GAS_CHECK,
     description: (
       <>
         <p>
-          Gas safety check of all owner supplied gas appliances at the property
-          in accordance with the AS 4575, AS/NZ 5601, Energy Safe Victoria &
-          Consumer Affairs. E.g. Gas stoves, heaters, hot water units and carbon
-          monoxide testing etc..
+          Przegląd wszystkich urządzeń gazowych dostarczonych przez właściciela
+          nieruchomości zgodnie z normami AS 4575, AS/NZ 5601, Energy Safe
+          Victoria i Consumer Affairs. Przykłady: kuchenki gazowe, ogrzewacze,
+          podgrzewacze wody oraz testy tlenku węgla itp.
         </p>
         <p>
-          Supply of a detailed gas report as a valid legal record for proof of
-          servicing will be provided on completion
+          Po zakończeniu zostanie dostarczony szczegółowy raport gazowy jako
+          ważny dokument prawny potwierdzający wykonanie usługi.
         </p>
       </>
     ),
   },
   {
-    label: "Smoke Alarm Check",
+    label: NAV_LABELS.SMOKE_ALARM_CHECK,
     value: SERVICE_KEYS.SmokeAlarmService,
     price: 9000,
-    address: "/smoke-alarm-safety-check/",
+    address: ROUTES.SMOKE_ALARM_CHECK,
     description: (
       <>
         <p>
-          Service all smoke alarms in accordance with the Victoria Building
-          Regulations 2006, S.R.No.68/2006, Australian Standards 3786 and
-          Section 3.7.2.2 of the Building Code of Australia
+          Serwis wszystkich czujników dymu zgodnie z Victoria Building
+          Regulations 2006, S.R.No.68/2006, Australian Standards 3786 oraz
+          sekcją 3.7.2.2 Kodeksu Budowlanego Australii.
         </p>
         <p>
-          Supply of a detailed smoke alarm report as a valid legal record for
-          proof of servicing will be provided on completion
+          Po zakończeniu zostanie dostarczony szczegółowy raport dotyczący
+          czujników dymu jako ważny dokument prawny potwierdzający wykonanie
+          usługi.
         </p>
       </>
     ),
   },
   {
-    label: "Full Service Package",
+    label: "Pakiet pełnego serwisu",
     value: SERVICE_KEYS.FullServicePackage,
     price: 60000,
-    address: "/services/",
+    address: ROUTES.SERVICES,
     description: (
       <>
         <ul className="flex flex-col gap-2">
-          <li>Smoke Alarm Service</li>
-          <li>Electrical Safety Check</li>
-          <li>Gas Safety Check</li>
+          <li>Serwis czujników dymu</li>
+          <li>Przegląd instalacji elektrycznej</li>
+          <li>Przegląd instalacji gazowej</li>
         </ul>
       </>
     ),
   },
   {
-    label: "Electrical Safety Check & Gas Safety Check",
+    label: "Przegląd instalacji elektrycznej i gazowej",
     value: SERVICE_KEYS.ElectricalSafetyCheckAndGasSafetyCheck,
     price: 65000,
   },
   {
-    label: "Electrical Safety Check & Smoke Alarm Service",
+    label: "Przegląd instalacji elektrycznej i serwis czujników dymu",
     value: SERVICE_KEYS.ElectricalSafetyCheckSmokeAlarmService,
     price: 39000,
   },
   {
-    label: "Smoke Alarm Service & Gas Safety Check",
+    label: "Serwis czujników dymu i przegląd instalacji gazowej",
     value: SERVICE_KEYS.SmokeAlarmServiceAndGasSafetyCheck,
     price: 44000,
   },
@@ -122,26 +125,26 @@ export const SERVICES: Service[] = [
 export const ADDITIONAL_SERVICES_OPTIONS: AdditionalServicesOption[] = [
   {
     id: "yes-with-gas",
-    label: "Yes - With Gas",
+    label: "Tak – z instalacją gazową",
     value: ADDITIONAL_SERVICES_VALUES.WithGas,
     details:
-      "A one-time only maintenance fee of $250 ex GST per rental property you subscribe with.",
+      "Jednorazowa opłata serwisowa w wysokości 250 zł netto za każdą wynajmowaną nieruchomość objętą subskrypcją.",
     oneTimeFee: 25000,
   },
   {
     id: "yes-without-gas",
-    label: "Yes - Without Gas",
+    label: "Tak – bez instalacji gazowej",
     value: ADDITIONAL_SERVICES_VALUES.WithoutGas,
     details:
-      "If the property has no gas, the one-time only maintenance fee will be $125 ex GST.",
+      "Jeśli nieruchomość nie posiada instalacji gazowej, jednorazowa opłata serwisowa wyniesie 125 zł netto.",
     oneTimeFee: 12500,
   },
   {
     id: "no",
-    label: "No",
+    label: "Nie",
     value: ADDITIONAL_SERVICES_VALUES.None,
     details:
-      "Do not include the property address in the property compliance subscription. \nI/WE acknowledge as the landlord, I/WE will take full responsibility for the annual maintenance of the property compliance for the property address.",
+      "Nie uwzględniaj adresu nieruchomości w subskrypcji zgodności. \nJako właściciel nieruchomości przyjmuję pełną odpowiedzialność za coroczne utrzymanie zgodności nieruchomości pod wskazanym adresem.",
   },
 ];
 
@@ -153,37 +156,37 @@ export interface CheckboxOptions {
 
 export const CONFIRM_CHECKBOX_OPTIONS: CheckboxOptions[] = [
   {
-    title: "Fees and Charges",
+    title: "Opłaty i koszty",
     content:
-      "A call-out fee of $180 (ex GST) will be charged in the following scenarios:",
+      "Opłata za przyjazd serwisu w wysokości 180 zł netto zostanie naliczona w następujących przypadkach:",
     list: [
-      "If there is no electricity or gas connected at the property.",
-      "If RCSC is unable to access the property at the confirmed appointment time.",
-      "If the rental provider books a service for a boarding/shared property (Class 3 Buildings) and our Electrician or Plumber identifies this on arrival.",
+      "Gdy w nieruchomości nie ma podłączonej energii elektrycznej lub gazu.",
+      "Gdy nie ma dostępu do nieruchomości w potwierdzonym terminie wizyty.",
+      "Gdy usługodawca zarezerwuje usługę dla nieruchomości typu boarding/shared (budynki klasy 3), a nasz elektryk lub hydraulik potwierdzi to na miejscu.",
     ],
   },
   {
-    title: "Additional Fees",
+    title: "Dodatkowe opłaty",
     list: [
-      "Installation of battery-operated smoke detectors in a new location to meet regulations incurs a fee of $30 (ex GST) per detector.",
-      "Immediate rectification of a dangerous/non-compliant electrical issue starts from $60 (ex GST).",
-      "Decommissioning or capping off an unsafe gas appliance or one leaking carbon monoxide starts from $90 (ex GST).",
+      "Montaż czujnika dymu zasilanego baterią w nowej lokalizacji w celu spełnienia wymogów to koszt 30 zł netto za sztukę.",
+      "Natychmiastowe usunięcie niebezpiecznej lub niezgodnej z przepisami usterki elektrycznej od 60 zł netto.",
+      "Wyłączenie lub odłączenie niebezpiecznego urządzenia gazowego lub takiego, które wykryto wyciek tlenku węgla, od 90 zł netto.",
     ],
   },
   {
-    title: "Payment Terms",
+    title: "Warunki płatności",
     list: [
-      "Funds will be debited from your account after your work order has been reviewed and formally accepted by RCSC.",
-      "Your credit card will only be charged once the work order has been reviewed and formally accepted by RCSC. The credit card details will be used by Stripe for the selected package/s and will not be stored on file by RCSC. No additional charges will be applied.",
-      "All processed payments are non-refundable.",
+      "Środki zostaną pobrane z Twojego konta po sprawdzeniu i formalnej akceptacji zlecenia.",
+      "Twoja karta kredytowa zostanie obciążona dopiero po przeglądzie i akceptacji zlecenia. Dane karty będą użyte przez Stripe do realizacji wybranego pakietu i nie będą przechowywane. Nie zostaną naliczone żadne dodatkowe opłaty.",
+      "Wszystkie zrealizowane płatności są bezzwrotne.",
     ],
   },
   {
-    title: "Credit Card Processing",
+    title: "Przetwarzanie płatności kartą",
     list: [
-      "For payments, we use Stripe, one of the world's best and most trusted third-party providers for online payments.",
-      "At the end of the booking, enter your credit card details for future payment.",
-      "Stripe charges a processing fee of 1.75% + $0.30 for domestic cards or 2.9% + $0.30 for international cards, added on top of RCSC's service charge.",
+      "Do płatności używamy Stripe, jednego z najlepszych i najbardziej zaufanych dostawców płatności online na świecie.",
+      "Po zakończeniu rezerwacji wprowadź dane karty kredytowej do przyszłej płatności.",
+      "Stripe pobiera opłatę za przetwarzanie w wysokości 1,75% + 0,30 zł dla kart krajowych oraz 2,9% + 0,30 zł dla kart zagranicznych, doliczaną do opłaty za usługę.",
     ],
   },
 ];
