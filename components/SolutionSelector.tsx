@@ -2,6 +2,8 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useContext } from "react";
+import { NAV_LABELS } from "~/pages/content/Labels";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import {
   Icons8Apartment,
@@ -22,28 +24,28 @@ interface SquareButtonProps {
 const buttonsData = [
   {
     icon: Icons8Apartment,
-    label: "Property Managers",
-    href: "/solutions-for-property-managers",
+    label: NAV_LABELS.FOR_PROPERTY_MANAGERS,
+    href: ROUTES.PROPERTY_MANAGERS,
   },
   {
     icon: Icons8Residence,
-    label: "Landlords",
-    href: "/solutions-for-landlords",
+    label: NAV_LABELS.FOR_LANDLORDS,
+    href: ROUTES.LANDLORDS,
   },
   {
     icon: Icons8Building,
-    label: "Building Managers",
-    href: "/solutions-for-building-managers",
+    label: NAV_LABELS.FOR_BUILDING_MANAGERS,
+    href: ROUTES.BUILDING_MANAGERS,
   },
   {
     icon: Icons8CountryHouse,
-    label: "Homeowners",
-    href: "/solutions-for-homeowners",
+    label: NAV_LABELS.FOR_HOMEOWNERS,
+    href: ROUTES.HOMEOWNERS,
   },
   {
     icon: Icons8CityBlock,
-    label: "Real Estate",
-    href: "/solutions-for-real-estate",
+    label: NAV_LABELS.FOR_REAL_ESTATE,
+    href: ROUTES.REAL_ESTATE,
   },
 ];
 
@@ -58,7 +60,7 @@ const SquareButton: React.FC<SquareButtonProps> = ({
     <Link
       href={href}
       className={clsx(
-        "group relative flex items-center justify-center overflow-hidden rounded bg-white text-primary-900 shadow-sm transition-transform hover:scale-105 hover:border-primary-600 hover:shadow-md",
+        "group relative flex items-center justify-center overflow-hidden rounded border-2 bg-white text-primary-900 shadow-sm transition-transform hover:scale-105 hover:border-sky-700 hover:shadow-md",
         isMobile ? "h-36 w-44" : "h-48 w-56",
         className
       )}
@@ -81,7 +83,7 @@ const SquareButton: React.FC<SquareButtonProps> = ({
             className
           )}
         >
-          Learn more
+          Więcej
         </span>
         <ArrowLongRightIcon
           className={clsx(
@@ -99,7 +101,7 @@ const SquareButton: React.FC<SquareButtonProps> = ({
 
 const SolutionSelector: React.FC = () => {
   return (
-    <div className="md:justify-content-center grid w-full grid-cols-2 justify-items-center gap-8 text-center xl:grid-cols-5">
+    <div className="md:justify-content-center mb-10 grid w-full grid-cols-2 justify-items-center gap-8 text-center xl:grid-cols-5">
       {buttonsData.map((button) => (
         <SquareButton
           key={button.href}
