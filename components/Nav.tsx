@@ -26,7 +26,7 @@ const navItems: NavItemProps[] = [
         name: NAV_LABELS.COMPLIANCE_SUBSCRIPTION,
         href: ROUTES.COMPLIANCE_SUBSCRIPTION,
         icon: (
-          <Icons8Property className="mr-2 h-8 w-8 flex-shrink-0 group-hover:text-red-500" />
+          <Icons8Property className="mr-2 h-8 w-8 flex-shrink-0 group-hover:text-sky-700" />
         ),
       },
       {
@@ -38,7 +38,7 @@ const navItems: NavItemProps[] = [
         name: NAV_LABELS.ELECTRICAL_CHECK,
         href: ROUTES.ELECTRICAL_CHECK,
         icon: (
-          <IconElectrical className="mr-2 h-8 w-8 flex-shrink-0 group-hover:text-red-500" />
+          <IconElectrical className="mr-2 h-8 w-8 flex-shrink-0 group-hover:text-sky-700" />
         ),
       },
       {

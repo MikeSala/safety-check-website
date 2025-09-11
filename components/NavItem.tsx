@@ -25,14 +25,14 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, subItems }) => {
       : "px-3 py-1.5"
   );
 
-  const activeClasses = "text-red-500";
+  const activeClasses = "text-sky-700";
 
   return !subItems ? (
     <Link
       href={href}
       className={clsx(
         classes,
-        "transition duration-500 hover:text-red-500",
+        "transition duration-500 hover:text-sky-700",
         href === route && activeClasses
       )}
     >
@@ -44,15 +44,23 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, subItems }) => {
         <>
           <Popover.Button
             className={clsx(
-              "group flex items-center gap-2 transition duration-500 hover:text-red-500",
+              "group flex items-center gap-2 transition duration-500 hover:text-sky-700",
               classes,
               subItems.map((item) => item.href).includes(route) && activeClasses
             )}
           >
-            {name}
+            <span
+              className={clsx(
+                "transition duration-500 group-hover:text-sky-700",
+                (subItems.map((item) => item.href).includes(route) || open) &&
+                  activeClasses
+              )}
+            >
+              {name}
+            </span>
             <ChevronDownIcon
               className={clsx(
-                "h-5 w-5 transform text-neutral-700 transition duration-500 ease-in-out group-hover:text-red-500",
+                "h-5 w-5 transform text-neutral-700 transition duration-500 ease-in-out group-hover:text-sky-700",
                 open && "rotate-180",
                 (subItems.map((item) => item.href).includes(route) || open) &&
                   activeClasses
@@ -86,8 +94,9 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, subItems }) => {
                         "text-md group flex items-center gap-2 rounded-none border-b-2 py-4 px-2 transition duration-500 ease-in-out",
                         classes,
                         "last:border-b-0",
-                        item.href === route && activeClasses,
-                        "hover:text-red-500"
+                        route.replace(/\/$/, "") ===
+                          item.href.replace(/\/$/, "") && activeClasses,
+                        "hover:text-sky-700"
                       )}
                       onClick={(e) => {
                         e.stopPropagation();

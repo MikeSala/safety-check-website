@@ -35,7 +35,7 @@ export enum ButtonColor {
 
 const solidColor: Record<ButtonColor, string> = {
   [ButtonColor.Primary]:
-    "bg-primary-800 hover:bg-primary-700 transition duration-300 transition text-white",
+    "bg-primary-800 hover:bg-sky-800 transition duration-300 transition text-white",
   [ButtonColor.Secondary]:
     "bg-primary-200 hover:bg-primary-300 transition duration-300 text-primary-800",
   [ButtonColor.Danger]:
@@ -50,7 +50,7 @@ const solidColor: Record<ButtonColor, string> = {
 
 const outlineColor: Record<ButtonColor, string> = {
   [ButtonColor.Primary]:
-    "border-primary-600 text-primary-700 hover:bg-primary-600 transition duration-300 focus:bg-primary-600 hover:text-white focus:text-white",
+    "border-sky-800 text-primary-800 hover:bg-sky-800 transition duration-300 focus:bg-primary-600 hover:text-white focus:text-white",
   [ButtonColor.Secondary]:
     "border-2 transition duration-300 border-primary-100 text-primary-700",
   [ButtonColor.Danger]:

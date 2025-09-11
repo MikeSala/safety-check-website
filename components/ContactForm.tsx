@@ -35,14 +35,14 @@ export const ContactForm: React.FC = () => {
       });
       if (!response) {
         throw new Error(
-          "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio pod adresem info@przegladinstalacji.pl"
+          "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio pod adresem info@przegladinstalacji.com"
         );
       }
       reset();
       successToast("Formularz został pomyślnie wysłany");
     } catch (error) {
       errorToast(
-        "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio pod adresem info@przegladinstalacji.pl"
+        "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z nami bezpośrednio pod adresem info@przegladinstalacji.com"
       );
     }
   };

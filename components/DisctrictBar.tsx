@@ -20,8 +20,8 @@ interface BarComponentProps {
 }
 
 const DistrictBar: React.FC<BarComponentProps> = ({
-  backgroundColor = "bg-gray-200",
-  textColor = "text-black",
+  backgroundColor = "bg-sky-800",
+  textColor = "text-white",
 }) => {
   const estimatedMinWidth = locations.length * 146;
 
@@ -43,7 +43,7 @@ const DistrictBar: React.FC<BarComponentProps> = ({
               key={index}
               className="flex shrink-0 items-center justify-center gap-2 whitespace-nowrap"
             >
-              <TruckIcon className="h-5 w-5 text-black" />
+              <TruckIcon className="h-5 w-5 text-white" />
               <span className={textColor}>{location}</span>{" "}
             </div>
           ))}
