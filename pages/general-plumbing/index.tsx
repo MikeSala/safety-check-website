@@ -16,7 +16,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
   return (
     <>
       <Banner title={content.seo.title} />
-      <MarginLayout className="mx-auto -mb-20 max-w-7xl">
+      <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
             "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",

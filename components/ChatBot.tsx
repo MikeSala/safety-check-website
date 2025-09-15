@@ -17,7 +17,6 @@ export default function Chatbox() {
   ]);
   const [input, setInput] = useState("");
 
-  // Spłaszczamy dane z sekcji do jednej listy
   const flatFaq = FaqSectionContent.flatMap((section: FaqContent) =>
     section.items.map((item: FaqItem) => ({
       id: item.id,
@@ -54,15 +53,15 @@ export default function Chatbox() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className=" fixed bottom-11 right-24 z-50">
       {isChatOpen ? (
-        <div className="flex h-[400px] w-[350px] flex-col rounded-2xl bg-white shadow-xl">
+        <div className="border-t-1 flex h-[400px] w-[350px] flex-col rounded-lg border-white bg-white shadow-xl">
           {/* Nagłówek z przyciskiem zamknięcia */}
-          <div className="flex items-center justify-between rounded-t-2xl bg-blue-600 px-3 py-2 text-white">
+          <div className="flex items-center justify-between rounded-lg bg-sky-800 px-3 py-2 text-white">
             <span className="font-medium">Chat z nami</span>
             <button
               onClick={() => setIsChatOpen(false)}
-              className="rounded px-2 py-1 transition-colors hover:bg-blue-700"
+              className="rounded px-2 py-1 transition-colors hover:bg-sky-800"
             >
               ✕
             </button>
@@ -73,10 +72,10 @@ export default function Chatbox() {
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`max-w-[80%] rounded-xl p-2 text-sm ${
+                className={`max-w-[80%] rounded p-2 text-sm ${
                   msg.sender === "bot"
                     ? "self-start bg-gray-100 text-gray-800"
-                    : "ml-auto self-end bg-blue-500 text-white"
+                    : "ml-auto self-end bg-sky-800 text-white"
                 }`}
               >
                 {typeof msg.text === "string" ? msg.text : msg.text}
@@ -98,16 +97,16 @@ export default function Chatbox() {
           </div>
 
           {/* Pole tekstowe */}
-          <div className="flex shrink-0 gap-2 rounded-b-2xl border-t bg-white p-2">
+          <div className="flex shrink-0 gap-2 rounded border-t bg-white p-2">
             <input
-              className="flex-1 rounded-lg border border-gray-300 px-2 py-1 text-sm focus:border-transparent focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="flex-1 rounded-lg border border-gray-300 px-2 py-1 text-sm focus:border-transparent focus:outline-none focus:ring-1 focus:ring-sky-700"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Napisz pytanie..."
               onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
             />
             <button
-              className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors hover:bg-blue-600 disabled:opacity-50"
+              className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors hover:bg-sky-800 disabled:opacity-50"
               onClick={() => handleSend(input)}
               disabled={!input.trim()}
             >
