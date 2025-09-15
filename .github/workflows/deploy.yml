@@ -1,0 +1,39 @@
+name: Build and Deploy to FTP
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:    # pozwala ręcznie uruchomić z Actions → Run workflow
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"   # lub 20, dopasuj do projektu
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and export (Next.js static)
+        # env:
+          # Jeśli masz secrets dla env używaj ich tutaj, np:
+          # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+        run: |
+          npm run export
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out            # <-- dla Next.js export. Dla CRA użyj ./build
+          server-dir: /public_html    # <-- katalog docelowy na serwerze
+          # port: ${{ secrets.FTP_PORT }}       # odkomentuj jeśli potrzebujesz
+          # protocol: ftps                     # odkomentuj jeśli używasz FTPS
