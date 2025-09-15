@@ -3,10 +3,10 @@ import clsx from "clsx";
 import React, { useContext, useState } from "react";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { ViewportContext } from "~/providers/ViewportProvider";
-import { FaqSectionConent } from "./FaqContent";
+import { FaqContent } from "./FaqContent";
 
 interface FaqComponentProps {
-  sections: FaqSectionConent[];
+  sections: FaqContent[];
   selectedIds: number[];
 }
 
