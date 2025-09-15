@@ -9,7 +9,7 @@ import Script from "next/script";
 import { ReactElement, ReactNode, useEffect, useRef } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Chatbot from "~/components/ChatBot";
+import Chatbot from "~/components/Faq/ChatBot";
 import ScrollButton from "~/components/ScrollButton";
 import apolloClient from "~/lib/apollo";
 import { GTM_ID, pageview } from "~/lib/gtag";

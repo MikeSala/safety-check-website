@@ -1,9 +1,6 @@
 import Fuse from "fuse.js";
 import { useState } from "react";
-import FaqSectionContent, {
-  FaqContent,
-  FaqItem,
-} from "~/components/Faq/FaqContent";
+import FaqSectionContent, { FaqContent, FaqItem } from "./FaqContent";
 
 interface Message {
   sender: "bot" | "user";
