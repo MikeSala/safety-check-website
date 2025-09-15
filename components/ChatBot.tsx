@@ -3,7 +3,7 @@ import { useState } from "react";
 import FaqSectionContent, {
   FaqContent,
   FaqItem,
-} from "~/components/FAQ/FaqContent";
+} from "~/components/Faq/FaqContent";
 
 interface Message {
   sender: "bot" | "user";

@@ -4,8 +4,8 @@ import { Banner } from "~/components/Banner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import FaqComponent from "../../components/FAQ/Faq";
-import faqSectionsData from "../../components/FAQ/FaqContent";
+import FaqComponent from "../../components/Faq/Faq";
+import faqSectionsData from "../../components/Faq/FaqContent";
 import { faqPageContent as content } from "./content.pl";
 
 const selectedId = [
