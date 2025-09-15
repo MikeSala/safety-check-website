@@ -11,10 +11,10 @@ const nextConfig = {
   images: {
     domains: ["lirp.cdn-website.com"],
   },
-  i18n: {
-    locales: ["pl"],
-    defaultLocale: "pl",
-  },
+  // i18n: {
+  //   locales: ["pl"],
+  //   defaultLocale: "pl",
+  // },
   productionBrowserSourceMaps: true,
   eslint: {
     ignoreDuringBuilds: true,
