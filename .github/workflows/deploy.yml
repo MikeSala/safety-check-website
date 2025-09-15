@@ -3,11 +3,12 @@ name: Build and Deploy to FTP
 on:
   push:
     branches: ["main"]
-  workflow_dispatch: # pozwala ręcznie uruchomić z Actions → Run workflow
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -15,17 +16,16 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18" # lub 20, dopasuj do projektu
+          node-version: "18"
+          cache: "yarn" # lub 'npm' jeśli wolisz npm
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
+        # lub: run: npm ci (jeśli używasz npm)
 
-      - name: Build and export (Next.js static)
-        # env:
-        # Jeśli masz secrets dla env używaj ich tutaj, np:
-        # NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-        run: |
-          npm run export
+      - name: Build and export Next.js
+        run: yarn export
+        # lub: run: npm run export (jeśli używasz npm)
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -33,8 +33,11 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out # <-- dla Next.js export. Dla CRA użyj ./build
-          server-dir: /public_html/przegladinstalacji.com
+          local-dir: ./out/
+          server-dir: /public_html/przegladinstalacji.com/
           dangerous-clean-slate: true
-          # port: ${{ secrets.FTP_PORT }}
-          # protocol: ftps                     # odkomentuj jeśli używasz FTPS
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.next/**
