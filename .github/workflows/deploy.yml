@@ -17,15 +17,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "yarn" # lub 'npm' jeśli wolisz npm
+          cache: "yarn"
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        # lub: run: npm ci (jeśli używasz npm)
 
-      - name: Build and export Next.js
-        run: yarn export
-        # lub: run: npm run export (jeśli używasz npm)
+      - name: Build Next.js
+        run: yarn build
+
+      - name: Export static files
+        run: |
+          mkdir -p export
+          # Skopiuj static files
+          cp -r .next/static export/_next/static/
+          cp -r public/* export/ 2>/dev/null || :
+          # Skopiuj HTML files z .next/server/pages
+          find .next/server/pages -name "*.html" -exec cp {} export/ \;
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -33,11 +40,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out/
+          local-dir: ./export/
           server-dir: /public_html/przegladinstalacji.com/
           dangerous-clean-slate: true
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.next/**
