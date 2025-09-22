@@ -12,6 +12,7 @@ import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { NextPageWithLayout } from "~/pages/_app";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { PropertyComplianceSubscriptionContent as content } from "./content.pl";
 
@@ -48,7 +49,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
               </p>
             ))}
             <InspectionAreas
-              ctaHref="/zarezerwuj-przeglad"
+              ctaHref={ROUTES.BOOK_NOW}
               ctaLabel="Skontaktuj się z nami"
             />
           </div>

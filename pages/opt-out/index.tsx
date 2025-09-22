@@ -33,7 +33,7 @@ const errorMessage: PageMessageProps = {
   mainContent:
     "If the problem persists, please contact our staff through the contact form.",
   link: {
-    href: "/contact-us",
+    href: "/kontakt",
     text: "Contact form",
   },
 };

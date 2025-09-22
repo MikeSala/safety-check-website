@@ -4,6 +4,7 @@ import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/Faq/Faq";
 import FaqSectionsData from "~/components/Faq/FaqContent";
+import InclusionsExclusions from "~/components/InclusionsExclusions";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
@@ -12,14 +13,15 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForPropertyManagersContent as content } from "~/pages/solutions-for-property-managers/content.pl";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
+import { SmokeSafetyCheckContent as content } from "./content.pl";
 
-const selectedId = [111, 112, 113, 114, 115];
+const selectedId = [11, 12, 13, 14, 15, 16, 17];
 
-const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
+const SmokeSafetyCheckPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
+
   return (
     <>
       <Banner title={content.seo.title} />
@@ -30,9 +32,9 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
             isMobile ? "gap-3 p-3" : "gap-8 p-8 "
           )}
         >
-          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
+          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/Mobile/smoke_2.webp"
+              src="/RCSC/smoke_4.jpg"
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -46,24 +48,22 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
                 {p}
               </p>
             ))}
+
             <InspectionAreas
-              ctaHref="book-now"
-              ctaLabel="Skontaktuj się z nami"
+              ctaLabel="Zarezerwuj przegląd instalacji przeciwpożarowej"
+              ctaHref={ROUTES.BOOK_NOW}
             />
           </div>
         </div>
       </MarginLayout>
-
-      <MarginLayout className="mx-auto -mt-20  max-w-7xl">
+      <MarginLayout className="mx-auto max-w-7xl">
         <div
           className={clsx(
-            "mx-auto flex max-w-7xl flex-col-reverse rounded bg-white shadow-sm",
-            isMobile
-              ? "-mb-10 gap-3 p-3"
-              : "-mb-20 gap-8 p-8 md:grid md:grid-cols-2"
+            "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
+            isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
           )}
         >
-          <div className="text-gray-700">
+          <div className="flex flex-col text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
               {content.section2.title}
             </h3>
@@ -72,20 +72,19 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
                 {p}
               </p>
             ))}
-            <InfoLinks />
           </div>
-
-          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
+          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/gas_9.webp"
+              src="/RCSC/smoke_1.webp"
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
         </div>
       </MarginLayout>
 
-      <SubscriptionServiceBanner />
+      <InclusionsExclusions category="Smoke Alarm Safety Checks" />
       <PropertyComplianceForm />
+      <SubscriptionServiceBanner />
       <ServiceBoxes />
 
       <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
@@ -93,9 +92,7 @@ const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
   );
 };
 
-SolutionsForPropertyManagersPage.getLayout = function GetLayout(
-  page: ReactElement
-) {
+SmokeSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
@@ -107,4 +104,4 @@ SolutionsForPropertyManagersPage.getLayout = function GetLayout(
   );
 };
 
-export default SolutionsForPropertyManagersPage;
+export default SmokeSafetyCheckPage;

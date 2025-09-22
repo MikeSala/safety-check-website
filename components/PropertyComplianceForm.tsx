@@ -211,7 +211,7 @@ const PropertyComplianceForm: NextPageWithLayout = () => {
           other bookings and inquiries, please get in touch with RCSC through
           the{" "}
           <Link
-            href="/contact-us/"
+            href="/kontakt/"
             title="Contact Us"
             className="cursor-pointer rounded-none border-b-2 border-blue-500 font-bold text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
           >

@@ -10,7 +10,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { PhoneNumberLink } from "~/pages/solutions-for-building-managers";
+import { PhoneNumberLink } from "~/pages/dla-administratorow-budynkow";
 
 const selectedId = [81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
 
@@ -78,7 +78,7 @@ const InterconnectedSmokeAlarmsPage: NextPageWithLayout = () => {
             <p className="mb-4">
               If you are not sure how many alarms your property needs, you can{" "}
               <Link
-                href="/contact-us"
+                href="/kontakt"
                 title="Contact Us"
                 className="cursor-pointer font-bold text-blue-500 hover:text-blue-400"
               >

@@ -1,6 +1,6 @@
 import React from "react";
 import { switchboardText } from "~/components/SwitchboardInclusionsExclusions";
-import { ServiceItem, serviceItems } from "~/pages/inclusions-exclusions/index";
+import { ServiceItem, serviceItems } from "~/pages/wlaczenia-wylaczenia/index";
 
 const InclusionsExclusionForBooking: React.FC = () => {
   return (

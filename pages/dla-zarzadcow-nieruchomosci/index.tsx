@@ -13,12 +13,13 @@ import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForRealEstateContent as content } from "~/pages/solutions-for-real-estate/content.pl";
+import { SolutionsForPropertyManagersContent as content } from "~/pages/dla-zarzadcow-nieruchomosci/content.pl";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
-const selectedId = [141, 142, 143, 144, 145];
+const selectedId = [111, 112, 113, 114, 115];
 
-const SolutionsForRealEstatePage: NextPageWithLayout = () => {
+const SolutionsForPropertyManagersPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
@@ -41,40 +42,37 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
             <h3 className="mb-4 text-xl font-bold h3">
               {content.section1.title}
             </h3>
-            <p className="mb-4">
-              {content.section1.paragraphs.map((p, i) => (
-                <p key={i} className="mb-2">
-                  {p}
-                </p>
-              ))}
-            </p>
+            {content.section1.paragraphs.map((p, i) => (
+              <p key={i} className="mb-2">
+                {p}
+              </p>
+            ))}
             <InspectionAreas
-              ctaHref="book-now"
+              ctaHref={ROUTES.BOOK_NOW}
               ctaLabel="Skontaktuj się z nami"
             />
           </div>
         </div>
       </MarginLayout>
 
-      <MarginLayout className="mx-auto -mt-20 max-w-7xl">
+      <MarginLayout className="mx-auto -mt-20  max-w-7xl">
         <div
           className={clsx(
-            "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
+            "mx-auto flex max-w-7xl flex-col-reverse rounded bg-white shadow-sm",
+            isMobile
+              ? "-mb-10 gap-3 p-3"
+              : "-mb-20 gap-8 p-8 md:grid md:grid-cols-2"
           )}
         >
           <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
               {content.section2.title}
             </h3>
-            <p className="mb-4">
-              {" "}
-              {content.section2.paragraphs.map((p, i) => (
-                <p key={i} className="mb-2">
-                  {p}
-                </p>
-              ))}
-            </p>
+            {content.section2.paragraphs.map((p, i) => (
+              <p key={i} className="mb-2">
+                {p}
+              </p>
+            ))}
             <InfoLinks />
           </div>
 
@@ -86,6 +84,7 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
           </div>
         </div>
       </MarginLayout>
+
       <SubscriptionServiceBanner />
       <PropertyComplianceForm />
       <ServiceBoxes />
@@ -95,7 +94,9 @@ const SolutionsForRealEstatePage: NextPageWithLayout = () => {
   );
 };
 
-SolutionsForRealEstatePage.getLayout = function GetLayout(page: ReactElement) {
+SolutionsForPropertyManagersPage.getLayout = function GetLayout(
+  page: ReactElement
+) {
   return (
     <MainLayout>
       <NextSeo
@@ -107,4 +108,4 @@ SolutionsForRealEstatePage.getLayout = function GetLayout(page: ReactElement) {
   );
 };
 
-export default SolutionsForRealEstatePage;
+export default SolutionsForPropertyManagersPage;

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { NextSeo } from "next-seo";
-import Link from "next/link";
+
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/Faq/Faq";
@@ -14,31 +14,13 @@ import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForBuildingManagersContent as content } from "~/pages/solutions-for-building-managers/content.pl";
+import { SolutionsForLandlordsContent as content } from "~/pages/dla-wlascicieli-mieszkan/content.pl";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
-const selectedId = [131, 132, 133, 134, 135];
+const selectedId = [101, 102, 103, 104, 105];
 
-export function PhoneNumberLink() {
-  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.location.href = `tel:${phoneNumber}`;
-  };
-
-  return (
-    <Link
-      href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
-      onClick={handleClick}
-      title="Call Us"
-      className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-    >
-      {phoneNumber}
-    </Link>
-  );
-}
-const SolutionsForBuildingManagersPage: NextPageWithLayout = () => {
+const SolutionsForLandlordsPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
@@ -67,7 +49,7 @@ const SolutionsForBuildingManagersPage: NextPageWithLayout = () => {
               </p>
             ))}
             <InspectionAreas
-              ctaHref="book-now"
+              ctaHref={ROUTES.BOOK_NOW}
               ctaLabel="Skontaktuj się z nami"
             />
           </div>
@@ -101,7 +83,6 @@ const SolutionsForBuildingManagersPage: NextPageWithLayout = () => {
           </div>
         </div>
       </MarginLayout>
-
       <SubscriptionServiceBanner />
       <PropertyComplianceForm />
       <ServiceBoxes />
@@ -111,9 +92,7 @@ const SolutionsForBuildingManagersPage: NextPageWithLayout = () => {
   );
 };
 
-SolutionsForBuildingManagersPage.getLayout = function GetLayout(
-  page: ReactElement
-) {
+SolutionsForLandlordsPage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
@@ -125,4 +104,4 @@ SolutionsForBuildingManagersPage.getLayout = function GetLayout(
   );
 };
 
-export default SolutionsForBuildingManagersPage;
+export default SolutionsForLandlordsPage;

@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { NextSeo } from "next-seo";
-
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/Faq/Faq";
@@ -14,12 +13,13 @@ import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForLandlordsContent as content } from "~/pages/solutions-for-landlords/content.pl";
+import { SolutionsForRealEstateContent as content } from "~/pages/dla-biur-nieruchomosci/content.pl";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
-const selectedId = [101, 102, 103, 104, 105];
+const selectedId = [141, 142, 143, 144, 145];
 
-const SolutionsForLandlordsPage: NextPageWithLayout = () => {
+const SolutionsForRealEstatePage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
   return (
     <>
@@ -42,13 +42,15 @@ const SolutionsForLandlordsPage: NextPageWithLayout = () => {
             <h3 className="mb-4 text-xl font-bold h3">
               {content.section1.title}
             </h3>
-            {content.section1.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
+            <p className="mb-4">
+              {content.section1.paragraphs.map((p, i) => (
+                <p key={i} className="mb-2">
+                  {p}
+                </p>
+              ))}
+            </p>
             <InspectionAreas
-              ctaHref="book-now"
+              ctaHref={ROUTES.BOOK_NOW}
               ctaLabel="Skontaktuj się z nami"
             />
           </div>
@@ -66,11 +68,14 @@ const SolutionsForLandlordsPage: NextPageWithLayout = () => {
             <h3 className="mb-4 text-xl font-bold h3">
               {content.section2.title}
             </h3>
-            {content.section2.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
+            <p className="mb-4">
+              {" "}
+              {content.section2.paragraphs.map((p, i) => (
+                <p key={i} className="mb-2">
+                  {p}
+                </p>
+              ))}
+            </p>
             <InfoLinks />
           </div>
 
@@ -91,7 +96,7 @@ const SolutionsForLandlordsPage: NextPageWithLayout = () => {
   );
 };
 
-SolutionsForLandlordsPage.getLayout = function GetLayout(page: ReactElement) {
+SolutionsForRealEstatePage.getLayout = function GetLayout(page: ReactElement) {
   return (
     <MainLayout>
       <NextSeo
@@ -103,4 +108,4 @@ SolutionsForLandlordsPage.getLayout = function GetLayout(page: ReactElement) {
   );
 };
 
-export default SolutionsForLandlordsPage;
+export default SolutionsForRealEstatePage;

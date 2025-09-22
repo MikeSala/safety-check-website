@@ -1357,7 +1357,7 @@ const FaqSectionsContent: FaqContent[] = [
               Rekomendujemy naszą usługę{" "}
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc/"
               >
                 Property Compliance Subscription
               </Link>
@@ -1385,7 +1385,7 @@ const FaqSectionsContent: FaqContent[] = [
               skomplikowane, skorzystaj z{" "}
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc/"
               >
                 Property Compliance Subscription
               </Link>
@@ -1468,7 +1468,7 @@ const FaqSectionsContent: FaqContent[] = [
               Rekomendujemy naszą usługę
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc/"
               >
                 Property Compliance Subscription
               </Link>
@@ -1502,7 +1502,7 @@ const FaqSectionsContent: FaqContent[] = [
               Aby temu zapobiec, skorzystaj z
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc/"
               >
                 Property Compliance Subscription
               </Link>
@@ -1574,7 +1574,7 @@ const FaqSectionsContent: FaqContent[] = [
               Polecamy naszą
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc/"
               >
                 Property Compliance Subscription
               </Link>
@@ -1604,7 +1604,7 @@ const FaqSectionsContent: FaqContent[] = [
               Aby ułatwić przestrzeganie przepisów, oferujemy
               <Link
                 className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
-                href="/property-compliance-subscription/"
+                href="/abonament-na-zgodnosc/"
               >
                 Property Compliance Subscription
               </Link>

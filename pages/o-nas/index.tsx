@@ -7,6 +7,7 @@ import { InspectionAreas } from "~/components/InspectionAreas";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { NextPageWithLayout } from "~/pages/_app";
+import { ROUTES } from "~/pages/content/Routes";
 import { AboutUsPageContent as content } from "./content.pl";
 
 const AboutPage: NextPageWithLayout = () => {
@@ -35,7 +36,7 @@ const AboutPage: NextPageWithLayout = () => {
           </Button>
 
           <InspectionAreas
-            ctaHref="zarezerwuj-przeglad"
+            ctaHref={ROUTES.BOOK_NOW}
             ctaLabel="Zarezerwuj przegląd"
           />
         </div>

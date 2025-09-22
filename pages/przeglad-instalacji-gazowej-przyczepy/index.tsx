@@ -10,7 +10,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { caravanGasContent as content } from "~/pages/caravan-gas-compliance-check/content.pl";
+import { caravanGasContent as content } from "~/pages/przeglad-instalacji-gazowej-przyczepy/content.pl";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight, Icons8checkmark } from "~/src/components/icons";
 

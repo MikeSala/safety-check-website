@@ -7,7 +7,7 @@ import {
 import {
   ServiceItem,
   serviceItems,
-} from "~/pages/inclusions-exclusions/content.pl";
+} from "~/pages/wlaczenia-wylaczenia/content.pl";
 
 const columnHelper = createColumnHelper<ServiceItem>();
 const columns = [

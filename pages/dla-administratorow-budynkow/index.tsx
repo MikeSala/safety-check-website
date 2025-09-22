@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 import { ReactElement, useContext } from "react";
 import { Banner } from "~/components/Banner";
 import FaqComponent from "~/components/Faq/Faq";
 import FaqSectionsData from "~/components/Faq/FaqContent";
-import InclusionsExclusions from "~/components/InclusionsExclusions";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
@@ -13,14 +13,34 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
+import InfoLinks from "~/pages/InfoLinks";
+import { SolutionsForBuildingManagersContent as content } from "~/pages/dla-administratorow-budynkow/content.pl";
+import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
-import { SmokeSafetyCheckContent as content } from "./content.pl";
 
-const selectedId = [11, 12, 13, 14, 15, 16, 17];
+const selectedId = [131, 132, 133, 134, 135];
 
-const SmokeSafetyCheckPage: NextPageWithLayout = () => {
+export function PhoneNumberLink() {
+  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.location.href = `tel:${phoneNumber}`;
+  };
+
+  return (
+    <Link
+      href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
+      onClick={handleClick}
+      title="Call Us"
+      className="mb-4 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
+    >
+      {phoneNumber}
+    </Link>
+  );
+}
+const SolutionsForBuildingManagersPage: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
-
   return (
     <>
       <Banner title={content.seo.title} />
@@ -31,9 +51,9 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
             isMobile ? "gap-3 p-3" : "gap-8 p-8 "
           )}
         >
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
+          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/smoke_4.jpg"
+              src="/RCSC/Mobile/smoke_2.webp"
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -47,22 +67,22 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
                 {p}
               </p>
             ))}
-
             <InspectionAreas
-              ctaLabel="Zarezerwuj przegląd instalacji przeciwpożarowej"
-              ctaHref="/zarezerwuj-przeglad"
+              ctaHref={ROUTES.BOOK_NOW}
+              ctaLabel="Skontaktuj się z nami"
             />
           </div>
         </div>
       </MarginLayout>
-      <MarginLayout className="mx-auto max-w-7xl">
+
+      <MarginLayout className="mx-auto -mt-20 max-w-7xl">
         <div
           className={clsx(
             "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
             isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
           )}
         >
-          <div className="flex flex-col text-gray-700">
+          <div className="text-gray-700">
             <h3 className="mb-4 text-xl font-bold h3">
               {content.section2.title}
             </h3>
@@ -71,19 +91,20 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
                 {p}
               </p>
             ))}
+            <InfoLinks />
           </div>
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
+
+          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/smoke_1.webp"
+              src="/RCSC/gas_9.webp"
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
         </div>
       </MarginLayout>
 
-      <InclusionsExclusions category="Smoke Alarm Safety Checks" />
-      <PropertyComplianceForm />
       <SubscriptionServiceBanner />
+      <PropertyComplianceForm />
       <ServiceBoxes />
 
       <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
@@ -91,7 +112,9 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
   );
 };
 
-SmokeSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
+SolutionsForBuildingManagersPage.getLayout = function GetLayout(
+  page: ReactElement
+) {
   return (
     <MainLayout>
       <NextSeo
@@ -103,4 +126,4 @@ SmokeSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
   );
 };
 
-export default SmokeSafetyCheckPage;
+export default SolutionsForBuildingManagersPage;

@@ -35,7 +35,7 @@ const CheckoutResultPage: NextPageWithLayout = () => {
             </p>
             <p>
               If the problem persists, please contact our staff through the{" "}
-              <Link href="/contact-us" className="link">
+              <Link href="/kontakt" className="link">
                 contact form
               </Link>
               .
