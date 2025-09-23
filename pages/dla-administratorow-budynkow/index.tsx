@@ -14,7 +14,7 @@ import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForBuildingManagersContent as content } from "~/pages/dla-administratorow-budynkow/content.pl";
+import { SolutionsForBuildingManagersContent as content } from "~/content/dla-administratorow-budynkow/content.pl";
 import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 

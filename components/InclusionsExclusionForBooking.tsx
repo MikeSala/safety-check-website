@@ -3,7 +3,7 @@ import { switchboardText } from "~/components/SwitchboardInclusionsExclusions";
 import {
   ServiceItem,
   serviceItems,
-} from "~/pages/wlaczenia-wylaczenia/content.pl";
+} from "~/content/wlaczenia-wylaczenia/content.pl";
 
 const InclusionsExclusionForBooking: React.FC = () => {
   return (

@@ -13,7 +13,7 @@ import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForHomeownersContent as content } from "~/pages/dla-wlascicieli-domow/content.pl";
+import { SolutionsForHomeownersContent as content } from "~/content/dla-wlascicieli-domow/content.pl";
 import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 

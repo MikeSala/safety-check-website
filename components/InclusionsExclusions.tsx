@@ -1,7 +1,7 @@
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import React, { useContext } from "react";
-import { serviceItems } from "~/pages/wlaczenia-wylaczenia/content.pl";
+import { serviceItems } from "~/content/wlaczenia-wylaczenia/content.pl";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 interface Props {

@@ -10,7 +10,7 @@ import { NextPageWithLayout } from "~/pages/_app";
 import {
   ServiceItem,
   serviceItems,
-} from "~/pages/wlaczenia-wylaczenia/content.pl";
+} from "~/content/wlaczenia-wylaczenia/content.pl";
 
 type ColumnProps = {
   listItems: string[];

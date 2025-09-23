@@ -8,7 +8,7 @@ import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import { Icons8checkmark } from "~/src/components/icons";
-import { legislationPageContent as content } from "./content.pl";
+import { legislationPageContent as content } from "~/content/legislacja/content.pl";
 
 const selectedId = [151, 152, 153];
 

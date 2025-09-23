@@ -14,7 +14,7 @@ import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
-import { SwitchboardUpgradeContent as content } from "./content.pl";
+import { SwitchboardUpgradeContent as content } from "~/content/modernizacja-rozdzielnicy/content.pl";
 
 const selectedId = [71, 72, 73, 74, 75, 76];
 

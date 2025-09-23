@@ -16,7 +16,7 @@ import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
-import { GasSafetyCheckContent as content } from "./content.pl";
+import { GasSafetyCheckContent as content } from "~/content/przeglad-instalacji-gazowej/content.pl";
 
 const selectedId = [
   41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,

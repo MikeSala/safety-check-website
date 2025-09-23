@@ -15,7 +15,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
-import { SmokeSafetyCheckContent as content } from "./content.pl";
+import { SmokeSafetyCheckContent as content } from "~/content/przeglad-czujnikow-dymu/content.pl";
 
 const selectedId = [11, 12, 13, 14, 15, 16, 17];
 

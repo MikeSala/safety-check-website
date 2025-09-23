@@ -6,7 +6,7 @@ import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import FaqComponent from "../../components/Faq/Faq";
 import faqSectionsData from "../../components/Faq/FaqContent";
-import { faqPageContent as content } from "./content.pl";
+import { faqPageContent as content } from "~/content/faq/content.pl";
 
 const selectedId = [
   1, 2, 3, 4, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 28, 29,

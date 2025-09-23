@@ -14,7 +14,7 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
-import { PropertyComplianceSubscriptionContent as content } from "./content.pl";
+import { PropertyComplianceSubscriptionContent as content } from "~/content/abonament-na-zgodnosc/content.pl";
 
 const selectedId = [91, 92, 93, 94, 95, 96, 97, 98];
 

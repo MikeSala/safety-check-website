@@ -5,7 +5,7 @@ import { Banner } from "~/components/Banner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { privacyPolicyContent as content } from "./content.pl";
+import { privacyPolicyContent as content } from "~/content/polityka-prywatnosci/content.pl";
 
 const PrivacyPolicy: NextPageWithLayout = () => {
   return (

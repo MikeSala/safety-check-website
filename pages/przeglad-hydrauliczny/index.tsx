@@ -9,7 +9,7 @@ import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight, Icons8checkmark } from "~/src/components/icons";
-import { GeneralPlumbingContent as content } from "./content.pl";
+import { GeneralPlumbingContent as content } from "~/content/przeglad-hydrauliczny/content.pl";
 
 const GeneralPlumbing: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);

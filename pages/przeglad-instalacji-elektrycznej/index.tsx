@@ -16,7 +16,7 @@ import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/pages/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8checkmark } from "~/src/components/icons";
-import { ElectricalSafetyCheckContent as content } from "./content.pl";
+import { ElectricalSafetyCheckContent as content } from "~/content/przeglad-instalacji-elektrycznej/content.pl";
 
 const selectedId = [21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33];
 

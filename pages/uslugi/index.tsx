@@ -11,7 +11,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { servicesPageContent as content } from "./content.pl";
+import { servicesPageContent as content } from "~/content/uslugi/content.pl";
 
 const selectedId = [
   1, 2, 3, 4, 11, 12, 15, 21, 22, 23, 41, 42, 43, 44, 71, 72, 81, 83, 91, 93,
