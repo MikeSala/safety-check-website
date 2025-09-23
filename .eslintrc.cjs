@@ -1,4 +1,7 @@
 module.exports = {
+  images: {
+    unoptimized: true,
+  },
   env: {
     browser: true,
     es2021: true,
