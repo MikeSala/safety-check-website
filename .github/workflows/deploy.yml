@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "yarn" # lub 'npm' jeśli wolisz npm
+          cache: "yarn"
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
