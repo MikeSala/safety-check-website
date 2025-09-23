@@ -4,7 +4,7 @@ import Link from "next/link";
 
 type Props = {
   className?: string;
-  isWhiteLogo?: boolean; // Nowa właściwość
+  isWhiteLogo?: boolean;
   height: number;
   width: number;
 };
@@ -22,14 +22,14 @@ export const LogoButton: React.FC<Props> = ({
       title="Home"
     >
       <Image
-        src="/logo-white.webp"
+        src="/logo-przegladinstalacji.com.webp"
         height={height}
         width={width}
         draggable={false}
         alt=""
         className={isWhiteLogo ? "invert filter" : ""}
       />
-      <span className="sr-only">Go to RCSC home</span>
+      <span className="sr-only">Przejdź na stronę główną</span>
     </Link>
   );
 };
