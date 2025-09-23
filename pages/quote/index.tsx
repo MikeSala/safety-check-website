@@ -1,4 +1,4 @@
-import { gql, useMutation } from "@apollo/client";
+import { gql, useLazyQuery, useMutation } from "@apollo/client";
 import { ArrowDownTrayIcon } from "@heroicons/react/20/solid";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
@@ -14,7 +14,6 @@ import {
 } from "~/components/ConfirmationCheckboxDialog";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
-import client from "~/lib/apollo";
 import { errorToast } from "~/utils/toast";
 
 const GET_QUOTE_SERVICE = gql`
@@ -50,46 +49,7 @@ const PDFViewer = dynamic(() => import("../../components/PDFViewer"), {
   ssr: false,
 });
 
-// TODO: Fix me
-// @ts-ignore
-export const getServerSideProps = async ({ context, query }) => {
-  const q = query?.q;
-  const quoteDataResponse = await client
-    .query({
-      query: GET_QUOTE_SERVICE,
-      variables: {
-        q,
-      },
-    })
-    .catch((error) => {
-      console.log(JSON.stringify(error, null, 2));
-    });
-
-  const quotePDFResponse = await client
-    .query({
-      query: GET_QUOTE_PDF_SERVICE,
-      variables: {
-        q,
-      },
-    })
-    .catch((error) => {
-      console.log(JSON.stringify(error, null, 2));
-    });
-
-  return {
-    props: {
-      quoteDataResponse: quoteDataResponse ?? {},
-      quotePDFResponse: quotePDFResponse ?? {},
-    },
-  };
-};
-
-type QuotePageProps = {
-  quoteDataResponse: any;
-  quotePDFResponse: any;
-};
-
-const QuotePage = ({ quoteDataResponse, quotePDFResponse }: QuotePageProps) => {
+const QuotePage = () => {
   const [quoteData, setQuoteData] = useState(null);
   const [pdf, setPdf] = useState("");
   const [getQuoteEmailHref, setQuoteEmailHref] = useState("");
@@ -100,21 +60,36 @@ const QuotePage = ({ quoteDataResponse, quotePDFResponse }: QuotePageProps) => {
 
   const router = useRouter();
   const query = router.query;
+  const qParam = typeof query.q === "string" ? query.q : undefined;
+
+  const [fetchQuoteData, { data: quoteDataResult }] = useLazyQuery(
+    GET_QUOTE_SERVICE
+  );
+  const [fetchQuotePdf, { data: quotePdfResult }] = useLazyQuery(
+    GET_QUOTE_PDF_SERVICE
+  );
 
   useEffect(() => {
-    if (quoteDataResponse) {
-      setQuoteData(quoteDataResponse?.data?.xeroQuoteForSite?.quoteDataForSite);
-      setQuoteEmailHref(
-        `mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}?subject=${quoteDataResponse?.data?.xeroQuoteForSite?.quoteDataForSite?.reference} - Regarding quote number ${quoteDataResponse?.data?.xeroQuoteForSite?.quoteDataForSite?.quoteNumber}`
-      );
-    }
-  }, [quoteDataResponse]);
+    if (!router.isReady || !qParam) return;
+
+    fetchQuoteData({ variables: { q: qParam } });
+    fetchQuotePdf({ variables: { q: qParam } });
+  }, [router.isReady, qParam, fetchQuoteData, fetchQuotePdf]);
 
   useEffect(() => {
-    if (quotePDFResponse) {
-      setPdf(quotePDFResponse?.data?.xeroQuotePDFForSite?.pdf);
-    }
-  }, [quotePDFResponse]);
+    if (!quoteDataResult?.xeroQuoteForSite?.quoteDataForSite) return;
+
+    const data = quoteDataResult.xeroQuoteForSite.quoteDataForSite;
+    setQuoteData(data);
+    setQuoteEmailHref(
+      `mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}?subject=${data?.reference} - Regarding quote number ${data?.quoteNumber}`
+    );
+  }, [quoteDataResult]);
+
+  useEffect(() => {
+    if (!quotePdfResult?.xeroQuotePDFForSite?.pdf) return;
+    setPdf(quotePdfResult.xeroQuotePDFForSite.pdf);
+  }, [quotePdfResult]);
 
   const [submitQuoteApprovalCustomer, { data, loading, error }] = useMutation(
     QUOTE_APPROVAL_SERVICE

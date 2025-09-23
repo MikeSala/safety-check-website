@@ -122,15 +122,26 @@ async function fetchPdfAsBase64(url: RequestInfo | URL) {
     if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.statusText}`);
 
     const arrayBuffer = await res.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    return buffer.toString("base64");
+    const bytes = new Uint8Array(arrayBuffer);
+    let binary = "";
+    const chunkSize = 0x8000;
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+      const chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode(...chunk);
+    }
+
+    if (typeof window === "undefined") {
+      return "";
+    }
+
+    return window.btoa(binary);
   } catch (error) {
     console.error("Error fetching or converting PDF:", error);
     return "";
   }
 }
 
-async function fetchQuoteData(id: string): Promise<QuoteResponse | {}> {
+async function fetchQuoteData(id: string): Promise<QuoteResponse | null> {
   try {
     return await client.query({
       query: GET_QUOTE_SERVICE,
@@ -143,41 +154,14 @@ async function fetchQuoteData(id: string): Promise<QuoteResponse | {}> {
     });
   } catch (error) {
     console.error(JSON.stringify(error, null, 2));
-    return {};
+    return null;
   }
 }
 
-// TODO: Fix me
-// @ts-ignore
-export async function getServerSideProps({ query }) {
-  const { id } = query;
-  const quoteDataResponse = (await fetchQuoteData(id)) as QuoteResponse;
-
-  const pdfDownloadUrl =
-    quoteDataResponse?.data?.quoteForBillableContact?.node.xeroQuote
-      .pdfDownloadUrl;
-
-  let pdfBase64 = "";
-  if (pdfDownloadUrl) {
-    pdfBase64 = await fetchPdfAsBase64(pdfDownloadUrl);
-  }
-
-  return {
-    props: {
-      quoteDataResponse: quoteDataResponse ?? {},
-      quotePDFResponse: pdfBase64,
-    },
-  };
-}
-
-type QuotePageProps = {
-  quoteDataResponse: any;
-  quotePDFResponse: string;
-};
-
-const QuotePage = ({ quoteDataResponse, quotePDFResponse }: QuotePageProps) => {
+const QuotePage = () => {
   const router = useRouter();
   const { id } = router.query;
+  const quoteId = typeof id === "string" ? id : "";
   const [quoteData, setQuoteData] = useState<any>(null);
   const [pdf, setPdf] = useState("");
   const [getQuoteEmailHref, setQuoteEmailHref] = useState("");
@@ -187,21 +171,27 @@ const QuotePage = ({ quoteDataResponse, quotePDFResponse }: QuotePageProps) => {
   );
 
   useEffect(() => {
-    if (quoteDataResponse) {
+    if (!router.isReady || !quoteId) return;
+
+    (async () => {
+      const quoteDataResponse = await fetchQuoteData(quoteId);
       const quoteResData =
         quoteDataResponse?.data?.quoteForBillableContact?.node;
-      setQuoteData(quoteResData);
-      setQuoteEmailHref(
-        `mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}?subject=${quoteResData?.reference} - Regarding quote number ${quoteResData?.quoteNumber}`
-      );
-    }
-  }, [quoteDataResponse]);
 
-  useEffect(() => {
-    if (quotePDFResponse) {
-      setPdf(quotePDFResponse);
-    }
-  }, [quotePDFResponse]);
+      if (quoteResData) {
+        setQuoteData(quoteResData);
+        setQuoteEmailHref(
+          `mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}?subject=${quoteResData?.reference} - Regarding quote number ${quoteResData?.quoteNumber}`
+        );
+
+        const pdfDownloadUrl = quoteResData.xeroQuote?.pdfDownloadUrl;
+        if (pdfDownloadUrl) {
+          const base64 = await fetchPdfAsBase64(pdfDownloadUrl);
+          setPdf(base64);
+        }
+      }
+    })();
+  }, [router.isReady, quoteId]);
 
   const [submitQuoteApprovalForBillableContact, { data, loading, error }] =
     useMutation(QUOTE_APPROVAL_SERVICE, { client });
@@ -280,7 +270,7 @@ const QuotePage = ({ quoteDataResponse, quotePDFResponse }: QuotePageProps) => {
       variables: {
         input: {
           isApproved,
-          quoteId: id,
+          quoteId,
         },
       },
     })
