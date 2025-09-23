@@ -4,8 +4,8 @@ import React, { ReactNode, useContext } from "react";
 import ContactButtons from "~/components/ContactButtons";
 import DistrictBar from "~/components/DisctrictBar";
 import { LogoButton } from "~/components/LogoButton";
-import { NAV_LABELS } from "~/pages/content/Labels";
-import { ROUTES } from "~/pages/content/Routes";
+import { NAV_LABELS } from "~/content/Labels";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 export const Footer: React.FC = () => {

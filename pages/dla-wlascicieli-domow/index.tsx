@@ -14,7 +14,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
 import { SolutionsForHomeownersContent as content } from "~/content/dla-wlascicieli-domow/content.pl";
-import { ROUTES } from "~/pages/content/Routes";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const selectedId = [121, 122, 123, 124, 125];

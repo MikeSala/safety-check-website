@@ -12,7 +12,7 @@ import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { NextPageWithLayout } from "~/pages/_app";
-import { ROUTES } from "~/pages/content/Routes";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { PropertyComplianceSubscriptionContent as content } from "~/content/abonament-na-zgodnosc/content.pl";
 

@@ -2,8 +2,8 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { NAV_LABELS } from "~/pages/content/Labels";
-import { ROUTES } from "~/pages/content/Routes";
+import { NAV_LABELS } from "~/content/Labels";
+import { ROUTES } from "~/content/Routes";
 import {
   IconElectrical,
   Icons8Fire,

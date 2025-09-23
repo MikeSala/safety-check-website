@@ -2,8 +2,8 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useContext } from "react";
-import { NAV_LABELS } from "~/pages/content/Labels";
-import { ROUTES } from "~/pages/content/Routes";
+import { NAV_LABELS } from "~/content/Labels";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import {
   Icons8Apartment,

@@ -13,7 +13,7 @@ import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
-import { ROUTES } from "~/pages/content/Routes";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
 import { GasSafetyCheckContent as content } from "~/content/przeglad-instalacji-gazowej/content.pl";

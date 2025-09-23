@@ -14,7 +14,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
 import { SolutionsForRealEstateContent as content } from "~/content/dla-biur-nieruchomosci/content.pl";
-import { ROUTES } from "~/pages/content/Routes";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const selectedId = [141, 142, 143, 144, 145];

@@ -15,7 +15,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
 import { SolutionsForBuildingManagersContent as content } from "~/content/dla-administratorow-budynkow/content.pl";
-import { ROUTES } from "~/pages/content/Routes";
+import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const selectedId = [131, 132, 133, 134, 135];

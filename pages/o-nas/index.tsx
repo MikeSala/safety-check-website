@@ -7,7 +7,7 @@ import { InspectionAreas } from "~/components/InspectionAreas";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { ROUTES } from "~/pages/content/Routes";
+import { ROUTES } from "~/content/Routes";
 import { AboutUsPageContent as content } from "~/content/o-nas/content.pl";
 
 const AboutPage: NextPageWithLayout = () => {

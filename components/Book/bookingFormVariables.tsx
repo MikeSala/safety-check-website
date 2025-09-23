@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { RadioOption } from "~/components/Fields/RadioField";
-import { NAV_LABELS } from "~/pages/content/Labels";
-import { ROUTES } from "~/pages/content/Routes";
+import { NAV_LABELS } from "~/content/Labels";
+import { ROUTES } from "~/content/Routes";
 
 export enum SERVICE_KEYS {
   FullServicePackage = "full-service-package",

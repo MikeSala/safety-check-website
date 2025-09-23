@@ -15,8 +15,8 @@ import {
   Icons8Trailer,
 } from "src/components/icons";
 import { NavItem, NavItemProps } from "~/components/NavItem";
-import { NAV_LABELS } from "~/pages/content/Labels";
-import { ROUTES } from "~/pages/content/Routes";
+import { NAV_LABELS } from "~/content/Labels";
+import { ROUTES } from "~/content/Routes";
 
 const navItems: NavItemProps[] = [
   {

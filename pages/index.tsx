@@ -13,7 +13,7 @@ import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
-import { HomePageContent as content } from "~/pages/content/homePageContent";
+import { HomePageContent as content } from "~/content/homePageContent";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8checkmark } from "~/src/components/icons";
 
