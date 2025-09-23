@@ -10,6 +10,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ["lirp.cdn-website.com"],
+    unoptimized: true,
   },
   // i18n: {
   //   locales: ["pl"],
