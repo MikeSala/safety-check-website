@@ -34,12 +34,3 @@ hr {
   padding-left: 8px;
   padding-right: 4px;
 }
-
-/* quote page */
-.react-pdf__Document canvas {
-  width: 100% !important;
-  height: auto !important;
-}
-.react-pdf__Document .annotationLayer {
-  display: none;
-}
