@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import logoPng from "~/src/assets/images/logo.webp";
 
 type Props = {
   className?: string;
@@ -13,23 +14,20 @@ export const LogoButton: React.FC<Props> = ({
   className,
   height,
   width,
-  isWhiteLogo,
 }: Props) => {
   return (
     <Link
       className={clsx("flex-shrink-0 rounded", className)}
       href="/"
-      title="Home"
+      title="Przejdź na stronę główną"
     >
       <Image
-        src="/logo-przegladinstalacji.com.webp"
+        src={logoPng}
         height={height}
         width={width}
         draggable={false}
-        alt=""
-        className={isWhiteLogo ? "invert filter" : ""}
+        alt="logo"
       />
-      <span className="sr-only">Przejdź na stronę główną</span>
     </Link>
   );
 };
