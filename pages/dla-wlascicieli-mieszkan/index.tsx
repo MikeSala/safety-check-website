@@ -1,94 +1,45 @@
-import clsx from "clsx";
 import { NextSeo } from "next-seo";
-
-import { ReactElement, useContext } from "react";
-import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/Faq/Faq";
-import FaqSectionsData from "~/components/Faq/FaqContent";
-import { InspectionAreas } from "~/components/InspectionAreas";
+import { ReactElement } from "react";
 import { MainLayout } from "~/components/layouts/MainLayout";
-import { MarginLayout } from "~/components/layouts/MarginLayout";
-import PropertyComplianceForm from "~/components/PropertyComplianceForm";
-import { ResponsiveImage } from "~/components/ResponsiveImage";
-import { ServiceBoxes } from "~/components/ServiceBoxes";
-import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
+import {
+  SolutionsLandingPage,
+  type SolutionsSection,
+} from "~/components/SolutionsLandingPage";
 import { NextPageWithLayout } from "~/pages/_app";
 import InfoLinks from "~/pages/InfoLinks";
-import { SolutionsForLandlordsContent as content } from "~/content/dla-wlascicieli-mieszkan/content.pl";
 import { ROUTES } from "~/content/Routes";
-import { ViewportContext } from "~/providers/ViewportProvider";
+import { SolutionsForLandlordsContent as content } from "~/content/dla-wlascicieli-mieszkan/content.pl";
+import gasServiceImage from "~/src/assets/images/gas_10.jpg";
+import smokeServiceImage from "~/src/assets/images/smoke-alarm-check.webp";
 
 const selectedId = [101, 102, 103, 104, 105];
 
+const sections: SolutionsSection[] = [
+  {
+    title: content.section1.title,
+    paragraphs: content.section1.paragraphs,
+    image: smokeServiceImage,
+    cta: {
+      href: ROUTES.BOOK_NOW,
+      label: "Skontaktuj się z nami",
+    },
+  },
+  {
+    title: content.section2.title,
+    paragraphs: content.section2.paragraphs,
+    image: gasServiceImage,
+    reverse: true,
+    additionalContent: <InfoLinks />,
+  },
+];
+
 const SolutionsForLandlordsPage: NextPageWithLayout = () => {
-  const { isMobile } = useContext(ViewportContext);
   return (
-    <>
-      <Banner title={content.seo.title} />
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 "
-          )}
-        >
-          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src="/RCSC/Mobile/smoke_2.webp"
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-            />
-          </div>
-
-          <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {content.section1.title}
-            </h3>
-            {content.section1.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-            <InspectionAreas
-              ctaHref={ROUTES.BOOK_NOW}
-              ctaLabel="Skontaktuj się z nami"
-            />
-          </div>
-        </div>
-      </MarginLayout>
-
-      <MarginLayout className="mx-auto -mt-20 max-w-7xl">
-        <div
-          className={clsx(
-            "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
-          )}
-        >
-          <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {content.section2.title}
-            </h3>
-            {content.section2.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-            <InfoLinks />
-          </div>
-
-          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src="/RCSC/gas_9.webp"
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-            />
-          </div>
-        </div>
-      </MarginLayout>
-      <SubscriptionServiceBanner />
-      <PropertyComplianceForm />
-      <ServiceBoxes />
-
-      <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
-    </>
+    <SolutionsLandingPage
+      bannerTitle={content.seo.title}
+      sections={sections}
+      faqSelectedIds={selectedId}
+    />
   );
 };
 

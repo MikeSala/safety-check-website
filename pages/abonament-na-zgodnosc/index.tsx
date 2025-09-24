@@ -11,10 +11,12 @@ import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import PropertyComplianceForm from "~/components/PropertyComplianceForm";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
-import { NextPageWithLayout } from "~/pages/_app";
-import { ROUTES } from "~/content/Routes";
-import { ViewportContext } from "~/providers/ViewportProvider";
 import { PropertyComplianceSubscriptionContent as content } from "~/content/abonament-na-zgodnosc/content.pl";
+import { ROUTES } from "~/content/Routes";
+import { NextPageWithLayout } from "~/pages/_app";
+import { ViewportContext } from "~/providers/ViewportProvider";
+import familySubscriptionImage from "~/src/assets/images/family_1.webp";
+import victoriaSubscriptionImage from "~/src/assets/images/victoria_1.webp";
 
 const selectedId = [91, 92, 93, 94, 95, 96, 97, 98];
 
@@ -35,7 +37,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 order-1 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/family_1.webp"
+              src={familySubscriptionImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -67,7 +69,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/victoria_1.webp"
+              src={victoriaSubscriptionImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
