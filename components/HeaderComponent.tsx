@@ -1,29 +1,46 @@
-import { useContext } from "react";
-import { ResponsiveImage } from "~/components/ResponsiveImage";
+import { useContext, useRef } from "react";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const HeaderComponent = () => {
   const { isMobile } = useContext(ViewportContext);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const mobileImageSrc = "/RCSC/Mobile/smoke_2.webp";
-  const desktopImageSrc = "/RCSC/Desktop/smoke_2_better_resolution.webp";
+  const handleVideoPlay = () => {
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    void video.play();
+  };
+
+  const handleVideoPause = () => {
+    const video = videoRef.current;
+    if (!video) {
+      return;
+    }
+
+    video.pause();
+    video.currentTime = 0;
+  };
 
   return (
     <div className={isMobile ? "flex flex-wrap" : "flex lg:flex-nowrap"}>
-      {isMobile ? (
-        <ResponsiveImage
-          className="order-1 w-full object-cover lg:order-1 lg:h-auto"
-          src={mobileImageSrc}
-          priority
-          sizes="(max-width: 1024px) 100vw, 40vw"
+      <div
+        className="order-1 w-full overflow-hidden lg:order-1 lg:h-auto lg:max-h-[560px]"
+        onMouseEnter={handleVideoPlay}
+        onMouseLeave={handleVideoPause}
+      >
+        <video
+          ref={videoRef}
+          className="h-full w-full object-cover"
+          src="/maintenance.mp4"
+          preload="metadata"
+          muted
+          loop={false}
+          playsInline
         />
-      ) : (
-        <ResponsiveImage
-          className="order-1 w-full object-cover lg:order-1 lg:h-auto"
-          src={desktopImageSrc}
-          sizes="(min-width: 1024px) 100vw, 40vw,"
-        />
-      )}
+      </div>
 
       <section
         className={`${
