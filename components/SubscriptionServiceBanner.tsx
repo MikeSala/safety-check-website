@@ -2,6 +2,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import Button, { ButtonColor } from "~/components/Button";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
+import familySubscriptionImage from "~/src/assets/images/family_1.webp";
 
 const content = {
   item: [
@@ -18,11 +19,11 @@ const content = {
 
 const SubscriptionServiceBanner: React.FC = () => {
   return (
-    <article className="mb-4 flex flex-col gap-4 bg-sky-900 px-4 py-6 sm:mb-8 sm:px-8 lg:mb-20 lg:px-12">
+    <article className="mb-4 mt-10 flex flex-col gap-4 bg-sky-900 px-4 py-6 sm:mb-8 sm:px-8 lg:mb-20 lg:px-12">
       <div className="flex flex-col items-center justify-center gap-6 md:flex-row">
         <div className="w-full md:w-1/3">
           <ResponsiveImage
-            src="/RCSC/family_1.webp"
+            src={familySubscriptionImage}
             className="h-full object-cover"
             sizes="(min-width: 1024px) 50vw, 100vw"
           />

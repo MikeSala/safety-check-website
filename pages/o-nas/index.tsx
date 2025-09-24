@@ -9,6 +9,7 @@ import { MainLayout } from "~/components/layouts/MainLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/content/Routes";
 import { AboutUsPageContent as content } from "~/content/o-nas/content.pl";
+import aboutHeroImage from "~/src/assets/images/hero-houses-aerial.jpg";
 
 const AboutPage: NextPageWithLayout = () => {
   return (
@@ -17,7 +18,7 @@ const AboutPage: NextPageWithLayout = () => {
       <div className="flex flex-grow flex-wrap lg:flex-nowrap">
         <ResponsiveImage
           className="order-1 lg:order-1 lg:h-auto lg:w-1/2"
-          src="/RCSC/cropped_tower.webp"
+          src={aboutHeroImage}
           priority
           sizes="(min-width: 1024px) 50vw, 100vw"
         />

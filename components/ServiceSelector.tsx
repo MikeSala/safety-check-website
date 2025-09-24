@@ -1,6 +1,6 @@
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { NAV_LABELS } from "~/content/Labels";
 import { ROUTES } from "~/content/Routes";
@@ -9,13 +9,16 @@ import {
   Icons8Fire,
   Icons8SmokeDetectorB,
 } from "~/src/components/icons";
+import electricalServiceImage from "~/src/assets/images/elec_11.jpg";
+import gasServiceImage from "~/src/assets/images/gas_10.jpg";
+import smokeServiceImage from "~/src/assets/images/smoke_4.jpg";
 
 interface ServiceButtonProps {
   iconLeft: string | React.ElementType;
   iconRight: React.ComponentType<{ className?: string }>;
   label: string;
   href: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   className?: string;
   imageWidth?: number;
   imageHeight?: number;
@@ -28,21 +31,21 @@ const services = [
     label: NAV_LABELS.ELECTRICAL_CHECK,
     iconLeft: IconElectrical,
     iconRight: ArrowLongRightIcon,
-    imageSrc: "/RCSC/elec_11.jpg",
+    imageSrc: electricalServiceImage,
     href: ROUTES.ELECTRICAL_CHECK,
   },
   {
     label: NAV_LABELS.GAS_CHECK,
     iconLeft: Icons8Fire,
     iconRight: ArrowLongRightIcon,
-    imageSrc: "/RCSC/gas_10.jpg",
+    imageSrc: gasServiceImage,
     href: ROUTES.GAS_CHECK,
   },
   {
     label: NAV_LABELS.SMOKE_ALARM_CHECK,
     iconLeft: Icons8SmokeDetectorB,
     iconRight: ArrowLongRightIcon,
-    imageSrc: "/RCSC/smoke_4.jpg",
+    imageSrc: smokeServiceImage,
     href: ROUTES.SMOKE_ALARM_CHECK,
   },
 ];

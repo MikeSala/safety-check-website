@@ -17,6 +17,9 @@ import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8checkmark } from "~/src/components/icons";
 import { ElectricalSafetyCheckContent as content } from "~/content/przeglad-instalacji-elektrycznej/content.pl";
+import electricalAssessmentImage from "~/src/assets/images/hero-power-box.webp";
+import electricalMaintenanceImage from "~/src/assets/images/elec_11.jpg";
+import electricalChecklistImage from "~/src/assets/images/energy-safe.png";
 
 const selectedId = [21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33];
 
@@ -34,7 +37,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/elec_3.webp"
+              src={electricalAssessmentImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -76,7 +79,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
           </div>
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/elec_5.webp"
+              src={electricalMaintenanceImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -91,7 +94,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/elec_6.webp"
+              src={electricalChecklistImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>

@@ -16,6 +16,8 @@ import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { SmokeSafetyCheckContent as content } from "~/content/przeglad-czujnikow-dymu/content.pl";
+import smokeAlarmInspectionImage from "~/src/assets/images/smoke_4.jpg";
+import smokeAlarmDetailImage from "~/src/assets/images/smoke-alarm-check.webp";
 
 const selectedId = [11, 12, 13, 14, 15, 16, 17];
 
@@ -34,7 +36,7 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/smoke_4.jpg"
+              src={smokeAlarmInspectionImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -75,7 +77,7 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
           </div>
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/smoke_1.webp"
+              src={smokeAlarmDetailImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>

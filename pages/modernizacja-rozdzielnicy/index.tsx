@@ -15,6 +15,9 @@ import { NextPageWithLayout } from "~/pages/_app";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
 import { SwitchboardUpgradeContent as content } from "~/content/modernizacja-rozdzielnicy/content.pl";
+import switchboardBeforeImage from "~/src/assets/images/elec_11.jpg";
+import switchboardAfterImage from "~/src/assets/images/hero-power-box.webp";
+import switchboardDetailImage from "~/src/assets/images/energy-safe.png";
 
 const selectedId = [71, 72, 73, 74, 75, 76];
 
@@ -33,7 +36,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/electrical-switchboard-before.webp"
+              src={switchboardBeforeImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -85,7 +88,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             {" "}
             <ResponsiveImage
-              src="/RCSC/electrical-switchboard-after.webp"
+              src={switchboardAfterImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -101,7 +104,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/elec_9.webp"
+              src={switchboardDetailImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>

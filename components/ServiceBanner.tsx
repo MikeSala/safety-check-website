@@ -1,9 +1,10 @@
 import clsx from "clsx";
+import type { StaticImageData } from "next/image";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 
 export type ServiceBannerProps = {
   imageFirst?: boolean;
-  imageUrl: string;
+  imageUrl: StaticImageData | string;
   serviceOfferings: string[];
   title: string;
   priority?: boolean;

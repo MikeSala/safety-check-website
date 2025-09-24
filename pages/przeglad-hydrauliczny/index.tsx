@@ -6,10 +6,13 @@ import FormComponent from "~/components/FormComponent";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
+import { GeneralPlumbingContent as content } from "~/content/przeglad-hydrauliczny/content.pl";
 import { NextPageWithLayout } from "~/pages/_app";
 import { ViewportContext } from "~/providers/ViewportProvider";
+import plumbingImageOne from "~/src/assets/images/plumbing_1.webp";
+import plumbingImageTwo from "~/src/assets/images/plumbing_2.webp";
+import plumbingImageFour from "~/src/assets/images/plumbing_4.webp";
 import { Icons8ArrowRight, Icons8checkmark } from "~/src/components/icons";
-import { GeneralPlumbingContent as content } from "~/content/przeglad-hydrauliczny/content.pl";
 
 const GeneralPlumbing: NextPageWithLayout = () => {
   const { isMobile } = useContext(ViewportContext);
@@ -25,7 +28,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
         >
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/plumbing_2.webp"
+              src={plumbingImageTwo}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -86,7 +89,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
           </div>
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/plumbing_4.webp"
+              src={plumbingImageFour}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -102,7 +105,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/plumbing_1.webp"
+              src={plumbingImageOne}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>

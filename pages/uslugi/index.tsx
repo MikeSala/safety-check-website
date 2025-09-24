@@ -12,6 +12,9 @@ import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import { servicesPageContent as content } from "~/content/uslugi/content.pl";
+import electricDetailsImage from "~/src/assets/images/services-details-electric.webp";
+import gasDetailsImage from "~/src/assets/images/services-details-gas.webp";
+import smokeDetailsImage from "~/src/assets/images/services-details-smoke.webp";
 
 const selectedId = [
   1, 2, 3, 4, 11, 12, 15, 21, 22, 23, 41, 42, 43, 44, 71, 72, 81, 83, 91, 93,
@@ -21,19 +24,19 @@ const selectedId = [
 const serviceBanners: ServiceBannerProps[] = [
   {
     serviceOfferings: content.serviceBanners.gas.offerings,
-    imageUrl: "/services-details-gas.webp",
+    imageUrl: gasDetailsImage,
     title: content.serviceBanners.gas.title,
     priority: true,
   },
   {
     serviceOfferings: content.serviceBanners.electric.offerings,
-    imageUrl: "/services-details-electric.webp",
+    imageUrl: electricDetailsImage,
     title: content.serviceBanners.electric.title,
     priority: true,
   },
   {
     serviceOfferings: content.serviceBanners.smoke.offerings,
-    imageUrl: "/services-details-smoke.webp",
+    imageUrl: smokeDetailsImage,
     title: content.serviceBanners.smoke.title,
   },
 ];

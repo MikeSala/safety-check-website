@@ -11,6 +11,8 @@ import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { NextPageWithLayout } from "~/pages/_app";
 import { PhoneNumberLink } from "~/pages/dla-administratorow-budynkow";
+import smokeAlarmIntroImage from "~/src/assets/images/smoke-alarm-check.webp";
+import smokeAlarmDetailImage from "~/src/assets/images/smoke_4.jpg";
 
 const selectedId = [81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
 
@@ -23,7 +25,7 @@ const InterconnectedSmokeAlarmsPage: NextPageWithLayout = () => {
         <div className="flex flex-col gap-8 rounded bg-white p-8 shadow-sm md:grid md:grid-cols-2">
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/Mobile/smoke_2.webp"
+              src={smokeAlarmIntroImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -99,7 +101,7 @@ const InterconnectedSmokeAlarmsPage: NextPageWithLayout = () => {
           </div>
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/smoke_1.webp"
+              src={smokeAlarmDetailImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>

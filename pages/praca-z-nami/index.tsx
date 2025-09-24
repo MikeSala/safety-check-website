@@ -12,6 +12,7 @@ import WorkApplicationSectionTwo from "~/components/WorkWithUs/FormSections/Work
 import { NextPageWithLayout } from "~/pages/_app";
 import { preventEnterSubmit } from "~/utils/form";
 import { errorToast, successToast } from "~/utils/toast";
+import workWithUsImage from "~/src/assets/images/energy-safe.png";
 
 const content = {
   bannerTitle: "Pracuj z Nami",
@@ -117,7 +118,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
         <div className="flex flex-wrap lg:flex-nowrap">
           <ResponsiveImage
             className="order-1 lg:order-1 lg:h-auto lg:w-1/2"
-            src="/RCSC/gas_9_work_with_us_b.webp"
+            src={workWithUsImage}
             sizes="(min-width: 1024px) 50vw, 100vw"
             priority
           />

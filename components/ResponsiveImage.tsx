@@ -1,10 +1,10 @@
 import clsx from "clsx";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type ResponsiveImageProps = {
   className?: string;
   priority?: boolean; // set true for images "above the fold"
-  src: string;
+  src: StaticImageData | string;
   sizes?: React.ImgHTMLAttributes<HTMLImageElement>["sizes"];
 };
 

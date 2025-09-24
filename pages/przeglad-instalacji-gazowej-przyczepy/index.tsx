@@ -13,6 +13,9 @@ import { NextPageWithLayout } from "~/pages/_app";
 import { caravanGasContent as content } from "~/content/przeglad-instalacji-gazowej-przyczepy/content.pl";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight, Icons8checkmark } from "~/src/components/icons";
+import caravanIntroImage from "~/src/assets/images/hero-houses-aerial.jpg";
+import caravanGuidelinesImage from "~/src/assets/images/family_1.webp";
+import caravanPreparationImage from "~/src/assets/images/victoria_1.webp";
 
 const selectedId = [61, 62, 63, 64, 65, 66, 67, 68, 69, 70];
 
@@ -30,7 +33,7 @@ const CaravanGasComplianceCheckPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/caravan_2.webp"
+              src={caravanIntroImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -98,7 +101,7 @@ const CaravanGasComplianceCheckPage: NextPageWithLayout = () => {
           </div>
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/caravan_3.webp"
+              src={caravanGuidelinesImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -108,7 +111,7 @@ const CaravanGasComplianceCheckPage: NextPageWithLayout = () => {
         <div className="flex flex-col gap-8 rounded bg-white p-8 shadow-sm md:grid md:grid-cols-2">
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/caravan_1.webp"
+              src={caravanPreparationImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>

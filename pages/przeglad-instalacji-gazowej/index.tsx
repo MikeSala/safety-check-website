@@ -17,6 +17,9 @@ import { ROUTES } from "~/content/Routes";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { Icons8ArrowRight } from "~/src/components/icons";
 import { GasSafetyCheckContent as content } from "~/content/przeglad-instalacji-gazowej/content.pl";
+import gasSafetyIntroImage from "~/src/assets/images/gas_10.jpg";
+import gasSafetyMaintenanceImage from "~/src/assets/images/hero-power-box.webp";
+import gasSafetyChecklistImage from "~/src/assets/images/energy-safe.png";
 
 const selectedId = [
   41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
@@ -36,7 +39,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/gas_2.webp"
+              src={gasSafetyIntroImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -78,7 +81,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
           </div>
           <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/elec_1.webp"
+              src={gasSafetyMaintenanceImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
@@ -94,7 +97,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
         >
           <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
             <ResponsiveImage
-              src="/RCSC/elec_7.webp"
+              src={gasSafetyChecklistImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
             />
           </div>
