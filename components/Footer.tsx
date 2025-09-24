@@ -1,171 +1,99 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { ReactNode, useContext } from "react";
 import ContactButtons from "~/components/ContactButtons";
 import DistrictBar from "~/components/DisctrictBar";
-import { LogoButton } from "~/components/LogoButton";
 import { NAV_LABELS } from "~/content/Labels";
 import { ROUTES } from "~/content/Routes";
-import { ViewportContext } from "~/providers/ViewportProvider";
+
+const LINK_GROUPS = [
+  {
+    heading: "Usługi",
+    links: [
+      { href: ROUTES.SERVICES, label: "Nasze usługi" },
+      {
+        href: ROUTES.COMPLIANCE_SUBSCRIPTION,
+        label: NAV_LABELS.COMPLIANCE_SUBSCRIPTION,
+      },
+      { href: ROUTES.SMOKE_ALARM_CHECK, label: NAV_LABELS.SMOKE_ALARM_CHECK },
+      { href: ROUTES.ELECTRICAL_CHECK, label: NAV_LABELS.ELECTRICAL_CHECK },
+      { href: ROUTES.GAS_CHECK, label: NAV_LABELS.GAS_CHECK },
+      { href: ROUTES.CARAVAN_GAS_CHECK, label: NAV_LABELS.CARAVAN_GAS_CHECK },
+      {
+        href: ROUTES.SWITCHBOARD_UPGRADE,
+        label: NAV_LABELS.SWITCHBOARD_UPGRADE,
+      },
+      { href: ROUTES.GENERAL_PLUMBING, label: NAV_LABELS.PLUMBING_SERVICES },
+      {
+        href: ROUTES.INCLUSIONS_EXCLUSIONS,
+        label: NAV_LABELS.INCLUSIONS_EXCLUSIONS,
+      },
+    ],
+  },
+  {
+    heading: "Rozwiązania",
+    links: [
+      { href: ROUTES.SOLUTIONS, label: "Nasze rozwiązania" },
+      {
+        href: ROUTES.PROPERTY_MANAGERS,
+        label: NAV_LABELS.FOR_PROPERTY_MANAGERS,
+      },
+      { href: ROUTES.LANDLORDS, label: NAV_LABELS.FOR_LANDLORDS },
+      {
+        href: ROUTES.BUILDING_MANAGERS,
+        label: NAV_LABELS.FOR_BUILDING_MANAGERS,
+      },
+      { href: ROUTES.HOMEOWNERS, label: NAV_LABELS.FOR_HOMEOWNERS },
+      { href: ROUTES.REAL_ESTATE, label: NAV_LABELS.FOR_REAL_ESTATE },
+    ],
+  },
+  {
+    heading: "Inne linki",
+    links: [
+      { href: ROUTES.BOOK_NOW, label: NAV_LABELS.BOOK_NOW },
+      { href: ROUTES.CONTACT_US, label: NAV_LABELS.CONTACT_US },
+      { href: ROUTES.ABOUT_US, label: NAV_LABELS.ABOUT_US },
+      { href: ROUTES.LEGISLATION, label: NAV_LABELS.LEGISLATION },
+      { href: ROUTES.FAQ, label: NAV_LABELS.FAQ },
+      { href: ROUTES.WORK_WITH_US, label: NAV_LABELS.WORK_WITH_US },
+      { href: ROUTES.PRIVACY_POLICY, label: NAV_LABELS.PRIVACY_POLICY },
+    ],
+  },
+];
 
 export const Footer: React.FC = () => {
   const router = useRouter();
-  const { isMobile } = useContext(ViewportContext);
+  const currentYear = new Date().getFullYear();
 
-  const footerSections: { heading?: string; content: ReactNode }[] = [
-    {
-      content: (
-        <LogoButton
-          className="self-start"
-          height={isMobile ? 96.6 : 110.4}
-          width={isMobile ? 179.2 : 204.8}
-          isWhiteLogo={true}
-        />
-      ),
-    },
-    {
-      heading: "Przegląd",
-      content: <p>Zarezerwuj przegląd. Profesjonalnie i przyjaźnie</p>,
-    },
-    {
-      heading: "Main Office",
-      content: (
-        <>
-          <p>82 Bardia Avenue,</p>
-          <p>Seaford Vic Australia 3198</p>
-          <p>Monday - Friday 8am - 4pm</p>
-        </>
-      ),
-    },
-    {
-      heading: "Contact",
-      content: (
-        <>
-          <Link
-            className="transition duration-300 hover:text-sky-700"
-            href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
-          >
-            {process.env.NEXT_PUBLIC_TEL_LINK}
-          </Link>
-          <Link
-            className="transition duration-300 hover:text-sky-700"
-            href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}`}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {process.env.NEXT_PUBLIC_EMAIL_LINK}
-          </Link>
-        </>
-      ),
-    },
-    {
-      content: (
+  const renderLinkGroup = (
+    heading: string,
+    links: (typeof LINK_GROUPS)[number]["links"]
+  ) => {
+    return (
+      <section className="flex flex-col gap-2 text-sm" key={heading}>
+        <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
+          {heading}
+        </h3>
         <ul>
-          <li>
-            <Link href={ROUTES.SERVICES}>Nasze usługi</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.COMPLIANCE_SUBSCRIPTION}>
-              {NAV_LABELS.COMPLIANCE_SUBSCRIPTION}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.SMOKE_ALARM_CHECK}>
-              {NAV_LABELS.SMOKE_ALARM_CHECK}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.ELECTRICAL_CHECK}>
-              {NAV_LABELS.ELECTRICAL_CHECK}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.GAS_CHECK}>{NAV_LABELS.GAS_CHECK}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.CARAVAN_GAS_CHECK}>
-              {NAV_LABELS.CARAVAN_GAS_CHECK}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.SWITCHBOARD_UPGRADE}>
-              {NAV_LABELS.SWITCHBOARD_UPGRADE}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.GENERAL_PLUMBING}>
-              {" "}
-              {NAV_LABELS.PLUMBING_SERVICES}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.INCLUSIONS_EXCLUSIONS}>
-              {" "}
-              {NAV_LABELS.INCLUSIONS_EXCLUSIONS}
-            </Link>
-          </li>
+          {links.map(({ href, label }) => {
+            const isActive = router.pathname === href;
+            return (
+              <li
+                key={href}
+                className={isActive ? "mb-1 text-sky-700" : "mb-1"}
+              >
+                <Link
+                  href={href}
+                  className="transition duration-500 hover:text-sky-700"
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
-      ),
-    },
-    {
-      content: (
-        <ul>
-          <li>
-            <Link href={ROUTES.SOLUTIONS}>Nasze Rozwiązania</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.PROPERTY_MANAGERS}>
-              {NAV_LABELS.FOR_PROPERTY_MANAGERS}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.LANDLORDS}> {NAV_LABELS.FOR_LANDLORDS}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.BUILDING_MANAGERS}>
-              {NAV_LABELS.FOR_BUILDING_MANAGERS}
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.HOMEOWNERS}> {NAV_LABELS.FOR_HOMEOWNERS}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.REAL_ESTATE}> {NAV_LABELS.FOR_REAL_ESTATE}</Link>
-          </li>
-        </ul>
-      ),
-    },
-    {
-      heading: "Inne linki",
-      content: (
-        <ul>
-          <li>
-            <Link href={ROUTES.BOOK_NOW}> {NAV_LABELS.BOOK_NOW}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.CONTACT_US}>{NAV_LABELS.CONTACT_US}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.ABOUT_US}>{NAV_LABELS.ABOUT_US}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.LEGISLATION}>{NAV_LABELS.LEGISLATION}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.FAQ}>{NAV_LABELS.FAQ}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.WORK_WITH_US}>{NAV_LABELS.WORK_WITH_US}</Link>
-          </li>
-          <li>
-            <Link href={ROUTES.PRIVACY_POLICY}>
-              {NAV_LABELS.PRIVACY_POLICY}
-            </Link>
-          </li>
-        </ul>
-      ),
-    },
-  ];
+      </section>
+    );
+  };
 
   return (
     <>
@@ -182,26 +110,7 @@ export const Footer: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5">
             <div className="flex flex-col gap-2 text-sm">
-              <LogoButton
-                className="self-start"
-                height={isMobile ? 96.6 : 110.4}
-                width={isMobile ? 179.2 : 204.8}
-              />
               <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
-                Przegląd Instalacji
-              </h3>
-              <p>Zarezerwuj przegląd. Profesjonalnie i przyjaźnie.</p>
-            </div>
-
-            <div className="flex flex-col gap-2 text-sm">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
-                Główne biuro
-              </h3>
-              <p>Rydla</p>
-              <p>Kraków</p>
-              <p>Pon-Pt, 8-16:00</p>
-
-              <h3 className="mt-4 text-sm font-semibold uppercase tracking-wider text-gray-200">
                 Kontakt
               </h3>
               <Link
@@ -220,72 +129,20 @@ export const Footer: React.FC = () => {
               </Link>
             </div>
 
-            {footerSections.slice(4, 7).map((section, i) => (
-              <section key={i} className="flex flex-col gap-2 text-lg">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-gray-200">
-                  {section.heading}
-                </h3>
-                <div className="mb-2 flex flex-col text-sm">
-                  {React.Children.map(section.content, (child) => {
-                    if (React.isValidElement(child) && child.type === "ul") {
-                      return (
-                        <ul>
-                          {React.Children.map(
-                            child.props.children,
-                            (listItem) => {
-                              if (
-                                React.isValidElement(listItem) &&
-                                listItem.type === "li"
-                              ) {
-                                const link = React.Children.toArray(
-                                  (listItem as React.ReactElement).props
-                                    .children
-                                )[0];
-
-                                if (
-                                  React.isValidElement(link) &&
-                                  link.type === Link
-                                ) {
-                                  const isActive =
-                                    router.pathname === link.props.href;
-                                  return (
-                                    <li
-                                      className={
-                                        isActive ? "mb-1 text-sky-700" : "mb-1"
-                                      }
-                                    >
-                                      <Link
-                                        href={link.props.href}
-                                        className="transition duration-500 hover:text-sky-700"
-                                      >
-                                        {link.props.children}
-                                      </Link>
-                                    </li>
-                                  );
-                                }
-                              }
-                              return listItem;
-                            }
-                          )}
-                        </ul>
-                      );
-                    }
-                    return child;
-                  })}
-                </div>
-              </section>
-            ))}
+            {LINK_GROUPS.map(({ heading, links }) =>
+              renderLinkGroup(heading, links)
+            )}
           </div>
 
           <hr className="my-8" />
           <div className="flex flex-col justify-between gap-2 text-center text-sm sm:flex-row">
-            <p>&copy; {new Date().getFullYear()}</p>
+            <p>&copy; {currentYear}</p>
             <p>
               Developed by{" "}
               <Link
                 className="text-gray-200 transition duration-500 hover:text-sky-700"
                 target="_blank"
-                href="https://strive.limited/"
+                href=""
                 rel="noreferrer"
               >
                 Strive & StriveLab
