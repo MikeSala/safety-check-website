@@ -53,7 +53,7 @@ export default function Chatbox() {
   };
 
   return (
-    <div className=" fixed bottom-11 right-24 z-50">
+    <div className="fixed bottom-11 right-20 z-50 sm:right-[7.5rem] lg:right-[5.5rem]">
       {isChatOpen ? (
         <div className="border-t-1 flex h-[400px] w-[350px] flex-col rounded-lg border-white bg-white shadow-xl">
           {/* Nagłówek z przyciskiem zamknięcia */}
@@ -61,7 +61,7 @@ export default function Chatbox() {
             <span className="font-medium">Chat z nami</span>
             <button
               onClick={() => setIsChatOpen(false)}
-              className="rounded px-2 py-1 transition-colors hover:bg-sky-800"
+              className="rounded px-2 py-1 transition-colors hover:bg-sky-700"
             >
               ✕
             </button>
@@ -106,7 +106,7 @@ export default function Chatbox() {
               onKeyDown={(e) => e.key === "Enter" && handleSend(input)}
             />
             <button
-              className="rounded-lg bg-blue-500 px-3 py-1 text-sm text-white transition-colors hover:bg-sky-800 disabled:opacity-50"
+              className="rounded-lg bg-sky-800 px-3 py-1 text-sm text-white transition-colors hover:bg-sky-800 disabled:opacity-50"
               onClick={() => handleSend(input)}
               disabled={!input.trim()}
             >
@@ -117,9 +117,18 @@ export default function Chatbox() {
       ) : (
         <button
           onClick={() => setIsChatOpen(true)}
-          className="rounded-full bg-blue-600 px-4 py-2 text-white shadow-lg transition-colors hover:bg-blue-700"
+          className="flex items-center gap-2 rounded-full border border-sky-800 bg-white px-5 py-2 text-sm font-medium text-sky-800 shadow-lg transition hover:bg-sky-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
         >
-          💬 Kliknij tutaj
+          <span aria-hidden className="text-lg">
+            💬
+          </span>
+          <span className="flex items-center gap-2 text-sm font-medium">
+            Kliknij tutaj
+            <span
+              aria-hidden
+              className="h-3 w-3 animate-pulse rounded-full bg-red-400 shadow-[0_0_0_2px_rgba(16,185,129,0.35)]"
+            />
+          </span>
         </button>
       )}
     </div>

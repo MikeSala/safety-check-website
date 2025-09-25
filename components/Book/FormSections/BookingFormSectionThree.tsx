@@ -60,33 +60,33 @@ const BookingFormSectionThree: React.FC<BookingFormSectionThreeProps> = ({
       {CONFIRM_CHECKBOX_OPTIONS.map(renderCheckboxOptions)}
 
       <p className="text-sm text-gray-800">
-        If you wish to know more about the inclusions/exclusions of our
-        services, click{" "}
+        Jeśli chcesz poznać szczegóły dotyczące zakresu i wyłączeń naszych
+        usług, kliknij{" "}
         <button
           className="mb-1 cursor-pointer rounded-none border-b-2 border-blue-500 text-blue-500 transition-colors duration-300 ease-in-out hover:border-white hover:text-blue-400"
           type="button"
           onClick={handleOpenModal}
         >
-          here
+          tutaj
         </button>
         .
       </p>
       <p className="mb-2 text-sm font-medium text-gray-800">
         {" "}
-        I confirm that I have provided my correct full legal name and accurate
-        contact information.
+        Potwierdzam, że podałem prawidłowe imię i nazwisko oraz aktualne dane
+        kontaktowe.
       </p>
       <HorizontalRule className="mb-2" />
       <CheckboxField
-        label="I have read and accepted all the terms and conditions."
+        label="Zapoznałem się z warunkami i je akceptuję."
         error={errors.confirm?.message}
         formProps={register("confirm", {
           validate: (v) =>
-            v ? undefined : "Please confirm the terms and conditions",
+            v ? undefined : "Potwierdź akceptację warunków",
         })}
       />
       <ModalLayout
-        title="Inclusions and Exclusions"
+        title="Zakres usług i wyłączenia"
         modalVisible={isModalVisible}
         onClose={handleCloseModal}
       >

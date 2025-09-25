@@ -91,29 +91,29 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
 
   const topSection: ReviewItemProps[] = [
     {
-      title: "Owner's Full Name",
+      title: "Imię i nazwisko właściciela",
       description: values.ownerFullName,
     },
     {
-      title: "Date Booked",
+      title: "Data rezerwacji",
       description: formatDate(values.date),
     },
     {
-      title: "Owner's Phone",
+      title: "Telefon właściciela",
       description: values.ownerPhone,
     },
     {
-      title: "Owner's Mobile",
-      description: values.ownerMobile || "N/A",
+      title: "Telefon komórkowy właściciela",
+      description: values.ownerMobile || "Brak",
     },
     {
-      title: "Billing Address",
+      title: "Adres rozliczeniowy",
       description: values.billingAddress,
       className: "sm:col-span-2",
     },
 
     {
-      title: "Owner's Email",
+      title: "Adres e-mail właściciela",
       description: values.ownerEmail,
     },
   ];
@@ -121,7 +121,7 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
   return (
     <StepLayout id={formStep} title={title}>
       <dl className="grid gap-8 text-sm sm:grid-cols-2">
-        <h3 className="text-lg font-bold sm:col-span-2">Owner Details</h3>
+        <h3 className="text-lg font-bold sm:col-span-2">Dane właściciela</h3>
         {topSection.map((item) => (
           <ReviewItem key={item.description} {...item} />
         ))}
@@ -130,7 +130,7 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
       <hr className="my-4" />
 
       <dl className="flex flex-col gap-8 text-sm">
-        <h3 className="text-lg font-bold sm:col-span-3">Property Details</h3>
+        <h3 className="text-lg font-bold sm:col-span-3">Informacje o nieruchomości</h3>
         {values.properties.map((property) => (
           <div
             key={property.address}
@@ -142,31 +142,31 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
               className="text-base sm:col-span-3"
             />
             <ReviewItem
-              title="Property Manager's Full Name"
+              title="Imię i nazwisko zarządcy"
               description={property.propertyManagerFullName}
             />
             <ReviewItem
-              title="Property Manager's Phone Number"
+              title="Telefon zarządcy"
               description={property.propertyManagerPhone}
             />
             <ReviewItem
-              title="Property Manager's Email"
+              title="Adres e-mail zarządcy"
               description={property.propertyManagerEmail}
             />
             <ReviewItem
-              title="Include in the property compliance subscription"
+              title="Uwzględnij w subskrypcji zgodności"
               description={getDescriptionForComplianceSubscription(
                 property.complianceSubscription
               )}
               className="sm:col-span-3"
             />
             <ReviewItem
-              title="Price"
+              title="Cena"
               description={`$${getServicePrice(property.service)}`}
             />
             {getOneTimeFee(property) && (
               <ReviewItem
-                title="One-Time Maintenance Fee"
+                title="Jednorazowa opłata serwisowa"
                 description={`$${getOneTimeFee(property)}`}
               />
             )}
@@ -177,19 +177,19 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
       <hr className="my-4" />
 
       <div className="flex flex-col gap-6">
-        <h3 className="text-lg font-bold sm:col-span-2">Order Summary</h3>
+        <h3 className="text-lg font-bold sm:col-span-2">Podsumowanie zamówienia</h3>
 
         <dl className="space-y-6 border-gray-200 text-sm">
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-900">Subtotal</dt>
+            <dt className="font-medium text-gray-900">Suma częściowa</dt>
             <dd className="text-gray-700">${getSubtotalServicePrice()}</dd>
           </div>
           {values.properties.length > 1 && (
             <div className="flex justify-between">
               <dt className="flex font-medium text-gray-900">
-                Discount
+                Rabat
                 <span className="ml-2 rounded-full bg-gray-200 py-0.5 px-2 text-xs text-gray-600">
-                  Multiple Properties
+                  Wiele nieruchomości
                 </span>
               </dt>
               <dd className="text-gray-700">
@@ -203,7 +203,7 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
             </div>
           )}
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-900">GST</dt>
+            <dt className="font-medium text-gray-900">Podatek GST</dt>
             <dd className="text-gray-900">
               <span>
                 ${getTotalGSTAmount()} ({GST_RATE * 100}%)
@@ -211,11 +211,11 @@ const BookingFormSectionFour = (props: BookingFormSectionFourProps) => {
             </dd>
           </div>
           <div className="flex justify-between">
-            <dt className="font-medium text-gray-900">Processing Fees</dt>
+            <dt className="font-medium text-gray-900">Opłata za przetwarzanie</dt>
             <dd className="text-gray-900">${getDisplayedProcessingFees()}</dd>
           </div>
           <div className="flex justify-between text-base font-bold text-gray-900">
-            <dt>Order Total</dt>
+            <dt>Łączna kwota</dt>
             <dd>${getTotalPrice()}</dd>
           </div>
         </dl>

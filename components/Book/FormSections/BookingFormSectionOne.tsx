@@ -45,17 +45,17 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
   return (
     <StepLayout title={title} id={formStep}>
       <div className="grid grid-cols-6 gap-6">
-        {/* Owner's Full Name Field */}
+        {/* Pole: imię i nazwisko właściciela */}
         <InputField
           className="col-span-6 md:col-span-4"
-          label="Owner's Full Name"
+          label="Imię i nazwisko właściciela"
           error={errors.ownerFullName?.message}
           autoComplete="name"
           required
           formProps={register("ownerFullName", {
             validate: {
               message: (v) =>
-                v ? undefined : "Please enter the owner's full name",
+                v ? undefined : "Podaj imię i nazwisko właściciela",
             },
           })}
         />
@@ -63,7 +63,7 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
         {/* Date Field */}
         <DateField
           className="col-span-6 md:col-span-2"
-          label="Date"
+          label="Data"
           name="date"
           control={control}
           error={errors.date?.message}
@@ -71,16 +71,16 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
           disabled
           rules={{
             validate: {
-              message: (v) => (v ? undefined : "Please select a date"),
+              message: (v) => (v ? undefined : "Wybierz datę"),
             },
             required: true,
           }}
         />
 
-        {/* Owner's Phone Number Field */}
+        {/* Pole: numer telefonu właściciela */}
         <InputField
           className="col-span-6 md:col-span-3"
-          label="Owner's Phone"
+          label="Telefon właściciela"
           error={errors.ownerPhone?.message}
           type="tel"
           autoComplete="tel"
@@ -88,15 +88,15 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
           formProps={register("ownerPhone", {
             validate: {
               message: (v) =>
-                v ? undefined : "Please enter the owner's phone number",
+                v ? undefined : "Podaj numer telefonu właściciela",
             },
           })}
         />
 
-        {/* Owner's Mobile Number Field */}
+        {/* Pole: numer komórkowy właściciela */}
         <InputField
           className="col-span-6 md:col-span-3"
-          label="Owner's Mobile"
+          label="Telefon komórkowy właściciela"
           error={errors.ownerMobile?.message}
           type="tel"
           formProps={register("ownerMobile")}
@@ -105,7 +105,7 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
         {/* Billing Address Field */}
         <div className="col-span-6">
           <InputFieldWithAutocomplete
-            label="Billing Address"
+            label="Adres rozliczeniowy"
             error={errors.billingAddress?.message}
             defaultValue={billingAddress}
             setValue={setValue}
@@ -114,16 +114,16 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
             formProps={register("billingAddress", {
               validate: {
                 message: (v) =>
-                  v ? undefined : "Please enter the billing address",
+                  v ? undefined : "Podaj adres rozliczeniowy",
               },
             })}
           />
         </div>
 
-        {/* Owner's Email Field */}
+        {/* Pole: adres e-mail właściciela */}
         <InputField
           className="col-span-6"
-          label="Owner's Email Address"
+          label="Adres e-mail właściciela"
           type="email"
           autoComplete="email"
           required
@@ -132,7 +132,7 @@ const BookingFormSectionOne: React.FC<BookingFormSectionOneProps> = ({
               message: (v) =>
                 !!v && isEmail(v)
                   ? undefined
-                  : "Please enter a valid email address",
+                  : "Podaj poprawny adres e-mail",
             },
           })}
           error={errors.ownerEmail?.message}

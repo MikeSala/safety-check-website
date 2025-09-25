@@ -51,25 +51,26 @@ const BookingFormSectionFive = (props: BookingFormSectionFiveProps) => {
       </div>
       <div className="mt-6 flex flex-col justify-center">
         <p className="mt-3 whitespace-pre-line text-base font-medium text-black">
-          <strong>Secure Processing on Stripe.</strong> <br /> We use your
-          credit card details exclusively for transactions via Stripe, a secure
-          payment platform, for the package or services you select.
+          <strong>Bezpieczne przetwarzanie w Stripe.</strong> <br /> Dane Twojej
+          karty wykorzystujemy wyłącznie do transakcji realizowanych za
+          pośrednictwem Stripe, zaufanej platformy płatniczej, dla wybranego
+          pakietu lub usługi.
         </p>
         <p className="mt-3 whitespace-pre-line text-base font-medium text-black">
-          <strong>No Credit Card Data Stored.</strong> <br />
-          In line with our privacy and security commitments, RCSC does not keep
-          your credit card information on file.
+          <strong>Bez przechowywania danych karty.</strong> <br />
+          Zgodnie z naszymi standardami prywatności i bezpieczeństwa nie
+          przechowujemy danych Twojej karty kredytowej.
         </p>
         <p className="mt-3 whitespace-pre-line text-base font-medium text-black">
-          <strong>No Hidden Fees.</strong> <br />
-          You will incur charges strictly for the services or packages you have
-          selected, with no unexpected additional charges.
+          <strong>Brak ukrytych opłat.</strong> <br />
+          Płacisz wyłącznie za wybrane pakiety lub usługi, bez nieoczekiwanych
+          kosztów dodatkowych.
         </p>
         <p className="mt-3 whitespace-pre-line text-base font-medium text-black">
-          <strong>Charged Only After Review and Approval.</strong>
-          <br /> Your credit card will only be charged when your work order has
-          been reviewed and accepted by RCSC, ensuring any charges align with
-          confirmed services.
+          <strong>Obciążenie dopiero po zatwierdzeniu.</strong>
+          <br /> Karta zostanie obciążona dopiero po weryfikacji i akceptacji
+          zlecenia przez nasz zespół, dzięki czemu płatność dotyczy jedynie
+          potwierdzonych usług.
         </p>
       </div>
     </StepLayout>

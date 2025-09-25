@@ -87,7 +87,7 @@ const BookingFormSectionTwo = (props: BookingFormSectionTwoProps) => {
           className="text-sm font-bold text-blue-500"
           onClick={handleAddProperty}
         >
-          + Add Property
+          + Dodaj nieruchomość
         </button>
       </div>
     </StepLayout>
@@ -129,25 +129,25 @@ const OrderCard = ({
 
   return (
     <div className={clsx("relative w-full", className)}>
-      {/* Delete Button */}
+      {/* Przycisk usuwania */}
       {properties.length > 1 && (
         <button
           className="absolute top-0 right-0 h-8 w-8 border-2 border-gray-300 text-red-600"
           onClick={() => removeProperty(index)}
         >
           <XMarkIcon />
-          <div className="sr-only">Remove property {index + 1}.</div>
+          <div className="sr-only">Usuń nieruchomość {index + 1}.</div>
         </button>
       )}
 
-      <h4 className="mb-2 h4">Property {index + 1}</h4>
+      <h4 className="mb-2 h4">Nieruchomość {index + 1}</h4>
 
       {/* Property Fields */}
       <div className="grid grid-cols-6 gap-6">
-        {/* Rental Property Address Field  */}
+        {/* Pole: adres wynajmowanej nieruchomości */}
         <div className="col-span-6">
           <InputFieldWithAutocomplete
-            label="Rental Property Address"
+            label="Adres wynajmowanej nieruchomości"
             error={errors.properties?.[index]?.address?.message}
             defaultValue={address}
             setValue={setValue}
@@ -155,7 +155,9 @@ const OrderCard = ({
             formProps={register(`properties.${index}.address`, {
               validate: {
                 message: (v) =>
-                  v ? undefined : "Please enter the rental property's address",
+                  v
+                    ? undefined
+                    : "Podaj adres wynajmowanej nieruchomości",
               },
             })}
             autoCompleteItems={placeStrings}
@@ -165,23 +167,23 @@ const OrderCard = ({
         {/* Service Field */}
         <SelectField
           className="col-span-6"
-          label="Please select a service from the list below"
+          label="Wybierz usługę z poniższej listy"
           options={SERVICES}
           error={errors.properties?.[index]?.service?.message}
           required
           formProps={register(`properties.${index}.service`, {
             validate: {
               message: (v) =>
-                v ? undefined : "Please select a service from above",
+                v ? undefined : "Wybierz usługę z powyższej listy",
             },
           })}
         />
         {/* Compliance Subscription Field */}
         <RadioField
           className="col-span-6"
-          title="Include the property in the property compliance subscription."
+          title="Dodaj nieruchomość do subskrypcji zapewniającej zgodność."
           description={
-            "Existing RCSC customers will not incur this fee if their properties were made compliant be RCSC.\n(Multi-landlord 10% discount does not apply to the one-time only maintenance fee)."
+            "Stałym klientom, których nieruchomości zostały doprowadzone do zgodności przez nasz zespół, nie naliczamy tej opłaty.\n(Zniżka 10% dla wielu właścicieli nie obejmuje jednorazowej opłaty serwisowej)."
           }
           options={ADDITIONAL_SERVICES_OPTIONS}
           error={errors.properties?.[index]?.complianceSubscription?.message}
@@ -191,7 +193,7 @@ const OrderCard = ({
             validate: {
               message: (v: string) => {
                 if (!v) {
-                  return "Please choose desired option.";
+                  return "Wybierz jedną z opcji.";
                 }
               },
             },
@@ -201,14 +203,16 @@ const OrderCard = ({
         {/* Property Manager's Full Name Field */}
         <InputField
           className="col-span-6 lg:col-span-2"
-          label="Property Manager's Full Name"
+          label="Imię i nazwisko zarządcy"
           autoComplete="name"
           error={errors.properties?.[index]?.propertyManagerFullName?.message}
           required
           formProps={register(`properties.${index}.propertyManagerFullName`, {
             validate: {
               message: (v) =>
-                v ? undefined : "Please enter the property manager's full name",
+                v
+                  ? undefined
+                  : "Podaj imię i nazwisko zarządcy nieruchomości",
             },
           })}
         />
@@ -216,7 +220,7 @@ const OrderCard = ({
         {/* Property Manager's Phone Number Field */}
         <InputField
           className="col-span-6 lg:col-span-2"
-          label="Property Manager's Phone Number"
+          label="Telefon zarządcy"
           autoComplete="tel"
           error={errors.properties?.[index]?.propertyManagerPhone?.message}
           required
@@ -225,7 +229,7 @@ const OrderCard = ({
               message: (v) =>
                 v
                   ? undefined
-                  : "Please enter the property manager's phone number",
+                  : "Podaj numer telefonu zarządcy",
             },
           })}
         />
@@ -233,7 +237,7 @@ const OrderCard = ({
         {/* Property Manager's Email Address Field */}
         <InputField
           className="col-span-6 lg:col-span-2"
-          label="Property Manager's Email Address"
+          label="Adres e-mail zarządcy"
           autoComplete="email"
           error={errors.properties?.[index]?.propertyManagerEmail?.message}
           required
@@ -242,7 +246,7 @@ const OrderCard = ({
               message: (v) =>
                 !!v && VALID_EMAIL_REGEX.test(v)
                   ? undefined
-                  : "Please enter a valid email address",
+                  : "Podaj poprawny adres e-mail",
             },
           })}
         />
