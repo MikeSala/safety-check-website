@@ -56,7 +56,7 @@ const outlineColor: Record<ButtonColor, string> = {
   [ButtonColor.Danger]:
     "border-red-600 text-red-700 hover:bg-red-600 transition duration-300 focus:bg-red-600 hover:text-white focus:text-white",
   [ButtonColor.Error]:
-    "border-2 transition duration-300 border-red-600 text-red-600",
+    "border-2 transition duration-300 border-red-600 text-red-600 hover:bg-red-600 hover:text-white focus:bg-red-600 focus:text-white",
   [ButtonColor.Success]:
     "border-2 transition duration-300 border-green-600 text-green-600",
   [ButtonColor.Neutral]:

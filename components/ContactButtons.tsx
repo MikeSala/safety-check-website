@@ -34,7 +34,7 @@ const ContactButtons: React.FC<ContactButtonsProps> = ({ isMobile }) => {
             <Icons8RegisterSimple className="h-7 w-7" />
           </span>
 
-          <ArrowLongRightIcon className="absolute inset-0 m-auto h-6 w-6 -translate-x-1/2 transform opacity-0 transition-all duration-500 group-hover:translate-x-0  group-hover:opacity-100" />
+          <ArrowLongRightIcon className="absolute inset-0 m-auto h-6 w-6 -translate-x-1/2 transform text-red-600 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:text-white group-hover:opacity-100" />
         </Button>
       </div>
     );
@@ -64,7 +64,7 @@ const ContactButtons: React.FC<ContactButtonsProps> = ({ isMobile }) => {
         <span className="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-300 group-hover:opacity-0">
           Rezerwuj
         </span>
-        <ArrowLongRightIcon className="absolute -left-1 h-9 w-9 transform opacity-0 transition-all duration-500 group-hover:translate-x-16 group-hover:opacity-100" />
+        <ArrowLongRightIcon className="absolute -left-1 h-9 w-9 transform text-red-600 opacity-0 transition-all duration-500 group-hover:translate-x-16 group-hover:text-white group-hover:opacity-100" />
       </Button>
     </div>
   );
