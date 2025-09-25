@@ -1,4 +1,4 @@
-import { ArrowUpCircleIcon } from "@heroicons/react/24/outline";
+import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
@@ -32,24 +32,19 @@ const ScrollButton = ({
     }
   };
 
-  const buttonStyle = isMobile ? "bottom-2 right-0" : "bottom-4 right-10";
+  const buttonStyle = isMobile ? "bottom-11 right-4" : "bottom-11 right-8";
 
   return (
-    <>
-      <div
-        className={`z-9999 fixed ${buttonStyle} -translate-y-1/2 transform cursor-pointer rounded`}
-        onClick={scrollToTop}
-        onKeyDown={scrollToTop}
-        role="button"
-        tabIndex={0}
-        style={{ display: visible ? "inline" : "none" }}
-        title="Scroll to Top"
-      >
-        <div className="position-relative">
-          <ArrowUpCircleIcon className="hover h-12 w-12 fill-white text-primary-600 hover:fill-primary-600 hover:text-white" />
-        </div>
-      </div>
-    </>
+    <button
+      type="button"
+      onClick={scrollToTop}
+      className={`group fixed ${buttonStyle} z-[9999] inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-800 bg-white/95 text-sky-800 shadow-lg transition hover:bg-sky-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-900`}
+      style={{ display: visible ? "flex" : "none" }}
+      title="Przewiń do góry"
+      aria-label="Przewiń do góry"
+    >
+      <ArrowUpIcon className="h-6 w-6 transition-colors group-hover:text-white" />
+    </button>
   );
 };
 
