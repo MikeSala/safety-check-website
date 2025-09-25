@@ -16,6 +16,7 @@ import { GTM_ID, pageview } from "~/lib/gtag";
 import { DEFAULT_SEO } from "~/next-seo.config";
 import { ViewportProvider } from "~/providers/ViewportProvider";
 import "~/styles/globals.css";
+import CookieBanner from "~/components/CookieBanner";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -97,6 +98,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
           <div>
             <Chatbot />
           </div>
+          <CookieBanner />
         </div>
       </ViewportProvider>
     </ApolloProvider>

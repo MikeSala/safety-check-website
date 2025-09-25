@@ -85,7 +85,7 @@ export const privacyPolicyContent = {
     },
   ],
   seo: {
-    title: "Polityka Prywatności",
+    title: "",
     description:
       "Przeczytaj naszą Politykę prywatności, aby dowiedzieć się, w jaki sposób gromadzimy, wykorzystujemy i chronimy Twoje dane osobowe zgodnie z australijskimi przepisami o ochronie prywatności.",
   },
