@@ -4,7 +4,12 @@ class WebDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="LJfwwRf5CXV29hh4qe1o4zmI2kHGIhpoNchQX4mKQiw"
+          />
+        </Head>
         <body>
           {process.env.NODE_ENV === "production" && (
             <noscript>
