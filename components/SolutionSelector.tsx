@@ -60,40 +60,37 @@ const SquareButton: React.FC<SquareButtonProps> = ({
     <Link
       href={href}
       className={clsx(
-        "group relative flex items-center justify-center overflow-hidden rounded border-2 bg-white text-primary-900 shadow-sm transition-transform hover:scale-105 hover:border-sky-700 hover:bg-sky-700 hover:shadow-md",
+        "group relative flex items-center justify-center overflow-hidden rounded border-2 bg-white text-primary-900 shadow-sm transition-transform hover:scale-105 hover:border-sky-700 hover:shadow-md",
         isMobile ? "h-36 w-44" : "h-48 w-56",
         className
       )}
     >
       <IconComponent
         className={clsx(
-          "absolute top-4 left-1/2  -translate-x-1/2 transform items-center justify-center text-primary-900 group-hover:text-white",
+          "absolute top-4 left-1/2  -translate-x-1/2 transform items-center justify-center",
           isMobile ? "h-10 w-10" : "h-12 w-12",
           className
         )}
       />
       <div className="absolute mt-6 flex flex-col items-center justify-center">
-        <span
-          className={clsx(
-            isMobile ? "text-sm" : "text-md",
-            "text-primary-900 group-hover:text-white"
-          )}
-        >
-          {label}
-        </span>
+        <span className={isMobile ? "text-sm" : "text-md"}>{label}</span>
       </div>
       <div className="absolute bottom-4 left-1/4 flex -translate-x-1/2 transform items-center space-x-2 pb-2 sm:pb-4">
         <span
           className={clsx(
-            "absolute whitespace-nowrap opacity-0 transition-opacity duration-300 group-hover:text-white group-hover:opacity-100",
+            "absolute whitespace-nowrap opacity-0 transition-opacity duration-300 group-hover:opacity-100",
             isMobile ? "text-sm" : "text-md",
             className
           )}
-        ></span>
+        >
+          Więcej
+        </span>
         <ArrowLongRightIcon
           className={clsx(
-            "absolute left-8 justify-center text-primary-900 transition-transform duration-500 group-hover:translate-x-10 group-hover:text-white",
-            isMobile ? "left-6 h-5 w-5" : "h-6 w-6",
+            "absolute left-8 justify-center transition-transform duration-500",
+            isMobile
+              ? "h-5 w-5 group-hover:translate-x-14"
+              : "h-6 w-6 group-hover:translate-x-20",
             className
           )}
         />
