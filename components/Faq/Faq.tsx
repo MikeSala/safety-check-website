@@ -75,29 +75,25 @@ const FaqComponent: React.FC<FaqComponentProps> = ({
                 }
               >
                 <h3
-                  className={`faq-question duration-400 flex items-center border-t border-gray-200 bg-white p-2 shadow-sm transition hover:text-sky-600 ${
+                  className={`faq-question duration-400 flex items-center border-t border-gray-200 p-2 shadow-sm transition hover:text-sky-600 ${
                     activeSection === index && activeItem === itemIndex
-                      ? "border-t-1 text-sky-600"
+                      ? "border-t-1  bg-sky-800 text-white"
                       : ""
-                  } duration-400 transition group-hover:text-sky-600`}
+                  } duration-400 transition group-hover:bg-sky-800 group-hover:text-white`}
                 >
-                  <div className=" flex-grow">{item.question}</div>
+                  <div className="flex-grow">{item.question}</div>
                   <ChevronDownIcon
                     className={clsx(
-                      "duration-400 ml-auto h-7 w-7 flex-shrink-0 transform text-neutral-700 transition duration-200 ease-in-out group-hover:text-sky-600",
-                      {
-                        "text-sky-600":
-                          activeSection === index && activeItem === itemIndex,
-                        "rotate-180":
-                          activeSection === index && activeItem === itemIndex,
-                      }
+                      "ml-auto h-7 w-7 flex-shrink-0 transform transition duration-200 ease-in-out group-hover:text-white",
+                      activeSection === index &&
+                        activeItem === itemIndex &&
+                        "rotate-180 text-white"
                     )}
-                    aria-hidden="true"
                   />
                 </h3>
 
                 {activeSection === index && activeItem === itemIndex && (
-                  <div className="faq-answer bg-white px-6 pb-6 pt-0 text-sm leading-relaxed shadow-sm md:text-base">
+                  <div className="faq-answer mt-4 bg-white px-6 pb-6 pt-0 text-sm leading-relaxed shadow-sm md:text-base">
                     {item.answer}
                   </div>
                 )}
