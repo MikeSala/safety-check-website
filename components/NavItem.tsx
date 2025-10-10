@@ -60,7 +60,7 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, subItems }) => {
             </span>
             <ChevronDownIcon
               className={clsx(
-                "h-5 w-5 transform text-neutral-700 transition duration-500 ease-in-out group-hover:text-sky-700",
+                "h-5 w-5 transform transition duration-500 ease-in-out group-hover:text-sky-700",
                 open && "rotate-180",
                 (subItems.map((item) => item.href).includes(route) || open) &&
                   activeClasses
