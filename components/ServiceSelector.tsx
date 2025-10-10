@@ -4,14 +4,14 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { NAV_LABELS } from "~/content/Labels";
 import { ROUTES } from "~/content/Routes";
+import electricalServiceImage from "~/src/assets/images/elec_11.jpg";
+import gasServiceImage from "~/src/assets/images/gas_10.jpg";
+import smokeServiceImage from "~/src/assets/images/smoke_4.jpg";
 import {
   IconElectrical,
   Icons8Fire,
   Icons8SmokeDetectorB,
 } from "~/src/components/icons";
-import electricalServiceImage from "~/src/assets/images/elec_11.jpg";
-import gasServiceImage from "~/src/assets/images/gas_10.jpg";
-import smokeServiceImage from "~/src/assets/images/smoke_4.jpg";
 
 interface ServiceButtonProps {
   iconLeft: string | React.ElementType;
@@ -62,23 +62,21 @@ const ServiceButton: React.FC<ServiceButtonProps> = ({
     <Link
       href={href}
       className={clsx(
-        "group relative flex transform items-center justify-center overflow-hidden rounded border-2 text-white transition-transform hover:scale-105 hover:border-sky-800 hover:shadow-md",
+        "group relative flex transform items-center justify-center overflow-hidden rounded border-2 border-gray-400 text-white transition-transform hover:scale-105 hover:border-sky-800 hover:shadow-md",
         className
       )}
     >
       <div className="relative z-10">
         <Image src={imageSrc} alt={label} width={720} height={640} />
       </div>
-      <div className="h-31 absolute bottom-0 z-20 flex w-full flex-col items-center justify-center -space-y-1 bg-blue-500 bg-opacity-40">
+      <div className="h-31 absolute bottom-0 z-20 flex w-full flex-col items-center justify-center -space-y-1 bg-black bg-opacity-40 group-hover:bg-sky-800">
         <div className="mt-4 flex items-center space-x-2">
           <IconLeftComponent className="mx-2 h-9 w-9 flex-shrink-0" />
           <span className="text-xl h5">{label}</span>
         </div>
 
-        <IconRightComponent className="bottom-2 h-9 w-9 flex-shrink-0 transition-transform duration-500 group-hover:translate-x-60" />
-        <span className="duration-400 absolute bottom-2 whitespace-nowrap opacity-0 transition-opacity h5 group-hover:opacity-100">
-          Więcej
-        </span>
+        <IconRightComponent className="bottom-2 h-9 w-9 flex-shrink-0 transition-transform duration-500 group-hover:translate-x-20" />
+        <span className="duration-400 absolute bottom-2 whitespace-nowrap opacity-0 transition-opacity h5 group-hover:opacity-100"></span>
       </div>
     </Link>
   );
