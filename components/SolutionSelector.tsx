@@ -67,7 +67,7 @@ const SquareButton: React.FC<SquareButtonProps> = ({
     >
       <IconComponent
         className={clsx(
-          "absolute top-4 left-1/2  -translate-x-1/2 transform items-center justify-center",
+          "absolute top-4 left-1/2 -translate-x-1/2 transform items-center justify-center",
           isMobile ? "h-10 w-10" : "h-12 w-12",
           className
         )}
