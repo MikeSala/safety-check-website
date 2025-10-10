@@ -62,14 +62,14 @@ const ServiceButton: React.FC<ServiceButtonProps> = ({
     <Link
       href={href}
       className={clsx(
-        "group relative flex transform items-center justify-center overflow-hidden rounded border-2 border-gray-400 text-white transition-transform hover:scale-105 hover:border-sky-800 hover:shadow-md",
+        "group relative inset-0 flex transform items-center justify-center overflow-hidden rounded border-2 border-gray-400  text-white transition-transform hover:scale-105 hover:border-sky-800 hover:shadow-md",
         className
       )}
     >
       <div className="relative z-10">
         <Image src={imageSrc} alt={label} width={720} height={640} />
       </div>
-      <div className="h-31 absolute bottom-0 z-20 flex w-full flex-col items-center justify-center -space-y-1 bg-black bg-opacity-40 group-hover:bg-sky-800">
+      <div className="duration-600 absolute bottom-0 z-20 flex h-32 w-full flex-col items-center justify-center bg-gradient-to-t from-black/100 to-transparent transition-all group-hover:from-sky-800/100 group-hover:to-transparent">
         <div className="mt-4 flex items-center space-x-2">
           <IconLeftComponent className="mx-2 h-9 w-9 flex-shrink-0" />
           <span className="text-xl h5">{label}</span>
