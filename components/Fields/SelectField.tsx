@@ -17,6 +17,7 @@ type SelectFieldProps = {
   error?: string;
   required?: boolean;
   className?: string;
+  placeholder?: string;
 };
 
 const SelectField = React.forwardRef(
@@ -29,6 +30,7 @@ const SelectField = React.forwardRef(
       autoComplete,
       required,
       className,
+      placeholder,
     }: SelectFieldProps,
     ref: LegacyRef<HTMLSelectElement>
   ) => {
@@ -48,7 +50,7 @@ const SelectField = React.forwardRef(
           required={required}
           {...formProps}
         >
-          <option value="">Please Select</option>
+          <option value="">{placeholder}</option>
 
           {options.map((option) => (
             <option key={option.value} value={option.value}>
