@@ -67,6 +67,7 @@ const HomePage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={homeElectricalImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 60vw, 100vw"
+              alt="Technik wykonujący pomiary rozdzielnicy elektrycznej"
             />
           </div>
 
@@ -143,6 +144,7 @@ const HomePage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={homeGasImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Specjalista kontrolujący instalację gazową w kuchni"
             />
           </div>
         </div>
@@ -157,6 +159,7 @@ const HomePage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={homeSmokeImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Zespół montujący czujniki dymu w domu"
             />
           </div>{" "}
           <div className="min-w-0 flex-1 text-gray-700">

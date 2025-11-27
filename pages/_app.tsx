@@ -1,5 +1,5 @@
 import { ApolloProvider } from "@apollo/client/react";
-import { Comfortaa, Inter } from "@next/font/google";
+import { Inter } from "@next/font/google";
 import clsx from "clsx";
 import { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
@@ -9,6 +9,7 @@ import Script from "next/script";
 import { ReactElement, ReactNode, useEffect, useRef } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CookieBanner from "~/components/CookieBanner";
 import Chatbot from "~/components/Faq/ChatBot";
 import ScrollButton from "~/components/ScrollButton";
 import apolloClient from "~/lib/apollo";
@@ -16,7 +17,6 @@ import { GTM_ID, pageview } from "~/lib/gtag";
 import { DEFAULT_SEO } from "~/next-seo.config";
 import { ViewportProvider } from "~/providers/ViewportProvider";
 import "~/styles/globals.css";
-import CookieBanner from "~/components/CookieBanner";
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -26,12 +26,6 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
-
-// headers
-const comfortaa = Comfortaa({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-comfortaa",
-});
 
 // body text
 const inter = Inter({

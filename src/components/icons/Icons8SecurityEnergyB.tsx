@@ -1,11 +1,9 @@
-import * as React from "react";
-const SvgIcons8SecurityEnergyB = (props) => (
+import type { SVGProps } from "react";
+
+const SvgIcons8SecurityEnergyB = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    style={{
-      enableBackground: "new 0 0 48 48",
-    }}
     viewBox="0 0 48 48"
     width="1em"
     height="1em"

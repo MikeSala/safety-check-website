@@ -27,17 +27,20 @@ const serviceBanners: ServiceBannerProps[] = [
     imageUrl: gasDetailsImage,
     title: content.serviceBanners.gas.title,
     priority: true,
+    imageAlt: "Specjalista sprawdzający instalację gazową w mieszkaniu",
   },
   {
     serviceOfferings: content.serviceBanners.electric.offerings,
     imageUrl: electricDetailsImage,
     title: content.serviceBanners.electric.title,
     priority: true,
+    imageAlt: "Elektryk kontrolujący rozdzielnicę z miernikiem",
   },
   {
     serviceOfferings: content.serviceBanners.smoke.offerings,
     imageUrl: smokeDetailsImage,
     title: content.serviceBanners.smoke.title,
+    imageAlt: "Technik testujący czujnik dymu na suficie",
   },
 ];
 

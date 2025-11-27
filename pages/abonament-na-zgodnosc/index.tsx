@@ -39,6 +39,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={familySubscriptionImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Rodzina rozmawiająca w salonie o bezpieczeństwie mieszkania"
             />
           </div>
           <div className=" text-gray-700">
@@ -71,6 +72,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={victoriaSubscriptionImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Panorama Melbourne symbolizująca zasięg usług"
             />
           </div>
           <div className="mb-4 text-gray-700">

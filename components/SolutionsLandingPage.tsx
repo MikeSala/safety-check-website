@@ -81,6 +81,7 @@ export const SolutionsLandingPage: React.FC<SolutionsLandingPageProps> = ({
                 <ResponsiveImage
                   src={image}
                   sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+                  alt={`Ilustracja sekcji ${title}`}
                 />
               </div>
             </div>

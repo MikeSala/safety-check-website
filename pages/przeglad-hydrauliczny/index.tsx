@@ -30,6 +30,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
             <ResponsiveImage
               src={plumbingImageTwo}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Instalator hydrauliczny naprawiający rury pod zlewem"
             />
           </div>
 
@@ -91,6 +92,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
             <ResponsiveImage
               src={plumbingImageFour}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Wnętrze łazienki podczas serwisu hydraulicznego"
             />
           </div>
         </div>
@@ -107,6 +109,7 @@ const GeneralPlumbing: NextPageWithLayout = () => {
             <ResponsiveImage
               src={plumbingImageOne}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Specjalista sprawdzający instalację wodną w pomieszczeniu technicznym"
             />
           </div>
 

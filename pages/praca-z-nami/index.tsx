@@ -121,6 +121,7 @@ const WorkWithUsPage: NextPageWithLayout = () => {
             src={workWithUsImage}
             sizes="(min-width: 1024px) 50vw, 100vw"
             priority
+            alt="Technik bezpieczeństwa instalacji przygotowujący dokumentację"
           />
           <div className="order-1 flex w-full flex-col justify-center gap-4 px-4 py-8 sm:px-6 sm:py-12 lg:order-2 lg:w-1/2 lg:px-16 lg:py-20">
             {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}

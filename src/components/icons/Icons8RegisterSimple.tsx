@@ -1,11 +1,10 @@
-const Icons8RegisterSimple = (props) => (
+import type { SVGProps } from "react";
+
+const Icons8RegisterSimple = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    style={{
-      enableBackground: "new 0 0 48 48",
-      stroke: "currentColor",
-    }}
+    stroke="currentColor"
     viewBox="0 0 48 48"
     width="1em"
     height="1em"

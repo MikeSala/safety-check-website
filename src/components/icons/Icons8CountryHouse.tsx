@@ -1,10 +1,9 @@
-const SvgIcons8CountryHouse = (props) => (
+import type { SVGProps } from "react";
+
+const SvgIcons8CountryHouse = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
-    style={{
-      enableBackground: "new 0 0 50 50",
-    }}
     viewBox="0 0 50 50"
     width="1em"
     height="1em"

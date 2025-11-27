@@ -8,6 +8,7 @@ export type ServiceBannerProps = {
   serviceOfferings: string[];
   title: string;
   priority?: boolean;
+  imageAlt?: string;
 };
 
 export const ServiceBanner: React.FC<ServiceBannerProps> = ({
@@ -16,6 +17,7 @@ export const ServiceBanner: React.FC<ServiceBannerProps> = ({
   serviceOfferings,
   title,
   priority,
+  imageAlt,
 }) => {
   return (
     <div className="flex flex-wrap bg-neutral-100 lg:flex-nowrap">
@@ -40,6 +42,7 @@ export const ServiceBanner: React.FC<ServiceBannerProps> = ({
         src={imageUrl}
         priority={priority}
         sizes="(min-width: 1024px) 50vw, 100vw"
+        alt={imageAlt ?? title}
       />
     </div>
   );

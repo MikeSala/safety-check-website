@@ -21,6 +21,7 @@ const AboutPage: NextPageWithLayout = () => {
           src={aboutHeroImage}
           priority
           sizes="(min-width: 1024px) 50vw, 100vw"
+          alt="Panorama osiedla domów jednorodzinnych z lotu ptaka"
         />
         <div className="order-1 flex flex-col justify-center gap-4 px-4 py-8 sm:px-6 sm:py-12 lg:w-1/2 lg:px-16 lg:py-20">
           <h2 className="font-bold h2">{content.title}</h2>

@@ -39,6 +39,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={electricalAssessmentImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Elektryk oceniający tablicę rozdzielczą"
             />
           </div>
 
@@ -81,6 +82,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={electricalMaintenanceImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Specjalista wykonuje serwis instalacji elektrycznej"
             />
           </div>
         </div>
@@ -96,6 +98,7 @@ const ElectricalSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={electricalChecklistImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Lista kontrolna bezpieczeństwa energetycznego"
             />
           </div>
 

@@ -6,6 +6,7 @@ type ResponsiveImageProps = {
   priority?: boolean; // set true for images "above the fold"
   src: StaticImageData | string;
   sizes?: React.ImgHTMLAttributes<HTMLImageElement>["sizes"];
+  alt: string;
 };
 
 export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
@@ -13,6 +14,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   priority,
   src,
   sizes = "100vw",
+  alt,
 }) => {
   return (
     <div className={clsx("relative h-[300px] w-full sm:h-[400px]", className)}>
@@ -20,7 +22,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         className="h-full w-full rounded-sm object-cover"
         src={src}
         sizes={sizes}
-        alt=""
+        alt={alt}
         priority={priority}
         fill
         draggable="false"

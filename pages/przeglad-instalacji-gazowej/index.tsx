@@ -41,6 +41,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={gasSafetyIntroImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Serwisant sprawdzający piec gazowy"
             />
           </div>
 
@@ -83,6 +84,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={gasSafetyMaintenanceImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Konserwacja instalacji gazowej w budynku"
             />
           </div>
         </div>
@@ -99,6 +101,7 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={gasSafetyChecklistImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Kontrolna lista zadań dla serwisu gazowego"
             />
           </div>
 

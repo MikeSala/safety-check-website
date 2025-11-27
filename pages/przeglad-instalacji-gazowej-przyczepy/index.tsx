@@ -35,6 +35,7 @@ const CaravanGasComplianceCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={caravanIntroImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Przyczepy kempingowe ustawione na polu z lotu ptaka"
             />
           </div>
 
@@ -103,6 +104,7 @@ const CaravanGasComplianceCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={caravanGuidelinesImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Rodzina odpoczywająca w przyczepie kempingowej"
             />
           </div>
         </div>
@@ -113,6 +115,7 @@ const CaravanGasComplianceCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={caravanPreparationImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Widok na samochód z przyczepą na tle krajobrazu"
             />
           </div>
 

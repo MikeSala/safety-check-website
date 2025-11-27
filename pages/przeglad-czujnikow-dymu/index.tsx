@@ -38,6 +38,7 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={smokeAlarmInspectionImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Technik kontrolujący czujnik dymu na suficie"
             />
           </div>
 
@@ -79,6 +80,7 @@ const SmokeSafetyCheckPage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={smokeAlarmDetailImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Zbliżenie na nowoczesny czujnik dymu"
             />
           </div>
         </div>

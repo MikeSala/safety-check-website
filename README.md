@@ -1,28 +1,46 @@
 ## Safety Check Website
 
-Safety Check is a marketing site showcasing compliance inspections and property safety services.  
-It guides property managers, landlords, and homeowners through tailored solutions and a multi-step contact form so they can request audits quickly.
+Portfolio-friendly marketing site for safety inspections of installations (electrical, gas, smoke alarms). Includes offers for different customer segments, FAQ modules, and multi-step lead forms.
 
-## Stack & Highlights
+## Highlights
+- Service and persona pages sourced from `content/*`, rendered via reusable components (`ServiceSelector`, `SolutionSelector`, FAQ blocks).
+- Forms: contact, tenant details, subscription opt-out, and “Work with us” with CV upload; the compliance booking form is currently disabled in code.
+- SEO and analytics: `next-seo`, canonical URLs, GTM loaded only in production.
+- Cookie consent: `react-cookie-consent` banner storing preferences (analytics/marketing) in cookie `pi_cookie_consent`.
+- FAQ chatbot powered by Fuse.js; success/error notifications via `react-toastify`.
 
-- Next.js with TypeScript and Tailwind CSS for fast, responsive UI.
-- Component-driven architecture (`SolutionSelector`, `ServiceSelector`, custom form fields).
-- Content sourced from typed `/content` modules and rendered in reusable layouts.
-- `ViewportProvider` powers mobile-aware components without duplicating logic.
+## Tech stack
+- Next.js 13 (pages router), TypeScript, Tailwind CSS, path alias `~/*`.
+- Apollo Client for GraphQL mutations, React Hook Form + MUI Stepper for multi-step flows.
+- Stripe SetupIntent (used when the compliance booking form is re-enabled), react-dropzone for CV uploads.
+- Next SEO, Google Tag Manager (production only), react-cookie-consent, Fuse.js.
 
-## Local Setup
-
-Clone the repo, install dependencies, and start the dev server:
-
+## Local setup
+1) Install dependencies:
 ```bash
 npm install
+```
+2) Add `.env.local` (sample values):
+```
+NEXT_PUBLIC_API_ENDPOINT=https://example.com
+NEXT_PUBLIC_TEL_LINK=+48123123123
+NEXT_PUBLIC_EMAIL_LINK=kontakt@example.com
+# Optional: Stripe and booking
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+NEXT_PUBLIC_BASE_URL=http://localhost:3000/
+NEXT_PUBLIC_CIN_DIRECT_API_ENDPOINT=https://example.com
+```
+3) Run dev server:
+```bash
 npm run dev
 ```
+Visit `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) to explore the app.
+## Build and static export
+- `npm run build` – production build.
+- `npm run export` – build + `next export` (outputs to `out/`, ready for static/CDN hosting).
+- `npm run lint` – lint.
+- `npm run analyze` – bundle analysis with `ANALYZE=true`.
 
-## Contribution Workflow
-
-- Use semantic commit messages with a scope (e.g. `Solution Selector: refine hover styling`).
-- Work on `dev`; promote changes via PRs (`dev` → `staging` → `master`).
-- For hotfixes, branch off, open PRs, and merge into all active branches once validated.
+## Architecture
+See `docs/SDD.md` for the full design summary (stack, data flows, integrations, constraints).

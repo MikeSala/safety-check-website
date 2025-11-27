@@ -1,4 +1,6 @@
-const SvgIcons8Trailer = (props) => (
+import type { SVGProps } from "react";
+
+const SvgIcons8Trailer = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="2 0 70 70"

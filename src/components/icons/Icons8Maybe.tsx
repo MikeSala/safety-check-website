@@ -1,12 +1,11 @@
-const SvgIcons8Maybe = (props) => (
+import type { SVGProps } from "react";
+
+const SvgIcons8Maybe = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     width="1em"
     height="1em"
-    style={{
-      enableBackground: "new 0 0 50 50",
-    }}
     viewBox="0 0 50 50"
     {...props}
   >

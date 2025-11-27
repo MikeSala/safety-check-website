@@ -4,14 +4,39 @@ import CookieConsent, { Cookies } from "react-cookie-consent";
 
 const COOKIE_NAME = "pi_cookie_consent";
 
-const serializePreferences = (analytics: boolean, marketing: boolean) =>
-  JSON.stringify({
-    necessary: true,
-    analytics,
-    marketing,
-  });
+type CookiePreferences = {
+  necessary: true;
+  analytics: boolean;
+  marketing: boolean;
+};
 
-const DECLINE_VALUE = serializePreferences(false, false);
+const buildPreferences = (analytics: boolean, marketing: boolean): CookiePreferences => ({
+  necessary: true,
+  analytics,
+  marketing,
+});
+
+const serializePreferences = (preferences: CookiePreferences) => JSON.stringify(preferences);
+
+const parsePreferences = (rawValue: string): CookiePreferences | null => {
+  try {
+    const parsed = JSON.parse(rawValue) as Partial<CookiePreferences>;
+
+    if (typeof parsed.analytics !== "boolean" || typeof parsed.marketing !== "boolean") {
+      return null;
+    }
+
+    return {
+      necessary: true,
+      analytics: parsed.analytics,
+      marketing: parsed.marketing,
+    };
+  } catch {
+    return null;
+  }
+};
+
+const DECLINE_VALUE = serializePreferences(buildPreferences(false, false));
 
 type PreferenceToggleProps = {
   label: string;
@@ -65,21 +90,17 @@ const CookieBanner = () => {
       return;
     }
 
-    try {
-      const parsed = JSON.parse(rawValue) as {
-        analytics?: boolean;
-        marketing?: boolean;
-      };
-
-      setAnalyticsAllowed(Boolean(parsed.analytics));
-      setMarketingAllowed(Boolean(parsed.marketing));
-    } catch (error) {
-      // ignore malformed cookie values
+    const parsedPreferences = parsePreferences(rawValue);
+    if (!parsedPreferences) {
+      return;
     }
+
+    setAnalyticsAllowed(parsedPreferences.analytics);
+    setMarketingAllowed(parsedPreferences.marketing);
   }, []);
 
   const cookieValue = useMemo(
-    () => serializePreferences(analyticsAllowed, marketingAllowed),
+    () => serializePreferences(buildPreferences(analyticsAllowed, marketingAllowed)),
     [analyticsAllowed, marketingAllowed]
   );
 
@@ -157,19 +178,19 @@ const CookieBanner = () => {
         </div>
 
         <div className="space-y-3">
-        <PreferenceToggle
-          label="Analityczne"
-          description="Pomagają nam monitorować statystyki i ulepszać serwis."
-          enabled={analyticsAllowed}
-          onChange={setAnalyticsAllowed}
-        />
-        <PreferenceToggle
-          label="Marketingowe"
-          description="Pozwalają dopasowywać komunikaty marketingowe do Twoich potrzeb."
-          enabled={marketingAllowed}
-          onChange={setMarketingAllowed}
-        />
-      </div>
+          <PreferenceToggle
+            label="Analityczne"
+            description="Pomagają nam monitorować statystyki i ulepszać serwis."
+            enabled={analyticsAllowed}
+            onChange={setAnalyticsAllowed}
+          />
+          <PreferenceToggle
+            label="Marketingowe"
+            description="Pozwalają dopasowywać komunikaty marketingowe do Twoich potrzeb."
+            enabled={marketingAllowed}
+            onChange={setMarketingAllowed}
+          />
+        </div>
 
         <div className="flex flex-col gap-3 border-t border-white/10 pt-4 text-sm sm:flex-row sm:items-center sm:justify-end sm:gap-4 sm:pt-6 sm:text-base">
           <button

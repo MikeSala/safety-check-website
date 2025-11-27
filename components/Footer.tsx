@@ -142,10 +142,10 @@ export const Footer: React.FC = () => {
               <Link
                 className="text-gray-200 transition duration-500 hover:text-sky-700"
                 target="_blank"
-                href=""
+                href="http://strivelab.pl"
                 rel="noreferrer"
               >
-                Strive & StriveLab
+                StriveLab
               </Link>
             </p>
           </div>

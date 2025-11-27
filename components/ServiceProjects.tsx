@@ -1,12 +1,12 @@
 import type { StaticImageData } from "next/image";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
+import eventsImage from "~/src/assets/images/services-projects-events.webp";
 import factoryImage from "~/src/assets/images/services-projects-factory.webp";
 import mallImage from "~/src/assets/images/services-projects-mall.webp";
 import officeImage from "~/src/assets/images/services-projects-office.webp";
 import residentialImage from "~/src/assets/images/services-projects-residential.webp";
 import restaurantImage from "~/src/assets/images/services-projects-restaurant.webp";
-import eventsImage from "~/src/assets/images/services-projects-events.webp";
 
 type ServiceProject = {
   heading: string;
@@ -59,6 +59,7 @@ export const ServiceProjects: React.FC = () => {
               className="col-span-1 flex flex-col items-center gap-3"
             >
               <ResponsiveImage
+                alt={project.heading}
                 src={project.image}
                 sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
               />

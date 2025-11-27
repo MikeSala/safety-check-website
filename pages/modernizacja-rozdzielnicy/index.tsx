@@ -38,6 +38,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={switchboardBeforeImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Stara rozdzielnica elektryczna przed modernizacją"
             />
           </div>
 
@@ -90,6 +91,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={switchboardAfterImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Nowoczesna rozdzielnica po modernizacji"
             />
           </div>
         </div>
@@ -106,6 +108,7 @@ const SwitchboardUpgradePage: NextPageWithLayout = () => {
             <ResponsiveImage
               src={switchboardDetailImage}
               sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
+              alt="Zbliżenie na szczegóły instalacji elektrycznej"
             />
           </div>
           <div>
