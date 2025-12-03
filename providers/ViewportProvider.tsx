@@ -8,35 +8,35 @@ export const ViewportContext = createContext<ViewportContextInterface>({
   isMobile: false,
 });
 
+const MOBILE_QUERY = "(max-width: 768px)";
+
+const getIsMobile = () =>
+  typeof window !== "undefined" &&
+  typeof window.matchMedia === "function" &&
+  window.matchMedia(MOBILE_QUERY).matches;
+
 export const ViewportProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [width, setWidth] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(getIsMobile);
 
   useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
-  const handleWindowResize = () => {
-    setWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
-
-  useEffect(() => {
-    if (width < 769 && !isMobile) {
-      setIsMobile(true);
+    if (typeof window === "undefined" || !window.matchMedia) {
+      return;
     }
-    if (width >= 769 && isMobile) {
-      setIsMobile(false);
-    }
-  }, [width]);
+
+    const mediaQueryList = window.matchMedia(MOBILE_QUERY);
+    const handleChange = (event: MediaQueryListEvent) => {
+      setIsMobile(event.matches);
+    };
+
+    setIsMobile(mediaQueryList.matches);
+    mediaQueryList.addEventListener("change", handleChange);
+
+    return () => mediaQueryList.removeEventListener("change", handleChange);
+  }, []);
 
   return (
     <ViewportContext.Provider value={{ isMobile }}>
