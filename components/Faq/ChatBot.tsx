@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import FaqSectionContent, { FaqContent, FaqItem } from "./FaqContent";
 
 interface Message {
@@ -7,8 +7,12 @@ interface Message {
   text: string | JSX.Element;
 }
 
-export default function Chatbox() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+type ChatboxProps = {
+  startOpen?: boolean;
+};
+
+export default function Chatbox({ startOpen = false }: ChatboxProps) {
+  const [isChatOpen, setIsChatOpen] = useState(startOpen);
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "bot" as const,
@@ -17,20 +21,28 @@ export default function Chatbox() {
   ]);
   const [input, setInput] = useState("");
 
-  const flatFaq = FaqSectionContent.flatMap((section: FaqContent) =>
-    section.items.map((item: FaqItem) => ({
-      id: item.id,
-      question: item.question,
-      answer: item.answer,
-      section: section.title,
-    }))
+  const flatFaq = useMemo(
+    () =>
+      FaqSectionContent.flatMap((section: FaqContent) =>
+        section.items.map((item: FaqItem) => ({
+          id: item.id,
+          question: item.question,
+          answer: item.answer,
+          section: section.title,
+        }))
+      ),
+    []
   );
 
   // Fuse.js do wyszukiwania
-  const fuse = new Fuse(flatFaq, {
-    keys: ["question"],
-    threshold: 0.3,
-  });
+  const fuse = useMemo(
+    () =>
+      new Fuse(flatFaq, {
+        keys: ["question"],
+        threshold: 0.3,
+      }),
+    [flatFaq]
+  );
 
   // Obsługa wysyłania pytania
   const handleSend = (text: string) => {
