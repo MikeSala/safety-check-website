@@ -8,19 +8,24 @@ interface ContactButtonsProps {
 }
 
 const ContactButtons: React.FC<ContactButtonsProps> = ({ isMobile }) => {
+  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
+  const phoneHref = phoneNumber ? `tel:${phoneNumber}` : undefined;
+
   if (isMobile) {
     return (
       <div className="mx-2 flex flex-wrap gap-2">
-        <Button
-          className="h-14 w-14 rounded-full bg-white"
-          href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
-          color={ButtonColor.Primary}
-          size="sm"
-          title="Zadzwoń"
-          outline
-        >
-          <PhoneIcon className="h-7 w-7" />
-        </Button>
+        {phoneHref && (
+          <Button
+            className="h-14 w-14 rounded-full bg-white"
+            href={phoneHref}
+            color={ButtonColor.Primary}
+            size="sm"
+            title="Zadzwoń"
+            outline
+          >
+            <PhoneIcon className="h-7 w-7" />
+          </Button>
+        )}
 
         <Button
           className="group relative h-14 w-14 rounded-full bg-white"
@@ -41,17 +46,19 @@ const ContactButtons: React.FC<ContactButtonsProps> = ({ isMobile }) => {
   }
   return (
     <div className="flex grid-cols-2 flex-wrap gap-2">
-      <Button
-        className="h-12 w-40 rounded bg-white text-sm"
-        href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
-        color={ButtonColor.Primary}
-        size="lg"
-        title="Zadzwoń"
-        outline
-      >
-        <PhoneIcon className="-ml-2 h-6 w-6" />
-        {process.env.NEXT_PUBLIC_TEL_LINK}
-      </Button>
+      {phoneHref && (
+        <Button
+          className="h-12 w-40 rounded bg-white text-sm"
+          href={phoneHref}
+          color={ButtonColor.Primary}
+          size="lg"
+          title="Zadzwoń"
+          outline
+        >
+          <PhoneIcon className="-ml-2 h-6 w-6" />
+          {phoneNumber}
+        </Button>
+      )}
 
       <Button
         className="group relative flex h-12 w-40 items-center justify-center overflow-hidden rounded bg-white"

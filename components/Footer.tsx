@@ -63,6 +63,9 @@ const LINK_GROUPS = [
 export const Footer: React.FC = () => {
   const router = useRouter();
   const currentYear = new Date().getFullYear();
+  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
+  const emailAddress = process.env.NEXT_PUBLIC_EMAIL_LINK;
+  const hasContactInfo = Boolean(phoneNumber || emailAddress);
 
   const renderLinkGroup = (
     heading: string,
@@ -109,25 +112,31 @@ export const Footer: React.FC = () => {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-5">
-            <div className="flex flex-col gap-2 text-sm">
-              <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
-                Kontakt
-              </h3>
-              <Link
-                className="transition duration-500 hover:text-sky-800"
-                href={`tel:${process.env.NEXT_PUBLIC_TEL_LINK}`}
-              >
-                {process.env.NEXT_PUBLIC_TEL_LINK}
-              </Link>
-              <Link
-                className="mt-1 transition duration-500 hover:text-sky-800"
-                href={`mailto:${process.env.NEXT_PUBLIC_EMAIL_LINK}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {process.env.NEXT_PUBLIC_EMAIL_LINK}
-              </Link>
-            </div>
+            {hasContactInfo && (
+              <div className="flex flex-col gap-2 text-sm">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
+                  Kontakt
+                </h3>
+                {phoneNumber && (
+                  <Link
+                    className="transition duration-500 hover:text-sky-800"
+                    href={`tel:${phoneNumber}`}
+                  >
+                    {phoneNumber}
+                  </Link>
+                )}
+                {emailAddress && (
+                  <Link
+                    className="mt-1 transition duration-500 hover:text-sky-800"
+                    href={`mailto:${emailAddress}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {emailAddress}
+                  </Link>
+                )}
+              </div>
+            )}
 
             {LINK_GROUPS.map(({ heading, links }) =>
               renderLinkGroup(heading, links)
@@ -142,7 +151,7 @@ export const Footer: React.FC = () => {
               <Link
                 className="text-gray-200 transition duration-500 hover:text-sky-700"
                 target="_blank"
-                href="http://strivelab.pl"
+                href="https://strivelab.pl"
                 rel="noreferrer"
               >
                 StriveLab

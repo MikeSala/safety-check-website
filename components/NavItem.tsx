@@ -2,7 +2,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Link from "next/link";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import React, { Fragment, useContext } from "react";
 import { ViewportContext } from "~/providers/ViewportProvider";
 import { RequireOnlyOne } from "~/types/optional";
@@ -101,7 +101,6 @@ export const NavItem: React.FC<NavItemProps> = ({ name, href, subItems }) => {
                       onClick={(e) => {
                         e.stopPropagation();
                         close();
-                        router.push(item.href);
                       }}
                     >
                       {item.icon}
