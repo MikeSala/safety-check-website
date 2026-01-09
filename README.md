@@ -10,7 +10,7 @@ Portfolio-friendly marketing site for safety inspections of installations (elect
 - FAQ chatbot powered by Fuse.js; success/error notifications via `react-toastify`.
 
 ## Tech stack
-- Next.js 13 (pages router), TypeScript, Tailwind CSS, path alias `~/*`.
+- Next.js 16 (pages router), TypeScript, Tailwind CSS, path alias `~/*`.
 - Apollo Client for GraphQL mutations, React Hook Form + MUI Stepper for multi-step flows.
 - Stripe SetupIntent (used when the compliance booking form is re-enabled), react-dropzone for CV uploads.
 - Next SEO, Google Tag Manager (production only), react-cookie-consent, Fuse.js.
@@ -38,7 +38,7 @@ Visit `http://localhost:3000`.
 
 ## Build and static export
 - `npm run build` – production build.
-- `npm run export` – build + `next export` (outputs to `out/`, ready for static/CDN hosting).
+- `npm run export` – build (outputs to `out/`, ready for static/CDN hosting).
 - `npm run lint` – lint.
 - `npm run analyze` – bundle analysis with `ANALYZE=true`.
 

@@ -4,7 +4,7 @@ This repository is a Next.js 13 (pages router) marketing site with TypeScript an
 
 ## Project basics
 - Stack: Next.js 13 (pages), React, TypeScript, Tailwind CSS, next-seo.
-- Static export: `next export` is used; keep pages compatible with static output.
+- Static export: `output: "export"` is used; `next build` generates `out/` and pages must be compatible with static output.
 - Path alias: `~/*` maps to repo root.
 
 ## Local setup
@@ -12,7 +12,7 @@ This repository is a Next.js 13 (pages router) marketing site with TypeScript an
 - Env: create `.env.local` (see `README.md` for required `NEXT_PUBLIC_*` values).
 - Run: `npm run dev`
 - Lint: `npm run lint`
-- Build/export: `npm run build` / `npm run export`
+- Build/export: `npm run build` (export happens automatically); `npm run export` is an alias.
 
 ## Content and routing
 - Marketing copy lives in `content/*`; prefer editing content files over component JSX.

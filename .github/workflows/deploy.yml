@@ -25,7 +25,7 @@ jobs:
 
       - name: Build and export Next.js
         run: yarn export
-        # lub: run: npm run export (jeśli używasz npm)
+        # lub: run: npm run build (jeśli używasz npm)
 
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6

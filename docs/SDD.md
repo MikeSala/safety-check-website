@@ -3,7 +3,7 @@
 ## 1. Purpose and scope
 - Public marketing and lead-gen site for safety inspections of installations (electrical, gas, smoke alarms) aimed at property managers and owners.
 - Covers offer presentation, FAQ/CTAs, and multiple forms (contact, tenant details, careers with CV upload, subscription opt-out).
-- Statical export (`next export`) suitable for CDN hosting; content and forms run client-side with external integrations.
+- Static export via `output: "export"` suitable for CDN hosting; `next build` writes `out/` and content/forms run client-side with external integrations.
 
 ## 2. Architecture and structure
 - **Framework**: Next.js 16 (pages router) with TypeScript and Tailwind CSS; source in `pages`, `components`, `content`, `styles`, `utils`.
@@ -30,10 +30,10 @@
 - **Cookie Consent**: `react-cookie-consent` in `components/CookieBanner.tsx`, storing preferences in cookie `pi_cookie_consent` (sameSite Lax, 180 days); toggles for analytics and marketing.
 - **FAQ search**: `components/Faq/ChatBot.tsx` uses Fuse.js to match questions/answers from `FaqContent`.
 - **Files**: `react-dropzone` for CV upload; files converted to base64 and sent in GraphQL payloads.
-- **Media**: images from `src/assets` + `next/image` with `unoptimized` (required by `next export`); remote domain allowlist includes `lirp.cdn-website.com`.
+- **Media**: images from `src/assets` + `next/image` with `unoptimized` (required by static export); remote domain allowlist includes `lirp.cdn-website.com`.
 
 ## 5. Build, run, deployment
-- Scripts (`package.json`): `dev`, `build`, `start`, `export` (build + `next export`), `lint`, `analyze` (bundle analyzer with `ANALYZE=true`).
+- Scripts (`package.json`): `dev`, `build`, `start`, `export` (alias of build), `lint`, `analyze` (bundle analyzer with `ANALYZE=true`).
 - `next.config.js`: `output: "export"`, `trailingSlash: true`, `reactStrictMode: true`, `productionBrowserSourceMaps: true`, remote images allowlist with `remotePatterns`.
 - Required public env vars:  
   `NEXT_PUBLIC_API_ENDPOINT`, `NEXT_PUBLIC_TEL_LINK`, `NEXT_PUBLIC_EMAIL_LINK`; optional `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_GTM_ID` (analytics), other entries used in content (`content/polityka-prywatnosci`).
