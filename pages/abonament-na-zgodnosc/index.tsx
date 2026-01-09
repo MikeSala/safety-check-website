@@ -9,7 +9,6 @@ import FaqSectionsData from "~/components/Faq/FaqContent";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
-import PropertyComplianceForm from "~/components/PropertyComplianceForm";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { PropertyComplianceSubscriptionContent as content } from "~/content/abonament-na-zgodnosc/content.pl";
 import { ROUTES } from "~/content/Routes";
@@ -120,7 +119,6 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
           </ul>
         </div>
       </div>
-      <PropertyComplianceForm />
       <MarginLayout className="flex w-full flex-col">
         <ComplianceSubscriptionMaterials />
       </MarginLayout>

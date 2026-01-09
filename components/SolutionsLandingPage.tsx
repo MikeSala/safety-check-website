@@ -6,7 +6,6 @@ import FaqComponent from "~/components/Faq/Faq";
 import FaqSectionsData from "~/components/Faq/FaqContent";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
-import PropertyComplianceForm from "~/components/PropertyComplianceForm";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
@@ -90,7 +89,6 @@ export const SolutionsLandingPage: React.FC<SolutionsLandingPageProps> = ({
       })}
 
       <SubscriptionServiceBanner />
-      <PropertyComplianceForm />
       <ServiceBoxes />
 
       <FaqComponent sections={FaqSectionsData} selectedIds={faqSelectedIds} />

@@ -8,7 +8,6 @@ import InclusionsExclusions from "~/components/InclusionsExclusions";
 import { InspectionAreas } from "~/components/InspectionAreas";
 import { MainLayout } from "~/components/layouts/MainLayout";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
-import PropertyComplianceForm from "~/components/PropertyComplianceForm";
 import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
@@ -132,7 +131,6 @@ const GasSafetyCheckPage: NextPageWithLayout = () => {
         </div>
       </MarginLayout>
       <InclusionsExclusions category="Przeglądy Bezpieczeństwa Elektrycznego" />
-      <PropertyComplianceForm />
       <ServiceBoxes />
       <SubscriptionServiceBanner />
       <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
