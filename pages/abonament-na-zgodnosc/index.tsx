@@ -88,8 +88,8 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
         </div>
       </MarginLayout>
 
-      <div className="mb-20 mt-20 flex flex-col gap-0 bg-sky-700 px-4 py-6 sm:mb-8 sm:mt-8 sm:px-8 md:mb-20 md:mt-20 md:flex-row md:px-24 md:py-12">
-        <div className="flex w-full flex-col items-center justify-center border-white bg-black p-4 text-center sm:p-6 md:w-1/2 md:border-r-2 md:p-4">
+      <div className="mb-20 mt-20 flex flex-col gap-0 bg-sky-800 px-4 py-6 sm:mb-8 sm:mt-8 sm:px-8 md:mb-20 md:mt-20 md:flex-row md:px-24 md:py-12">
+        <div className="bg-sky-000 flex w-full flex-col items-center justify-center border-white p-4 text-center sm:p-6 md:w-1/2 md:border-r-2 md:p-4">
           <p className="mb-4 text-center font-semibold text-white h5">
             {content.description}
           </p>
@@ -103,7 +103,7 @@ const PropertyComplianceSubscriptionPage: NextPageWithLayout = () => {
           <i className="text-white">{content.note}</i>
         </div>
 
-        <div className="w-full bg-black p-4 sm:p-6 md:w-1/2 md:p-2">
+        <div className="w-full bg-sky-800 p-4 sm:p-6 md:w-1/2 md:p-2">
           <h3 className="mb-4 flex items-center justify-center text-xl font-semibold text-white h2">
             Korzyści
           </h3>
