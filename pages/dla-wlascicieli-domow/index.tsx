@@ -2,7 +2,7 @@ import {
   buildDefaultSolutionsSections,
   createSolutionsPage,
 } from "~/components/solutions/solutionsPageFactory";
-import InfoLinks from "~/pages/InfoLinks";
+import InfoLinks from "~/components/InfoLinks";
 import { SolutionsForHomeownersContent as content } from "~/content/dla-wlascicieli-domow/content.pl";
 
 const selectedId = [121, 122, 123, 124, 125];

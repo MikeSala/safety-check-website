@@ -1,6 +1,6 @@
-// InfoLinks.tsx
 import Link from "next/link";
-import PhoneNumberLink from "./PhoneNumberLink";
+import { ROUTES } from "~/content/Routes";
+import PhoneNumberLink from "~/components/PhoneNumberLink";
 
 export default function InfoLinks() {
   const linkClasses =
@@ -12,14 +12,14 @@ export default function InfoLinks() {
         Bardziej szczegółowe informacje znajdziesz w sekcji FAQ. Jeśli
         interesują Cię przepisy i regulacje dotyczące kontroli bezpieczeństwa,
         odwiedź naszą{" "}
-        <Link href="/legislacja/" title="Przepisy" className={linkClasses}>
+        <Link href={ROUTES.LEGISLATION} title="Przepisy" className={linkClasses}>
           stronę z przepisami
         </Link>
         .
       </p>
       <p className="mt-4">
         Alternatywnie możesz{" "}
-        <Link href="/kontakt/" title="Kontakt" className={linkClasses}>
+        <Link href={ROUTES.CONTACT_US} title="Kontakt" className={linkClasses}>
           skontaktować się z nami
         </Link>{" "}
         lub zadzwonić pod <PhoneNumberLink />.

@@ -3,7 +3,7 @@ import {
   createSolutionsPage,
 } from "~/components/solutions/solutionsPageFactory";
 import { SolutionsForRealEstateContent as content } from "~/content/dla-biur-nieruchomosci/content.pl";
-import InfoLinks from "~/pages/InfoLinks";
+import InfoLinks from "~/components/InfoLinks";
 
 const selectedId = [141, 142, 143, 144, 145];
 
