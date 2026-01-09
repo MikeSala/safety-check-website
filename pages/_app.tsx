@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
-import { Inter } from "next/font/google";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import dynamic from "next/dynamic";
@@ -33,12 +32,6 @@ export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
-
-// body text
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page);
@@ -74,7 +67,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       <ViewportProvider>
         <div
           id="app"
-          className={clsx("flex h-full flex-col overflow-auto", inter.variable)}
+          className={clsx("flex h-full flex-col overflow-auto")}
           ref={ref}
         >
           {" "}

@@ -7,9 +7,13 @@ const nextConfig = {
   output: "export",
   trailingSlash: true,
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ["lirp.cdn-website.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lirp.cdn-website.com",
+      },
+    ],
     unoptimized: true,
   },
   // i18n: {
@@ -17,9 +21,6 @@ const nextConfig = {
   //   defaultLocale: "pl",
   // },
   productionBrowserSourceMaps: true,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);

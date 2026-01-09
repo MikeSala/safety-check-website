@@ -9,6 +9,16 @@ class WebDocument extends Document {
             name="google-site-verification"
             content="LJfwwRf5CXV29hh4qe1o4zmI2kHGIhpoNchQX4mKQiw"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+          />
         </Head>
         <body>
           {process.env.NODE_ENV === "production" && (

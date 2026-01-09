@@ -6,7 +6,7 @@
 - Statical export (`next export`) suitable for CDN hosting; content and forms run client-side with external integrations.
 
 ## 2. Architecture and structure
-- **Framework**: Next.js 13 (pages router) with TypeScript and Tailwind CSS; source in `pages`, `components`, `content`, `styles`, `utils`.
+- **Framework**: Next.js 16 (pages router) with TypeScript and Tailwind CSS; source in `pages`, `components`, `content`, `styles`, `utils`.
 - **Composition**: `_app.tsx` wraps the app with `ApolloProvider`, `ViewportProvider`, `DefaultSeo`, GTM (production only), `ToastContainer`, `Chatbot`, and `CookieBanner`; most pages use `MainLayout`.
 - **Routing**: static pages for services and customer personas (`/uslugi`, `/rozwiazania`, dedicated landings in `pages/*`), policy/FAQ pages, technical paths `/opt-out`, `/checkout-result`, `/tenant-information-request`, `/praca-z-nami`.
 - **Content**: imported from `content/*` modules (e.g., `content/homePageContent.ts`, `content/.../content.pl.ts`) via alias `~/*` (see `tsconfig.json`).
@@ -24,7 +24,7 @@
 - **Notifications**: form successes/errors surfaced via `react-toastify` (`utils/toast.ts`).
 
 ## 4. Integrations and key libraries
-- **UI/UX**: Tailwind CSS with extended `primary` palette, fonts via `@next/font` (Inter), utility heading classes h1–h5 in `tailwind.config.cjs`; MUI components (Stepper, Card).
+- **UI/UX**: Tailwind CSS with extended `primary` palette, Google Fonts loaded in `pages/_document.tsx` (Inter, Comfortaa, Montserrat), utility heading classes h1–h5 in `tailwind.config.cjs`; MUI components (Stepper, Card).
 - **Analytics**: Google Tag Manager (`lib/gtag.ts`, `pages/_document.tsx`) loaded only in production; `pageview` events on `routeChangeComplete`; GTM ID overridable via `NEXT_PUBLIC_GTM_ID` (defaults to `GTM-PJBDLC2`).
 - **SEO**: `next-seo` (`DEFAULT_SEO` in `next-seo.config.ts`) + dynamic `canonical` in `_app.tsx`.
 - **Cookie Consent**: `react-cookie-consent` in `components/CookieBanner.tsx`, storing preferences in cookie `pi_cookie_consent` (sameSite Lax, 180 days); toggles for analytics and marketing.
@@ -34,7 +34,7 @@
 
 ## 5. Build, run, deployment
 - Scripts (`package.json`): `dev`, `build`, `start`, `export` (build + `next export`), `lint`, `analyze` (bundle analyzer with `ANALYZE=true`).
-- `next.config.js`: `output: "export"`, `trailingSlash: true`, `reactStrictMode: true`, `productionBrowserSourceMaps: true`, ESLint errors ignored during build.
+- `next.config.js`: `output: "export"`, `trailingSlash: true`, `reactStrictMode: true`, `productionBrowserSourceMaps: true`, remote images allowlist with `remotePatterns`.
 - Required public env vars:  
   `NEXT_PUBLIC_API_ENDPOINT`, `NEXT_PUBLIC_TEL_LINK`, `NEXT_PUBLIC_EMAIL_LINK`; optional `NEXT_PUBLIC_BASE_URL`, `NEXT_PUBLIC_GTM_ID` (analytics), other entries used in content (`content/polityka-prywatnosci`).
 - Aliases and TS: `baseUrl` set to repo root; alias `~/*` for relative imports.
