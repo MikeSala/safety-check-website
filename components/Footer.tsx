@@ -4,6 +4,7 @@ import ContactButtons from "~/components/ContactButtons";
 import DistrictBar from "~/components/DisctrictBar";
 import { NAV_LABELS } from "~/content/Labels";
 import { ROUTES } from "~/content/Routes";
+import { getContactInfo } from "~/utils/contactInfo";
 
 const LINK_GROUPS = [
   {
@@ -63,9 +64,8 @@ const LINK_GROUPS = [
 export const Footer: React.FC = () => {
   const router = useRouter();
   const currentYear = new Date().getFullYear();
-  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
-  const emailAddress = process.env.NEXT_PUBLIC_EMAIL_LINK;
-  const hasContactInfo = Boolean(phoneNumber || emailAddress);
+  const { phoneNumber, phoneHref, email, emailHref } = getContactInfo();
+  const hasContactInfo = Boolean(phoneNumber || email);
 
   const renderLinkGroup = (
     heading: string,
@@ -117,22 +117,22 @@ export const Footer: React.FC = () => {
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-200">
                   Kontakt
                 </h3>
-                {phoneNumber && (
+                {phoneNumber && phoneHref && (
                   <Link
                     className="transition duration-500 hover:text-sky-800"
-                    href={`tel:${phoneNumber}`}
+                    href={phoneHref}
                   >
                     {phoneNumber}
                   </Link>
                 )}
-                {emailAddress && (
+                {email && emailHref && (
                   <Link
                     className="mt-1 transition duration-500 hover:text-sky-800"
-                    href={`mailto:${emailAddress}`}
+                    href={emailHref}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {emailAddress}
+                    {email}
                   </Link>
                 )}
               </div>

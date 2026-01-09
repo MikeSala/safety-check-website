@@ -1,8 +1,12 @@
+import { getContactInfo } from "~/utils/contactInfo";
+
+const { phoneNumber, email } = getContactInfo();
+
 export const privacyPolicyContent = {
   updated: "22 stycznia 2024",
   address: "ul. Przykładowa 1, 00-000 Warszawa",
-  phone: process.env.NEXT_PUBLIC_TEL_LINK,
-  email: process.env.NEXT_PUBLIC_EMAIL_LINK,
+  phone: phoneNumber,
+  email: email,
   sections: [
     {
       title: "Polityka Prywatności",

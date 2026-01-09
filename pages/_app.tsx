@@ -11,6 +11,9 @@ import { ReactElement, ReactNode, useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CookieBanner from "~/components/CookieBanner";
+import ChatLauncherButton, {
+  CHAT_LAUNCHER_POSITION_CLASSES,
+} from "~/components/Faq/ChatLauncherButton";
 import ScrollButton from "~/components/ScrollButton";
 import apolloClient from "~/lib/apollo";
 import { GTM_ID, pageview } from "~/lib/gtag";
@@ -96,22 +99,9 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
           <ToastContainer autoClose={4000} hideProgressBar={true} />
           <div>
             {!isChatLoaded && (
-              <button
-                type="button"
-                onClick={() => setIsChatLoaded(true)}
-                className="fixed bottom-11 right-20 z-40 flex items-center gap-2 rounded-full border border-sky-800 bg-white px-5 py-2 text-sm font-medium text-sky-800 shadow-lg transition hover:bg-sky-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300 sm:right-[7.5rem] lg:right-[5.5rem]"
-              >
-                <span aria-hidden className="text-lg">
-                  💬
-                </span>
-                <span className="flex items-center gap-2 text-sm font-medium">
-                  Kliknij tutaj
-                  <span
-                    aria-hidden
-                    className="h-3 w-3 animate-pulse rounded-full bg-red-400 shadow-[0_0_0_2px_rgba(16,185,129,0.35)]"
-                  />
-                </span>
-              </button>
+              <div className={CHAT_LAUNCHER_POSITION_CLASSES}>
+                <ChatLauncherButton onClick={() => setIsChatLoaded(true)} />
+              </div>
             )}
             {isChatLoaded && <Chatbot startOpen />}
           </div>

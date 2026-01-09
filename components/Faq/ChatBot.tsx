@@ -1,6 +1,10 @@
 import Fuse from "fuse.js";
 import { useMemo, useState } from "react";
+import ChatLauncherButton, {
+  CHAT_LAUNCHER_POSITION_CLASSES,
+} from "./ChatLauncherButton";
 import FaqSectionContent, { FaqContent, FaqItem } from "./FaqContent";
+import { BG, TEXT } from "~/components/theme/colors";
 
 interface Message {
   sender: "bot" | "user";
@@ -65,11 +69,13 @@ export default function Chatbox({ startOpen = false }: ChatboxProps) {
   };
 
   return (
-    <div className="fixed bottom-11 right-20 z-50 sm:right-[7.5rem] lg:right-[5.5rem]">
+    <div className={CHAT_LAUNCHER_POSITION_CLASSES}>
       {isChatOpen ? (
         <div className="border-t-1 flex h-[400px] w-[350px] flex-col rounded-lg border-white bg-white shadow-xl">
           {/* Nagłówek z przyciskiem zamknięcia */}
-          <div className="flex items-center justify-between rounded-lg bg-sky-800 px-3 py-2 text-white">
+          <div
+            className={`flex items-center justify-between rounded-lg px-3 py-2 ${BG.primary} ${TEXT.onPrimary}`}
+          >
             <span className="font-medium">Chat z nami</span>
             <button
               onClick={() => setIsChatOpen(false)}
@@ -87,7 +93,7 @@ export default function Chatbox({ startOpen = false }: ChatboxProps) {
                 className={`max-w-[80%] rounded p-2 text-sm ${
                   msg.sender === "bot"
                     ? "self-start bg-gray-100 text-gray-800"
-                    : "ml-auto self-end bg-sky-800 text-white"
+                    : `ml-auto self-end ${BG.primary} ${TEXT.onPrimary}`
                 }`}
               >
                 {typeof msg.text === "string" ? msg.text : msg.text}
@@ -127,21 +133,7 @@ export default function Chatbox({ startOpen = false }: ChatboxProps) {
           </div>
         </div>
       ) : (
-        <button
-          onClick={() => setIsChatOpen(true)}
-          className="flex items-center gap-2 rounded-full border border-sky-800 bg-white px-5 py-2 text-sm font-medium text-sky-800 shadow-lg transition hover:bg-sky-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
-        >
-          <span aria-hidden className="text-lg">
-            💬
-          </span>
-          <span className="flex items-center gap-2 text-sm font-medium">
-            Kliknij tutaj
-            <span
-              aria-hidden
-              className="h-3 w-3 animate-pulse rounded-full bg-red-400 shadow-[0_0_0_2px_rgba(16,185,129,0.35)]"
-            />
-          </span>
-        </button>
+        <ChatLauncherButton onClick={() => setIsChatOpen(true)} />
       )}
     </div>
   );

@@ -48,7 +48,7 @@ const SubscriptionServiceBanner: React.FC = () => {
             </h4>
             <Button
               className="mt-4 shrink-0 rounded bg-white hover:bg-primary-600 hover:text-white"
-              href="/abonament-na-zgodnosc"
+              href="/abonament-na-ko"
               color={ButtonColor.Primary}
               size="lg"
               title={`Learn more about ${content.item[3]}`}

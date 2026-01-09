@@ -1,5 +1,7 @@
+import { getContactInfo } from "~/utils/contactInfo";
+
 export default function PhoneNumberLink() {
-  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
+  const { phoneNumber, phoneHref } = getContactInfo();
 
   if (!phoneNumber) {
     return <span className="text-red-500">[Brak Numeru]</span>;
@@ -7,7 +9,7 @@ export default function PhoneNumberLink() {
 
   return (
     <a
-      href={`tel:${phoneNumber}`}
+      href={phoneHref}
       className="text-blue-500 transition-colors duration-300 ease-in-out hover:text-blue-400"
     >
       {phoneNumber}

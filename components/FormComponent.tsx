@@ -1,5 +1,6 @@
 import { ContactForm } from "~/components/ContactForm";
 import { MarginLayout } from "~/components/layouts/MarginLayout";
+import SectionStrip from "~/components/SectionStrip";
 
 type TitleId =
   | "caravanSafety"
@@ -31,9 +32,11 @@ const FormComponent: React.FC<FormComponentProps> = ({ titleId }) => {
   return (
     <>
       {titleId && (
-        <article className="flex h-[100px] flex-col items-center justify-center gap-4 bg-gray-200 px-4 py-12 text-center text-2xl h3 sm:py-24 lg:px-8">
-          <h2 className="font-semibold h3">{title}</h2>
-        </article>
+        <SectionStrip
+          title={title}
+          paddingClassName="px-4 py-12 sm:py-24 lg:px-8"
+          titleClassName="font-semibold h3"
+        />
       )}
       <MarginLayout className="mt-10 mb-10 items-center justify-center">
         <div className="gap-12 md:grid md:grid-cols-2">

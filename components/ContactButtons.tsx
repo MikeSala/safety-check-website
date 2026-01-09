@@ -1,6 +1,7 @@
 import { ArrowLongRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import Button, { ButtonColor } from "~/components/Button";
 import { Icons8RegisterSimple } from "~/src/components/icons";
+import { getContactInfo } from "~/utils/contactInfo";
 
 interface ContactButtonsProps {
   className?: string;
@@ -8,8 +9,7 @@ interface ContactButtonsProps {
 }
 
 const ContactButtons: React.FC<ContactButtonsProps> = ({ isMobile }) => {
-  const phoneNumber = process.env.NEXT_PUBLIC_TEL_LINK;
-  const phoneHref = phoneNumber ? `tel:${phoneNumber}` : undefined;
+  const { phoneNumber, phoneHref } = getContactInfo();
 
   if (isMobile) {
     return (

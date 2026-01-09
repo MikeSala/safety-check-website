@@ -93,7 +93,7 @@ const FaqComponent: React.FC<FaqComponentProps> = ({
                 </h3>
 
                 {activeSection === index && activeItem === itemIndex && (
-                  <div className="faq-answer mt-4 bg-white px-6 pb-6 pt-0 text-sm leading-relaxed shadow-sm md:text-base">
+                  <div className="faq-answer bg-white px-4 pb-4 pt-4 text-sm leading-relaxed shadow-sm md:text-base">
                     {item.answer}
                   </div>
                 )}

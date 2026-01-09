@@ -1,6 +1,7 @@
 import { ArrowUpIcon } from "@heroicons/react/24/outline";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ViewportContext } from "~/providers/ViewportProvider";
+import { BG, BORDER, TEXT } from "~/components/theme/colors";
 
 const ScrollButton = ({
   containerRef,
@@ -38,7 +39,7 @@ const ScrollButton = ({
     <button
       type="button"
       onClick={scrollToTop}
-      className={`group fixed ${buttonStyle} z-[9999] inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-800 bg-white/95 text-sky-800 shadow-lg transition hover:bg-sky-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-900`}
+      className={`group fixed ${buttonStyle} z-[9999] inline-flex h-11 w-11 items-center justify-center rounded-full border ${BORDER.primary} ${BG.surfaceMuted} ${TEXT.primary} shadow-lg transition hover:bg-sky-800 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-900`}
       style={{ display: visible ? "flex" : "none" }}
       title="Przewiń do góry"
       aria-label="Przewiń do góry"
