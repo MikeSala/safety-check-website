@@ -1,5 +1,6 @@
 import { TruckIcon } from "@heroicons/react/20/solid";
 import React from "react";
+import { BG, TEXT } from "~/components/theme/colors";
 
 const locations = [
   "Kraków",
@@ -20,8 +21,8 @@ interface BarComponentProps {
 }
 
 const DistrictBar: React.FC<BarComponentProps> = ({
-  backgroundColor = "bg-sky-800",
-  textColor = "text-white",
+  backgroundColor = BG.primary,
+  textColor = TEXT.onPrimary,
 }) => {
   const estimatedMinWidth = locations.length * 146;
 
