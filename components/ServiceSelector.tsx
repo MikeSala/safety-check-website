@@ -10,7 +10,7 @@ import {
   Icons8Fire,
   Icons8SmokeDetectorB,
 } from "~/src/components/icons";
-import { SERVICE_CARDS } from "~/content/services";
+import { SERVICE_CARDS, type ServiceCard } from "~/content/services";
 
 interface ServiceButtonProps {
   iconLeft: string | React.ElementType;
@@ -25,7 +25,15 @@ interface ServiceButtonProps {
   iconRightClass?: string;
 }
 
-const serviceAssets = {
+type SelectorIconType = Exclude<ServiceCard["iconType"], "package">;
+
+const serviceAssets: Record<
+  SelectorIconType,
+  {
+    iconLeft: React.ElementType;
+    imageSrc: StaticImageData;
+  }
+> = {
   electrical: {
     iconLeft: IconElectrical,
     imageSrc: electricalServiceImage,
@@ -38,7 +46,12 @@ const serviceAssets = {
     iconLeft: Icons8SmokeDetectorB,
     imageSrc: smokeServiceImage,
   },
-} as const;
+};
+
+const selectorServices = SERVICE_CARDS.filter(
+  (service): service is ServiceCard & { iconType: SelectorIconType } =>
+    service.iconType !== "package"
+);
 
 const ServiceButton: React.FC<ServiceButtonProps> = ({
   iconLeft: IconLeftComponent,
@@ -75,23 +88,21 @@ const ServiceButton: React.FC<ServiceButtonProps> = ({
 const ServiceSelector: React.FC = () => {
   return (
     <div className="xs:grid-cols-1 mb-10 grid md:grid-cols-2 lg:grid-cols-3">
-      {SERVICE_CARDS.filter((service) => serviceAssets[service.iconType]).map(
-        (service, index) => {
-          const assets = serviceAssets[service.iconType];
-          return (
-        <div key={index} className="min-w-0 flex-1 p-4">
-          <ServiceButton
-            className="shadow-sm"
-            label={service.label}
-            iconLeft={assets.iconLeft}
-            iconRight={ArrowLongRightIcon}
-            imageSrc={assets.imageSrc}
-            href={service.href}
-          />
-        </div>
-          );
-        }
-      )}
+      {selectorServices.map((service, index) => {
+        const assets = serviceAssets[service.iconType];
+        return (
+          <div key={index} className="min-w-0 flex-1 p-4">
+            <ServiceButton
+              className="shadow-sm"
+              label={service.label}
+              iconLeft={assets.iconLeft}
+              iconRight={ArrowLongRightIcon}
+              imageSrc={assets.imageSrc}
+              href={service.href}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 };
