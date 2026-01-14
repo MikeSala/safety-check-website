@@ -19,16 +19,13 @@ export const ElectricalSafetyCheckContent = {
 
   section3: {
     title: "Raport z przeglądu instalacji elektrycznej",
-    intro:
-      "Każdy klient otrzymuje raport z przeglądu bezpieczeństwa instalacji elektrycznej zawierający następujące informacje:",
     paragraphs: [
+      "Każdy klient otrzymuje raport z przeglądu bezpieczeństwa instalacji elektrycznej zawierający następujące informacje:",
       "Data przeprowadzenia kontroli instalacji elektrycznej.",
       "Imię i nazwisko lub nazwa firmy elektryka wraz z numerem uprawnień lub wpisu do rejestru.",
       "Wyniki przeglądu, w tym wykryte nieprawidłowości oraz wykonane naprawy i działania naprawcze.",
       "Potwierdzenie, że wszystkie instalacje i urządzenia zostały dokładnie sprawdzone i uznane za bezpieczne.",
-    ],
-    note: [
-      `Dokument ten stanowi dowód przeprowadzenia przeglądu i potwierdza, że podjęto niezbędne środki w celu zapewnienia bezpiecznego użytkowania instalacji elektrycznej.`,
+      "Dokument ten stanowi dowód przeprowadzenia przeglądu i potwierdza, że podjęto niezbędne środki w celu zapewnienia bezpiecznego użytkowania instalacji elektrycznej.",
     ],
   },
   seo: {

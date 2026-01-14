@@ -18,7 +18,7 @@ type InputProps = {
   disabled?: boolean;
 };
 
-const InputField = React.forwardRef(
+const InputFieldComponent = React.forwardRef(
   (
     {
       label,
@@ -35,7 +35,6 @@ const InputField = React.forwardRef(
     }: InputProps,
     _ref: LegacyRef<HTMLInputElement>
   ) => {
-    InputField.displayName = "InputField";
     const id = useId();
 
     return (
@@ -62,5 +61,9 @@ const InputField = React.forwardRef(
     );
   }
 );
+
+InputFieldComponent.displayName = "InputField";
+
+const InputField = InputFieldComponent;
 
 export default InputField;

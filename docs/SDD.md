@@ -2,13 +2,13 @@
 
 ## 1. Purpose and scope
 - Public marketing and lead-gen site for safety inspections of installations (electrical, gas, smoke alarms) aimed at property managers and owners.
-- Covers offer presentation, FAQ/CTAs, and multiple forms (contact, tenant details, careers with CV upload, subscription opt-out).
+- Covers offer presentation, FAQ/CTAs, and multiple forms (contact form, subscription opt-out).
 - Static export via `output: "export"` suitable for CDN hosting; `next build` writes `out/` and content/forms run client-side with external integrations.
 
 ## 2. Architecture and structure
 - **Framework**: Next.js 16 (pages router) with TypeScript and Tailwind CSS; source in `pages`, `components`, `content`, `styles`, `utils`.
 - **Composition**: `_app.tsx` wraps the app with `ApolloProvider`, `ViewportProvider`, `DefaultSeo`, GTM (production only), `ToastContainer`, `Chatbot`, and `CookieBanner`; most pages use `MainLayout`.
-- **Routing**: static pages for services and customer personas (`/uslugi`, `/rozwiazania`, dedicated landings in `pages/*`), policy/FAQ pages, technical paths `/opt-out`, `/checkout-result`, `/tenant-information-request`, `/praca-z-nami`.
+- **Routing**: static pages for services and customer personas (`/uslugi`, `/rozwiazania`, dedicated landings in `pages/*`), policy/FAQ pages, technical paths `/opt-out`, `/checkout-result`.
 - **Content**: imported from `content/*` modules (e.g., `content/homePageContent.ts`, `content/.../content.pl.ts`) via alias `~/*` (see `tsconfig.json`).
 - **UI**: shared components (`ServiceSelector`, `SolutionSelector`, `ResponsiveImage`, `Faq`, `Header/Footer`) and layout helpers (`MarginLayout`, `StepLayout`, `ModalLayout`).
 - **Global state**: `ViewportProvider` calculates `isMobile` from window width and exposes it via context for responsive logic.
@@ -17,19 +17,15 @@
 - **GraphQL (Apollo Client)**: `lib/apollo.ts` targets `NEXT_PUBLIC_API_ENDPOINT` (`/graphql`).
 - **Lead forms** (React Hook Form):
   - `components/ContactForm.tsx` → mutation `submitContactForm`.
-  - `components/TenantForm.tsx` → mutation `submitTenantRequestForm` (adds `request` from query string).
-  - `pages/praca-z-nami/index.tsx` + `components/WorkWithUs/*` → mutation `submitWorkApplication`; CV upload via `StyledDropzone` (file converted to base64 in `utils/blob.ts`).
   - `pages/opt-out/index.tsx` → mutation `optOutCustomer` using token `t` from query.
-- **Multi-step flows**: `components/Stepper.tsx` (MUI) + sections `components/WorkWithUs/FormSections/*`. Per-step validation with `trigger` using a field list; Next button blocked on errors.
 - **Notifications**: form successes/errors surfaced via `react-toastify` (`utils/toast.ts`).
 
 ## 4. Integrations and key libraries
-- **UI/UX**: Tailwind CSS with extended `primary` palette, Google Fonts loaded in `pages/_document.tsx` (Inter, Comfortaa, Montserrat), utility heading classes h1–h5 in `tailwind.config.cjs`; MUI components (Stepper, Card).
+- **UI/UX**: Tailwind CSS with extended `primary` palette, Google Fonts loaded in `pages/_document.tsx` (Inter, Comfortaa, Montserrat), utility heading classes h1–h5 in `tailwind.config.cjs`; MUI components (Card).
 - **Analytics**: Google Tag Manager (`lib/gtag.ts`, `pages/_document.tsx`) loaded only in production; `pageview` events on `routeChangeComplete`; GTM ID overridable via `NEXT_PUBLIC_GTM_ID` (defaults to `GTM-PJBDLC2`).
 - **SEO**: `next-seo` (`DEFAULT_SEO` in `next-seo.config.ts`) + dynamic `canonical` in `_app.tsx`.
 - **Cookie Consent**: `react-cookie-consent` in `components/CookieBanner.tsx`, storing preferences in cookie `pi_cookie_consent` (sameSite Lax, 180 days); toggles for analytics and marketing.
 - **FAQ search**: `components/Faq/ChatBot.tsx` uses Fuse.js to match questions/answers from `FaqContent`.
-- **Files**: `react-dropzone` for CV upload; files converted to base64 and sent in GraphQL payloads.
 - **Media**: images from `src/assets` + `next/image` with `unoptimized` (required by static export); remote domain allowlist includes `lirp.cdn-website.com`.
 
 ## 5. Build, run, deployment
@@ -49,5 +45,4 @@
 - No automated tests; manual testing required for key paths (forms, navigation, static export).
 
 ## 8. Known gaps and future work
-- No client-side file size limits for CV upload (depends on `react-dropzone` and backend enforcement).
 - Missing E2E/unit tests and CI; adding basic scenarios (page render, form submissions with mocked API) would reduce regression risk for public release.

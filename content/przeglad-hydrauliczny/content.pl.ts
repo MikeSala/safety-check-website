@@ -4,9 +4,7 @@ export const GeneralPlumbingContent = {
     title: "Profesjonalne usługi hydrauliczne",
     paragraphs: [
       `Oferujemy kompleksowe wsparcie w szerokim zakresie usług – od napraw przecieków i instalacji dachowych po drobne prace konserwacyjne. Potrzebujesz sprawdzonego hydraulika? Przekonaj się sam, jak bardzo dbamy o jakość obsługi i pełne zadowolenie klientów.`,
-    ],
-    bullet: "Nasze główne usługi",
-    list: [
+      "Nasze główne usługi:",
       `Wycieki wody (w tym pęknięte rury, nieszczelności prysznicowe)`,
       `Naprawa wszystkich rodzajów kranów`,
       `Naprawa i montaż podgrzewaczy wody`,
@@ -24,10 +22,8 @@ export const GeneralPlumbingContent = {
   },
   section2: {
     title: "Hydraulik do domu i firmy",
-    paragraph: [
+    paragraphs: [
       `Usługi hydrauliczne są podstawą bezpiecznego i sprawnego funkcjonowania zarówno budynków mieszkalnych, jak i obiektów komercyjnych.`,
-    ],
-    list: [
       `Zdrowie i higiena: zapewniają czystą wodę i prawidłowe odprowadzanie ścieków.`,
       `Bezpieczeństwo: ograniczają ryzyko zalania i uszkodzeń.`,
       `Ciągłość działania: zapobiegają przestojom w firmach.`,
@@ -35,13 +31,13 @@ export const GeneralPlumbingContent = {
       `Komfort: poprawiają warunki życia i pracy.`,
       `Zgodność z przepisami: spełniają normy instalacyjne.`,
       `Ochrona środowiska: promują zrównoważone rozwiązania.`,
+      `Profesjonalny hydraulik to gwarancja sprawnych i bezpiecznych instalacji wodnych, co wpływa na komfort mieszkańców oraz działanie firm.`,
     ],
-    note: `Profesjonalny hydraulik to gwarancja sprawnych i bezpiecznych instalacji wodnych, co wpływa na komfort mieszkańców oraz działanie firm.`,
   },
   section3: {
     title: "Kiedy skontaktować się z hydraulikiem?",
-    paragraph: `Wiedza, kiedy wezwać fachowca, jest kluczowa dla bezpieczeństwa i stanu technicznego nieruchomości. Oto sytuacje, w których pomoc hydraulika jest niezbędna:`,
-    list: [
+    paragraphs: [
+      `Wiedza, kiedy wezwać fachowca, jest kluczowa dla bezpieczeństwa i stanu technicznego nieruchomości. Oto sytuacje, w których pomoc hydraulika jest niezbędna:`,
       `Ciągłe wycieki wody: prowadzą do uszkodzeń i pleśni.`,
       `Problemy z ciśnieniem wody: mogą świadczyć o poważnych usterkach.`,
       `Zatory w kanalizacji: objawiają się zapachami i niedrożnością.`,
@@ -50,8 +46,8 @@ export const GeneralPlumbingContent = {
       `Zabarwiona woda: może wskazywać na korozję rur.`,
       `Bulgotanie w rurach: świadczy o zatorach.`,
       `Zapach gazu: natychmiast wezwij fachowca i opuść budynek.`,
+      `Szybka interwencja hydraulika pozwala uniknąć kosztownych napraw i poprawia bezpieczeństwo nieruchomości.`,
     ],
-    note: `Szybka interwencja hydraulika pozwala uniknąć kosztownych napraw i poprawia bezpieczeństwo nieruchomości.`,
   },
   seo: {
     title: "Usługi hydrauliczne",

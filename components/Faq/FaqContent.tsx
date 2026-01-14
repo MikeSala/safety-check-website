@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Icons8checkmark } from "~/src/components/icons";
 import Icon8Checkmark from "~/src/components/icons/Icon8checkmark";
 
 export interface FaqItem {
@@ -1674,12 +1673,12 @@ const FaqSectionsContent: FaqContent[] = [
             </p>
             <ul className="mb-1 list-disc">
               <li className="mb-2 flex h-20 items-center">
-                <Icons8checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
+                <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
                 Kontrola obejmuje szczelność instalacji, stan przewodów i
                 urządzeń gazowych.
               </li>
               <li className="mb-2 flex h-20 items-center">
-                <Icons8checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
+                <Icon8Checkmark className="mr-4 h-7 w-7 flex-shrink-0" />
                 Brak wykonania przeglądu może skutkować sankcjami
                 administracyjnymi i zwiększa ryzyko awarii.
               </li>

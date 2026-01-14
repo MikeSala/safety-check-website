@@ -18,7 +18,6 @@ export const NAV_LABELS = {
 
   FAQ: "FAQ",
   ABOUT_US: "O nas",
-  WORK_WITH_US: "Praca z Nami",
   BOOK_NOW: "Zarezerwuj Przegląd",
   CONTACT_US: "Kontakt",
   LEGISLATION: "Legislacja",

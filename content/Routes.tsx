@@ -16,7 +16,6 @@ export const ROUTES = {
 
   FAQ: "/faq/",
   ABOUT_US: "/o-nas/",
-  WORK_WITH_US: "/praca-z-nami/",
   PRIVACY_POLICY: "/polityka-prywatnosci/",
   LEGISLATION: "/legislacja/",
   CONTACT_US: "/kontakt/",

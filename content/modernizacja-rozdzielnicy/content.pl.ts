@@ -4,8 +4,6 @@ export const SwitchboardUpgradeContent = {
     paragraphs: [
       `Od 2023 roku w Polsce obowiązują zaktualizowane wymagania dotyczące bezpieczeństwa instalacji elektrycznych w budynkach mieszkalnych, wynikające m.in. z przepisów prawa budowlanego i norm PN-EN. Właściciel nieruchomości ma obowiązek zapewnić, że instalacja elektryczna jest sprawna i bezpieczna. W praktyce oznacza to stosowanie urządzeń różnicowoprądowych (RCD) lub wyłączników różnicowoprądowych z zabezpieczeniem nadprądowym (RCBO) zgodnych z normami PN-EN 61008 lub PN-EN 61009.`,
       `Brak zgodności z tymi wymaganiami może skutkować poważnymi konsekwencjami:`,
-    ],
-    bullets: [
       `Najemca może odmówić przyjęcia lokalu lub rozwiązać umowę bez konsekwencji, jeśli lokal nie spełnia minimalnych standardów bezpieczeństwa.`,
       `W trakcie trwania umowy najmu najemca ma prawo żądać usunięcia wad zagrażających bezpieczeństwu – w tym modernizacji rozdzielnicy jako naprawy pilnej.`,
     ],

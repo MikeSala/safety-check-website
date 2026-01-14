@@ -106,10 +106,6 @@ const navItems: NavItemProps[] = [
     name: NAV_LABELS.ABOUT_US,
     href: ROUTES.ABOUT_US,
   },
-  {
-    name: NAV_LABELS.WORK_WITH_US,
-    href: ROUTES.WORK_WITH_US,
-  },
 ];
 
 type Props = {

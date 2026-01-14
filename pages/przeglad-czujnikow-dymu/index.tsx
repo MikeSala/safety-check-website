@@ -1,109 +1,39 @@
-import clsx from "clsx";
-import { NextSeo } from "next-seo";
-import { ReactElement, useContext } from "react";
-import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/Faq/Faq";
-import FaqSectionsData from "~/components/Faq/FaqContent";
-import InclusionsExclusions from "~/components/InclusionsExclusions";
+import { createServicePage } from "~/components/services/servicePageFactory";
 import { InspectionAreas } from "~/components/InspectionAreas";
-import { MainLayout } from "~/components/layouts/MainLayout";
-import { MarginLayout } from "~/components/layouts/MarginLayout";
-import { ResponsiveImage } from "~/components/ResponsiveImage";
+import InclusionsExclusions from "~/components/InclusionsExclusions";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
-import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/content/Routes";
-import { ViewportContext } from "~/providers/ViewportProvider";
 import { SmokeSafetyCheckContent as content } from "~/content/przeglad-czujnikow-dymu/content.pl";
 import smokeAlarmInspectionImage from "~/src/assets/images/smoke_4.jpg";
 import smokeAlarmDetailImage from "~/src/assets/images/smoke-alarm-check.webp";
 
-const selectedId = [11, 12, 13, 14, 15, 16, 17];
-
-const SmokeSafetyCheckPage: NextPageWithLayout = () => {
-  const { isMobile } = useContext(ViewportContext);
-
-  return (
+const SmokeSafetyCheckPage = createServicePage({
+  content,
+  images: [
+    {
+      src: smokeAlarmInspectionImage,
+      alt: "Technik kontrolujący czujnik dymu na suficie",
+    },
+    {
+      src: smokeAlarmDetailImage,
+      alt: "Zbliżenie na nowoczesny czujnik dymu",
+    },
+  ],
+  faqSelectedIds: [11, 12, 13, 14, 15, 16, 17],
+  section1Children: (
+    <InspectionAreas
+      ctaLabel="Zarezerwuj przegląd instalacji przeciwpożarowej"
+      ctaHref={ROUTES.BOOK_NOW}
+    />
+  ),
+  additionalBottomContent: (
     <>
-      <Banner title={content.seo.title} />
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 "
-          )}
-        >
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={smokeAlarmInspectionImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Technik kontrolujący czujnik dymu na suficie"
-            />
-          </div>
-
-          <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {content.section1.title}
-            </h3>
-            {content.section1.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-
-            <InspectionAreas
-              ctaLabel="Zarezerwuj przegląd instalacji przeciwpożarowej"
-              ctaHref={ROUTES.BOOK_NOW}
-            />
-          </div>
-        </div>
-      </MarginLayout>
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
-          )}
-        >
-          <div className="flex flex-col text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {content.section2.title}
-            </h3>
-            {content.section2.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-          </div>
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={smokeAlarmDetailImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Zbliżenie na nowoczesny czujnik dymu"
-            />
-          </div>
-        </div>
-      </MarginLayout>
-
       <InclusionsExclusions category="Smoke Alarm Safety Checks" />
       <SubscriptionServiceBanner />
       <ServiceBoxes />
-
-      <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
     </>
-  );
-};
-
-SmokeSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
-  return (
-    <MainLayout>
-      <NextSeo
-        title={content.seo.title}
-        description={content.seo.description}
-      />
-      {page}
-    </MainLayout>
-  );
-};
+  ),
+});
 
 export default SmokeSafetyCheckPage;

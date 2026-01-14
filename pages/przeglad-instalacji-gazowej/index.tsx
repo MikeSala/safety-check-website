@@ -1,153 +1,41 @@
-import clsx from "clsx";
-import { NextSeo } from "next-seo";
-import { ReactElement, useContext } from "react";
-import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/Faq/Faq";
-import FaqSectionsData from "~/components/Faq/FaqContent";
-import InclusionsExclusions from "~/components/InclusionsExclusions";
+import { createServicePage } from "~/components/services/servicePageFactory";
 import { InspectionAreas } from "~/components/InspectionAreas";
-import { MainLayout } from "~/components/layouts/MainLayout";
-import { MarginLayout } from "~/components/layouts/MarginLayout";
-import { ResponsiveImage } from "~/components/ResponsiveImage";
+import InclusionsExclusions from "~/components/InclusionsExclusions";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
-import { NextPageWithLayout } from "~/pages/_app";
 import { ROUTES } from "~/content/Routes";
-import { ViewportContext } from "~/providers/ViewportProvider";
-import { Icons8ArrowRight } from "~/src/components/icons";
 import { GasSafetyCheckContent as content } from "~/content/przeglad-instalacji-gazowej/content.pl";
 import gasSafetyIntroImage from "~/src/assets/images/gas_10.jpg";
 import gasSafetyMaintenanceImage from "~/src/assets/images/hero-power-box.webp";
 import gasSafetyChecklistImage from "~/src/assets/images/energy-safe.png";
 
-const selectedId = [
-  41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-];
-
-const GasSafetyCheckPage: NextPageWithLayout = () => {
-  const { isMobile } = useContext(ViewportContext);
-  return (
+const GasSafetyCheckPage = createServicePage({
+  content,
+  images: [
+    {
+      src: gasSafetyIntroImage,
+      alt: "Serwisant sprawdzający piec gazowy",
+    },
+    {
+      src: gasSafetyMaintenanceImage,
+      alt: "Konserwacja instalacji gazowej w budynku",
+    },
+    {
+      src: gasSafetyChecklistImage,
+      alt: "Kontrolna lista zadań dla serwisu gazowego",
+    },
+  ],
+  faqSelectedIds: [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57],
+  section1Children: (
+    <InspectionAreas ctaLabel="Skontaktuj się z nami" ctaHref={ROUTES.BOOK_NOW} />
+  ),
+  additionalBottomContent: (
     <>
-      <Banner title={content.seo.title} />
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 "
-          )}
-        >
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={gasSafetyIntroImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Serwisant sprawdzający piec gazowy"
-            />
-          </div>
-
-          <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {" "}
-              {content.section1.title}
-            </h3>
-            {content.section1.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-            <InspectionAreas
-              ctaLabel="Skontaktuj się z nami"
-              ctaHref={ROUTES.BOOK_NOW}
-            />
-          </div>
-        </div>
-      </MarginLayout>
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
-          )}
-        >
-          <div className="flex flex-col  text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {content.section2.title}
-            </h3>
-
-            {content.section2.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-          </div>
-          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={gasSafetyMaintenanceImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Konserwacja instalacji gazowej w budynku"
-            />
-          </div>
-        </div>
-      </MarginLayout>
-
-      <MarginLayout className="mx-auto -mt-20 max-w-7xl">
-        <div
-          className={clsx(
-            "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 "
-          )}
-        >
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={gasSafetyChecklistImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Kontrolna lista zadań dla serwisu gazowego"
-            />
-          </div>
-
-          <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold  h3">
-              {content.section3.title}
-            </h3>
-            <p className="">{content.section3.intro}</p>
-            <ul className="mb-4 list-disc">
-              {content.section3.paragraphs.map((p, i) => (
-                <li
-                  key={i}
-                  className={`mb-2 flex items-center ${
-                    isMobile ? "h-20 text-sm" : "h-20 text-base"
-                  }`}
-                >
-                  <Icons8ArrowRight
-                    className={`-ml-1 flex-shrink-0 ${
-                      isMobile ? "mr-2 h-6 w-6" : "mr-2 h-7 w-7"
-                    }`}
-                  />
-                  <span>{p}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mb-4">{content.section3.note}</p>
-          </div>
-        </div>
-      </MarginLayout>
       <InclusionsExclusions category="Przeglądy Bezpieczeństwa Elektrycznego" />
       <ServiceBoxes />
       <SubscriptionServiceBanner />
-      <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
     </>
-  );
-};
-
-GasSafetyCheckPage.getLayout = function GetLayout(page: ReactElement) {
-  return (
-    <MainLayout>
-      <NextSeo
-        title={content.seo.title}
-        description={content.seo.description}
-      />
-      {page}
-    </MainLayout>
-  );
-};
+  ),
+});
 
 export default GasSafetyCheckPage;

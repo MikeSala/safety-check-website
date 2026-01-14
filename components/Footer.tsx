@@ -55,7 +55,6 @@ const LINK_GROUPS = [
       { href: ROUTES.ABOUT_US, label: NAV_LABELS.ABOUT_US },
       { href: ROUTES.LEGISLATION, label: NAV_LABELS.LEGISLATION },
       { href: ROUTES.FAQ, label: NAV_LABELS.FAQ },
-      { href: ROUTES.WORK_WITH_US, label: NAV_LABELS.WORK_WITH_US },
       { href: ROUTES.PRIVACY_POLICY, label: NAV_LABELS.PRIVACY_POLICY },
     ],
   },

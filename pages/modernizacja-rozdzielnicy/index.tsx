@@ -1,147 +1,38 @@
-import clsx from "clsx";
-import { NextSeo } from "next-seo";
-import { ReactElement, useContext } from "react";
-import { Banner } from "~/components/Banner";
-import FaqComponent from "~/components/Faq/Faq";
-import FaqSectionsData from "~/components/Faq/FaqContent";
+import { createServicePage } from "~/components/services/servicePageFactory";
 import FormComponent from "~/components/FormComponent";
-import { ResponsiveImage } from "~/components/ResponsiveImage";
 import { ServiceBoxes } from "~/components/ServiceBoxes";
 import SubscriptionServiceBanner from "~/components/SubscriptionServiceBanner";
 import SwitchboardInclusionsExclusions from "~/components/SwitchboardInclusionsExclusions";
-import { MainLayout } from "~/components/layouts/MainLayout";
-import { MarginLayout } from "~/components/layouts/MarginLayout";
-import { NextPageWithLayout } from "~/pages/_app";
-import { ViewportContext } from "~/providers/ViewportProvider";
-import { Icons8ArrowRight } from "~/src/components/icons";
 import { SwitchboardUpgradeContent as content } from "~/content/modernizacja-rozdzielnicy/content.pl";
 import switchboardBeforeImage from "~/src/assets/images/elec_11.jpg";
 import switchboardAfterImage from "~/src/assets/images/hero-power-box.webp";
 import switchboardDetailImage from "~/src/assets/images/energy-safe.png";
 
-const selectedId = [71, 72, 73, 74, 75, 76];
-
-const SwitchboardUpgradePage: NextPageWithLayout = () => {
-  const { isMobile } = useContext(ViewportContext);
-  return (
+const SwitchboardUpgradePage = createServicePage({
+  content,
+  images: [
+    {
+      src: switchboardBeforeImage,
+      alt: "Stara rozdzielnica elektryczna przed modernizacją",
+    },
+    {
+      src: switchboardAfterImage,
+      alt: "Nowoczesna rozdzielnica po modernizacji",
+    },
+    {
+      src: switchboardDetailImage,
+      alt: "Zbliżenie na szczegóły instalacji elektrycznej",
+    },
+  ],
+  faqSelectedIds: [71, 72, 73, 74, 75, 76],
+  additionalBottomContent: (
     <>
-      <Banner title={content.seo.title} />
-
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 "
-          )}
-        >
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={switchboardBeforeImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Stara rozdzielnica elektryczna przed modernizacją"
-            />
-          </div>
-
-          <div className="text-gray-700">
-            <h3 className="mb-2 text-xl font-bold h3">
-              {content.section1.title}
-            </h3>
-
-            {content.section1.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-
-            <ul className="mb-2 mt-2 list-disc">
-              {content.section1.bullets.map((p, i) => (
-                <li key={i} className="mb-2 flex h-16 items-center">
-                  <Icons8ArrowRight
-                    className={`-ml-1 flex-shrink-0 ${
-                      isMobile ? "mr-2 h-6 w-6" : "mr-2 h-7 w-7"
-                    }`}
-                  />
-                  {p}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </MarginLayout>
-      <MarginLayout className="mx-auto max-w-7xl">
-        <div
-          className={clsx(
-            "mx-auto flex max-w-7xl flex-col-reverse rounded  bg-white shadow-sm",
-            isMobile ? "gap-3 p-3" : "gap-8 p-8 md:grid md:grid-cols-2"
-          )}
-        >
-          <div className="text-gray-700">
-            <h3 className="mb-4 text-xl font-bold h3">
-              {content.section2.title}
-            </h3>
-            {content.section2.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-          </div>
-
-          <div className="relative top-0 md:sticky md:top-[100px] md:h-[400px]">
-            {" "}
-            <ResponsiveImage
-              src={switchboardAfterImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Nowoczesna rozdzielnica po modernizacji"
-            />
-          </div>
-        </div>
-      </MarginLayout>
-
-      <MarginLayout className="mx-auto mb-10 max-w-7xl">
-        <div
-          className={clsx(
-            "flex flex-col rounded bg-white shadow-sm md:grid md:grid-cols-2",
-            isMobile ? "gap-2 p-2" : "gap-8 p-8 "
-          )}
-        >
-          <div className="relative top-0 flex flex-col md:sticky md:top-[100px] md:h-[400px]">
-            <ResponsiveImage
-              src={switchboardDetailImage}
-              sizes="(min-width: 1024px) 33vw,(min-width: 640px) 50vw, 100vw"
-              alt="Zbliżenie na szczegóły instalacji elektrycznej"
-            />
-          </div>
-          <div>
-            <h3 className="mb-4 text-xl font-bold text-gray-800 h3">
-              {content.section3.title}
-            </h3>
-            {content.section3.paragraphs.map((p, i) => (
-              <p key={i} className="mb-2">
-                {p}
-              </p>
-            ))}
-          </div>
-        </div>
-      </MarginLayout>
       <FormComponent titleId="switchboardUpgrade" />
       <SwitchboardInclusionsExclusions />
       <ServiceBoxes />
       <SubscriptionServiceBanner />
-      <FaqComponent sections={FaqSectionsData} selectedIds={selectedId} />
     </>
-  );
-};
-
-SwitchboardUpgradePage.getLayout = function GetLayout(page: ReactElement) {
-  return (
-    <MainLayout>
-      <NextSeo
-        title={content.seo.title}
-        description={content.seo.description}
-      />
-      {page}
-    </MainLayout>
-  );
-};
+  ),
+});
 
 export default SwitchboardUpgradePage;

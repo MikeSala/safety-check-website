@@ -1,5 +1,6 @@
 export { default as Icons8Plumbing } from "./Icon8Plumbing";
-export { default as Icons8checkmark } from "./Icon8checkmark";
+export { default as Icon8Checkmark } from "./Icon8checkmark";
+export { default as Icons8checkmark } from "./Icon8checkmark"; // Deprecated: use Icon8Checkmark
 export { default as IconElectrical } from "./IconElectrical";
 export { default as Icons8Apartment } from "./Icons8Apartment";
 export { default as Icons8ArrowRight } from "./Icons8ArrowRight";
