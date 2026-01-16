@@ -1,4 +1,6 @@
 import clsx from "clsx";
+import { FadeIn } from "~/components/animations";
+import { BG } from "~/components/theme/colors";
 
 type SectionStripProps = {
   title: string;
@@ -24,10 +26,11 @@ const SectionStrip: React.FC<SectionStripProps> = ({
         className
       )}
     >
-      <h2 className={clsx(titleClassName)}>{title}</h2>
+      <FadeIn direction="up" duration={0.6}>
+        <h2 className={clsx(titleClassName)}>{title}</h2>
+      </FadeIn>
     </article>
   );
 };
 
 export default SectionStrip;
-import { BG } from "~/components/theme/colors";

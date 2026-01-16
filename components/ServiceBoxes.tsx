@@ -2,6 +2,7 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import Link from "next/link";
 import { useContext } from "react";
+import { FadeIn, StaggerContainer, StaggerItem } from "~/components/animations";
 import {
   RECOMMENDED_SERVICE_KEYS,
   SERVICE_CARDS,
@@ -24,18 +25,22 @@ export const ServiceBoxes: React.FC = () => {
 
   return (
     <article className="mt-20 mb-20 rounded border bg-gray-200 px-8 sm:px-16 lg:px-20">
-      <h3 className="mb-20 mt-20 px-2 text-center font-semibold h2 sm:px-4 lg:px-0">
-        {serviceBoxesContent.title}
-      </h3>
+      <FadeIn direction="up" duration={0.6}>
+        <h3 className="mb-20 mt-20 px-2 text-center font-semibold h2 sm:px-4 lg:px-0">
+          {serviceBoxesContent.title}
+        </h3>
+      </FadeIn>
       <div className="flex flex-col gap-2 px-2 pb-6">
-        <div
+        <StaggerContainer
+          staggerDelay={0.1}
           className={`grid place-items-center gap-6 ${
             isMobile ? "grid-cols-1" : "md:grid-cols-2 xl:grid-cols-4"
           }`}
         >
           {displayedServices.map((service) => (
-            <Link href={service.href} key={service.label}>
-              <article
+            <StaggerItem key={service.label} direction="up">
+              <Link href={service.href}>
+                <article
                 className={clsx(
                   "group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-lg border-2 bg-white px-2 py-4 transition-transform duration-300 hover:scale-105 hover:border-sky-700 hover:shadow-md",
                   isMobile
@@ -85,10 +90,11 @@ export const ServiceBoxes: React.FC = () => {
                     className={`${isMobile ? "h-6 w-6" : "h-8 w-8"}`}
                   />
                 </Button>
-              </article>
-            </Link>
+                </article>
+              </Link>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
         <div className="mb-4 mt-4 flex flex-col items-center justify-center gap-4 rounded border p-4 sm:px-14">
           <small className="text-md text-center font-semibold h5">
             {serviceBoxesContent.note1}

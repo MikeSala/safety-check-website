@@ -1,5 +1,6 @@
 import { ArrowLongRightIcon, PhoneIcon } from "@heroicons/react/24/solid";
-import Button, { ButtonColor } from "~/components/Button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { Icons8RegisterSimple } from "~/src/components/icons";
 import { getContactInfo } from "~/utils/contactInfo";
 
@@ -13,66 +14,58 @@ const ContactButtons: React.FC<ContactButtonsProps> = ({ isMobile }) => {
 
   if (isMobile) {
     return (
-      <div className="mx-2 flex flex-wrap gap-2">
+      <div className="flex items-center gap-2">
         {phoneHref && (
-          <Button
-            className="h-14 w-14 rounded-full bg-white"
+          <motion.a
             href={phoneHref}
-            color={ButtonColor.Primary}
-            size="sm"
+            whileTap={{ scale: 0.95 }}
+            className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-sky-600 bg-white text-sky-600 shadow-sm transition-all duration-300 hover:bg-sky-600 hover:text-white hover:shadow-md"
             title="Zadzwoń"
-            outline
           >
-            <PhoneIcon className="h-7 w-7" />
-          </Button>
+            <PhoneIcon className="h-5 w-5" />
+          </motion.a>
         )}
 
-        <Button
-          className="group relative h-14 w-14 rounded-full bg-white"
-          title="Zarezerwuj Przegląd"
-          color={ButtonColor.Error}
-          href="/zarezerwuj-przeglad/"
-          size="sm"
-          outline
-        >
-          <span className="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-300 group-hover:opacity-0">
-            <Icons8RegisterSimple className="h-7 w-7" />
-          </span>
-
-          <ArrowLongRightIcon className="absolute inset-0 m-auto h-6 w-6 -translate-x-1/2 transform text-red-600 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:text-white group-hover:opacity-100" />
-        </Button>
+        <motion.div whileTap={{ scale: 0.95 }}>
+          <Link
+            href="/zarezerwuj-przeglad/"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white shadow-md transition-all duration-300 hover:from-red-600 hover:to-red-700 hover:shadow-lg"
+            title="Zarezerwuj Przegląd"
+          >
+            <Icons8RegisterSimple className="h-5 w-5" />
+          </Link>
+        </motion.div>
       </div>
     );
   }
+
   return (
-    <div className="flex grid-cols-2 flex-wrap gap-2">
+    <div className="flex items-center gap-3">
       {phoneHref && (
-        <Button
-          className="h-12 w-40 rounded bg-white text-sm"
+        <motion.a
           href={phoneHref}
-          color={ButtonColor.Primary}
-          size="lg"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="flex h-11 items-center gap-2 rounded-lg border-2 border-sky-600 bg-white px-4 text-sm font-semibold text-sky-700 shadow-sm transition-all duration-300 hover:bg-sky-600 hover:text-white hover:shadow-md"
           title="Zadzwoń"
-          outline
         >
-          <PhoneIcon className="-ml-2 h-6 w-6" />
-          {phoneNumber}
-        </Button>
+          <PhoneIcon className="h-5 w-5" />
+          <span>{phoneNumber}</span>
+        </motion.a>
       )}
 
-      <Button
-        className="group relative flex h-12 w-40 items-center justify-center overflow-hidden rounded bg-white"
-        title="Zarezerwuj Przegląd"
-        color={ButtonColor.Error}
-        href="/zarezerwuj-przeglad"
-        size="lg"
-        outline
-      >
-        <span className="absolute inset-0 flex items-center justify-center opacity-100 transition-opacity duration-300 group-hover:opacity-0">
-          Rezerwuj
-        </span>
-        <ArrowLongRightIcon className="absolute -left-1 h-9 w-9 transform text-red-600 opacity-0 transition-all duration-500 group-hover:translate-x-16 group-hover:text-white group-hover:opacity-100" />
-      </Button>
+      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+        <Link
+          href="/zarezerwuj-przeglad/"
+          className="group relative flex h-11 items-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:from-red-600 hover:to-red-700 hover:shadow-lg"
+          title="Zarezerwuj Przegląd"
+        >
+          <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-1">
+            Rezerwuj
+          </span>
+          <ArrowLongRightIcon className="relative z-10 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
+      </motion.div>
     </div>
   );
 };
