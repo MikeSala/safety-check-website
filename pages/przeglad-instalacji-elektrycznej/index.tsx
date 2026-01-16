@@ -7,7 +7,7 @@ import { ROUTES } from "~/content/Routes";
 import { ElectricalSafetyCheckContent as content } from "~/content/przeglad-instalacji-elektrycznej/content.pl";
 import electricalAssessmentImage from "~/src/assets/images/hero-power-box.webp";
 import electricalMaintenanceImage from "~/src/assets/images/elec_11.jpg";
-import electricalChecklistImage from "~/src/assets/images/energy-safe.png";
+import electricalChecklistImage from "~/src/assets/images/services-details-electric.webp";
 
 const ElectricalSafetyCheckPage = createServicePage({
   content,

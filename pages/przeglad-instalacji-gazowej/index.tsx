@@ -7,7 +7,7 @@ import { ROUTES } from "~/content/Routes";
 import { GasSafetyCheckContent as content } from "~/content/przeglad-instalacji-gazowej/content.pl";
 import gasSafetyIntroImage from "~/src/assets/images/gas_10.jpg";
 import gasSafetyMaintenanceImage from "~/src/assets/images/hero-power-box.webp";
-import gasSafetyChecklistImage from "~/src/assets/images/energy-safe.png";
+import gasSafetyChecklistImage from "~/src/assets/images/services-details-gas.webp";
 
 const GasSafetyCheckPage = createServicePage({
   content,
