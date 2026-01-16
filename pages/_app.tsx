@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { ReactElement, ReactNode, useEffect, useRef, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SmoothScroll } from "~/components/animations/SmoothScroll";
 import CookieBanner from "~/components/CookieBanner";
 import ChatLauncherButton, {
   CHAT_LAUNCHER_POSITION_CLASSES,
@@ -64,6 +65,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return (
     <ApolloProvider client={apolloClient}>
+      <SmoothScroll>
       <ViewportProvider>
         <div
           id="app"
@@ -101,6 +103,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
           <CookieBanner />
         </div>
       </ViewportProvider>
+      </SmoothScroll>
     </ApolloProvider>
   );
 };
