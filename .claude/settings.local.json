@@ -6,7 +6,10 @@
       "Bash(cd:*)",
       "Bash(cd /Users/maciejsala/Desktop/Praca/Projekty\\\\ Portfolio/safety-check-website && timeout 90 npm run build:*)",
       "Bash(npm run build:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\" && head -20 {}')",
+      "Bash(tree:*)",
+      "Bash(cd /Users/maciejsala/Desktop/Praca/Projekty\\\\ Portfolio/safety-check-website && npm install framer-motion lenis:*)"
     ]
   }
 }
