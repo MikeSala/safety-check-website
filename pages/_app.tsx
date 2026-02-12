@@ -4,6 +4,7 @@ import { NextPage } from "next";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import { ReactElement, ReactNode, useEffect, useRef, useState } from "react";
@@ -61,7 +62,12 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
       ""
     );
   const cleanPath = router.asPath.split("#")[0].split("?")[0];
-  const canonicalUrl = `${baseUrl}${cleanPath === "/" ? "" : cleanPath}`;
+  const canonicalPath = cleanPath === "/" ? "/" : cleanPath;
+  const canonicalUrl = `${baseUrl}${canonicalPath}`;
+  const openGraph = {
+    ...DEFAULT_SEO.openGraph,
+    url: canonicalUrl,
+  };
 
   return (
     <ApolloProvider client={apolloClient}>
@@ -74,7 +80,101 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
         >
           {" "}
           <ScrollButton containerRef={ref} />
-          <DefaultSeo {...DEFAULT_SEO} canonical={canonicalUrl} />
+          <DefaultSeo {...DEFAULT_SEO} canonical={canonicalUrl} openGraph={openGraph} />
+          <Head>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@graph": [
+                    {
+                      "@type": "LocalBusiness",
+                      "@id": "https://www.przegladinstalacji.com/#organization",
+                      name: "Przegląd Instalacji",
+                      alternateName: "Inspektor Instalacji",
+                      url: "https://www.przegladinstalacji.com",
+                      email: "info@przegladinstalacji.com",
+                      description:
+                        "Profesjonalne przeglądy bezpieczeństwa instalacji elektrycznych, gazowych i przeciwpożarowych w budynkach mieszkalnych i komercyjnych na terenie całej Polski.",
+                      areaServed: [
+                        { "@type": "City", name: "Kraków" },
+                        { "@type": "City", name: "Warszawa" },
+                        { "@type": "City", name: "Poznań" },
+                        { "@type": "City", name: "Wrocław" },
+                        { "@type": "City", name: "Gdańsk" },
+                        { "@type": "City", name: "Katowice" },
+                        { "@type": "City", name: "Szczecin" },
+                      ],
+                      knowsLanguage: "pl",
+                      hasOfferCatalog: {
+                        "@type": "OfferCatalog",
+                        name: "Usługi przeglądów instalacji",
+                        itemListElement: [
+                          {
+                            "@type": "Offer",
+                            itemOffered: {
+                              "@type": "Service",
+                              name: "Przegląd instalacji elektrycznej",
+                              description:
+                                "Kontrola bezpieczeństwa elektrycznego zgodnie z normą PN-HD 60364, sprawdzenie zgodności instalacji z normą PN-IEC 60364.",
+                              url: "https://www.przegladinstalacji.com/przeglad-instalacji-elektrycznej/",
+                            },
+                          },
+                          {
+                            "@type": "Offer",
+                            itemOffered: {
+                              "@type": "Service",
+                              name: "Przegląd instalacji gazowej",
+                              description:
+                                "Kontrola bezpieczeństwa instalacji gazowych zgodna z normami PN-EN 437, PN-EN 15001 i PN-EN 1775, serwisowanie urządzeń gazowych.",
+                              url: "https://www.przegladinstalacji.com/przeglad-instalacji-gazowej/",
+                            },
+                          },
+                          {
+                            "@type": "Offer",
+                            itemOffered: {
+                              "@type": "Service",
+                              name: "Kontrola czujników dymu",
+                              description:
+                                "Testowanie alarmów dymowych, sprawdzenie rozmieszczenia, wymiana baterii i czujników.",
+                              url: "https://www.przegladinstalacji.com/przeglad-czujnikow-dymu/",
+                            },
+                          },
+                          {
+                            "@type": "Offer",
+                            itemOffered: {
+                              "@type": "Service",
+                              name: "Przegląd hydrauliczny",
+                              url: "https://www.przegladinstalacji.com/przeglad-hydrauliczny/",
+                            },
+                          },
+                          {
+                            "@type": "Offer",
+                            itemOffered: {
+                              "@type": "Service",
+                              name: "Modernizacja rozdzielnicy",
+                              url: "https://www.przegladinstalacji.com/modernizacja-rozdzielnicy/",
+                            },
+                          },
+                        ],
+                      },
+                    },
+                    {
+                      "@type": "WebSite",
+                      "@id": "https://www.przegladinstalacji.com/#website",
+                      url: "https://www.przegladinstalacji.com",
+                      name: "Przegląd Instalacji",
+                      publisher: {
+                        "@id": "https://www.przegladinstalacji.com/#organization",
+                      },
+                      inLanguage: "pl-PL",
+                    },
+                  ],
+                }),
+              }}
+            />
+          </Head>
           {process.env.NODE_ENV === "production" && (
             <Script
               id="gtag-base"

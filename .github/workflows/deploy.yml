@@ -27,6 +27,9 @@ jobs:
         run: yarn export
         # lub: run: npm run build (jeśli używasz npm)
 
+      - name: Verify .htaccess exists in build output
+        run: test -f ./out/.htaccess && echo ".htaccess found" || (echo ".htaccess missing from build output!" && exit 1)
+
       - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
