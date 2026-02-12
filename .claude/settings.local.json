@@ -9,7 +9,18 @@
       "Bash(git add:*)",
       "Bash(xargs -I {} sh -c 'echo \"\"=== {} ===\"\" && head -20 {}')",
       "Bash(tree:*)",
-      "Bash(cd /Users/maciejsala/Desktop/Praca/Projekty\\\\ Portfolio/safety-check-website && npm install framer-motion lenis:*)"
+      "Bash(cd /Users/maciejsala/Desktop/Praca/Projekty\\\\ Portfolio/safety-check-website && npm install framer-motion lenis:*)",
+      "WebFetch(domain:www.przegladinstalacji.com)",
+      "Bash(npx next build:*)",
+      "Bash(git -C \"/Users/maciejsala/Desktop/Praca/Projekty Portfolio/safety-check-website\" ls-files)",
+      "Bash(test:*)",
+      "Bash(npx next lint)",
+      "Bash(npx --prefix:*)",
+      "Bash(python3:*)",
+      "Bash(yarn lint:*)",
+      "Bash(npx eslint:*)",
+      "Bash(ESLINT_USE_FLAT_CONFIG=false npx eslint:*)",
+      "Bash(curl:*)"
     ]
   }
 }

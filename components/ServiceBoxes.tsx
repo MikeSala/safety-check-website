@@ -8,7 +8,6 @@ import {
   SERVICE_CARDS,
   SERVICE_KEYS,
 } from "~/content/services";
-import Button, { ButtonColor } from "~/components/Button";
 import { ViewportContext } from "~/providers/ViewportProvider";
 
 const displayedServices = SERVICE_CARDS;
@@ -77,19 +76,18 @@ export const ServiceBoxes: React.FC = () => {
                   </>
                 )}
 
-                <Button
-                  className="font-base ml-8 mr-8 inline-flex items-center rounded bg-white px-6 group-hover:bg-sky-800 group-hover:text-white sm:mt-4"
-                  color={ButtonColor.Primary}
-                  size={isMobile ? "sm" : "lg"}
-                  title={`Dowiedz się więcej - ${service.label}`}
-                  outline
-                  type="button"
+                <span
+                  className={clsx(
+                    "font-base ml-8 mr-8 inline-flex items-center justify-center rounded border-2 border-sky-800 text-primary-800 font-medium shadow-sm transition-colors duration-200 bg-white px-6 group-hover:bg-sky-800 group-hover:text-white sm:mt-4",
+                    isMobile ? "px-2 py-1 text-sm" : "px-4 py-2"
+                  )}
+                  aria-hidden="true"
                 >
                   Więcej{" "}
                   <ArrowLongRightIcon
                     className={`${isMobile ? "h-6 w-6" : "h-8 w-8"}`}
                   />
-                </Button>
+                </span>
                 </article>
               </Link>
             </StaggerItem>

@@ -43,7 +43,7 @@ const Header: React.FC = () => {
   const mobileNavContainerRef = useRef(null);
 
   const logoSize = {
-    height: isMobile ? 50.04 : 76.95,
+    height: isMobile ? 50 : 77,
     width: isMobile ? 93 : 143,
   };
 

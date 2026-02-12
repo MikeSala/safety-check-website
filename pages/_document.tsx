@@ -3,7 +3,7 @@ import { GTM_ID } from "~/lib/gtag";
 class WebDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="pl">
         <Head>
           <meta
             name="google-site-verification"

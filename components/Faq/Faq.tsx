@@ -81,7 +81,7 @@ const FaqComponent: React.FC<FaqComponentProps> = ({
                       : ""
                   } duration-400 transition group-hover:bg-sky-800 group-hover:text-white`}
                 >
-                  <div className="flex-grow">{item.question}</div>
+                  <span className="flex-grow">{item.question}</span>
                   <ChevronDownIcon
                     className={clsx(
                       "ml-auto h-7 w-7 flex-shrink-0 transform transition duration-200 ease-in-out group-hover:text-white",
